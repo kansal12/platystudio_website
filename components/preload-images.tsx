@@ -1,0 +1,30 @@
+export function PreloadImages() {
+  return (
+    <>
+      <link
+        rel="preload"
+        href="/features/dubbing2.png"
+        as="image"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        href="/features/karaoke.png"
+        as="image"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        href="/features/manual.png"
+        as="image"
+        type="image/png"
+      />
+      <link
+        rel="preload"
+        href="/features/ott.png"
+        as="image"
+        type="image/png"
+      />
+    </>
+  );
+}
