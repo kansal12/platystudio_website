@@ -44,17 +44,17 @@ const features: Array<DubbingFeature> = [
     videoTitle: "BLOG DEMO",
     languages: [
       {
-        src: "/assets/audios/blog/en.mp3",
+        src: "/assets/audios/vocals2.mp3",
         flag: "/assets/img/us-flag.png",
         label: "English",
       },
       {
-        src: "/assets/audios/blog/es.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/span-flag.png",
         label: "Spanish",
       },
       {
-        src: "/assets/audios/blog/hi.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/ind-flag.png",
         label: "Hindi",
       },
@@ -69,17 +69,17 @@ const features: Array<DubbingFeature> = [
     videoTitle: "WEBSITE DEMO",
     languages: [
       {
-        src: "/assets/audios/website/en.mp3",
+        src: "/assets/audios/vocals2.mp3",
         flag: "/assets/img/us-flag.png",
         label: "English",
       },
       {
-        src: "/assets/audios/website/es.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/span-flag.png",
         label: "Spanish",
       },
       {
-        src: "/assets/audios/website/hi.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/ind-flag.png",
         label: "Hindi",
       },
@@ -94,17 +94,17 @@ const features: Array<DubbingFeature> = [
     videoTitle: "MOVIE DEMO 1",
     languages: [
       {
-        src: "/assets/audios/movie1/en.mp3",
+        src: "/assets/audios/vocals2.mp3",
         flag: "/assets/img/us-flag.png",
         label: "English",
       },
       {
-        src: "/assets/audios/movie1/es.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/span-flag.png",
         label: "Spanish",
       },
       {
-        src: "/assets/audios/movie1/hi.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/ind-flag.png",
         label: "Hindi",
       },
@@ -119,17 +119,17 @@ const features: Array<DubbingFeature> = [
     videoTitle: "MOVIE DEMO 2",
     languages: [
       {
-        src: "/assets/audios/movie2/en.mp3",
+        src: "/assets/audios/vocals2.mp3",
         flag: "/assets/img/us-flag.png",
         label: "English",
       },
       {
-        src: "/assets/audios/movie2/es.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/span-flag.png",
         label: "Spanish",
       },
       {
-        src: "/assets/audios/movie2/hi.mp3",
+        src: "/assets/audios/dubbed_track2.wav",
         flag: "/assets/img/ind-flag.png",
         label: "Hindi",
       },
@@ -145,12 +145,12 @@ const karaokeFeatures: Array<KaraokeFeature> = [
     type: "karaoke",
     videoTitle: "THE BAR SONG",
     videos: {
-      full: "/assets/videos/karaoke1/full.mp4",
+      full: "/assets/videos/karaoke_output_bar.mp4",
       noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
       noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
     },
     audios: {
-      full: "/assets/audios/karaoke1/full.mp3",
+      full: "/assets/audios/song_bar.mp3",
       noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
       noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
     },
