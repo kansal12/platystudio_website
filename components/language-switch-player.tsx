@@ -184,7 +184,8 @@ export function LanguageSwitchPlayer({
     const handleClickOutside = (event: MouseEvent) => {
       if (
         containerElementRef.current &&
-        !containerElementRef.current.contains(event.target as Node)
+        !containerElementRef.current.contains(event.target as Node) &&
+        isPlaying
       ) {
         setShowControls(false);
       }
@@ -194,14 +195,14 @@ export function LanguageSwitchPlayer({
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isPlaying]);
 
   return (
     <div
       ref={setRefs}
       className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
       onMouseEnter={() => setShowControls(true)}
-      onMouseLeave={() => setShowControls(false)}
+      onMouseLeave={() => isPlaying && setShowControls(false)}
       onMouseMove={() => setShowControls(true)}
     >
       <div className="relative aspect-video bg-black">

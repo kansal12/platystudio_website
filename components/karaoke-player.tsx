@@ -211,7 +211,8 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         containerElementRef.current &&
-        !containerElementRef.current.contains(event.target as Node)
+        !containerElementRef.current.contains(event.target as Node) &&
+        isPlaying
       ) {
         setShowControls(false);
       }
@@ -221,7 +222,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [isPlaying]);
 
   useEffect(() => {
     if (!inView && isPlaying) {
@@ -242,7 +243,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
       ref={setRefs}
       className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
       onMouseEnter={() => setShowControls(true)}
-      onMouseLeave={() => setShowControls(false)}
+      onMouseLeave={() => isPlaying && setShowControls(false)}
       onMouseMove={() => setShowControls(true)}
     >
       <div className="relative aspect-video bg-black">
