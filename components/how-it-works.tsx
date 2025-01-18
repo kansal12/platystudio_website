@@ -4,101 +4,173 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { LanguageSwitchPlayer } from "@/components/language-switch-player";
 import { KaraokePlayer } from "@/components/karaoke-player";
 
-const features = [
+interface DubbingFeature {
+  title: string;
+  description: string;
+  type: "dubbing";
+  video: string;
+  videoTitle: string;
+  languages: Array<{
+    src: string;
+    flag: string;
+    label: string;
+  }>;
+}
+
+interface KaraokeFeature {
+  title: string;
+  description: string;
+  type: "karaoke";
+  videoTitle: string;
+  videos: {
+    full: string;
+    noVocals: string;
+    noLyrics: string;
+  };
+  audios: {
+    full: string;
+    noVocals: string;
+    noLyrics: string;
+  };
+}
+
+const features: Array<DubbingFeature> = [
   {
     title: "Blog Dubbing",
     description:
       "Transform your blog content into engaging multilingual video presentations with natural voice synthesis.",
-    type: "dubbing" as const,
+    type: "dubbing",
     video: "/assets/videos/video2.mp4",
     videoTitle: "BLOG DEMO",
-    lang1: {
-      src: "/assets/audios/vocals2.mp3",
-      flag: "/assets/img/us-flag.png",
-      label: "English",
-    },
-    lang2: {
-      src: "/assets/audios/dubbed_track2.wav",
-      flag: "/assets/img/span-flag.png",
-      label: "Spanish",
-    },
+    languages: [
+      {
+        src: "/assets/audios/blog/en.mp3",
+        flag: "/assets/img/us-flag.png",
+        label: "English",
+      },
+      {
+        src: "/assets/audios/blog/es.mp3",
+        flag: "/assets/img/span-flag.png",
+        label: "Spanish",
+      },
+      {
+        src: "/assets/audios/blog/hi.mp3",
+        flag: "/assets/img/ind-flag.png",
+        label: "Hindi",
+      },
+    ],
   },
   {
     title: "Website Narration",
     description:
       "Add professional voiceovers to your website content in multiple languages to enhance user engagement.",
-    type: "dubbing" as const,
+    type: "dubbing",
     video: "/assets/videos/video2.mp4",
     videoTitle: "WEBSITE DEMO",
-    lang1: {
-      src: "/assets/audios/vocals2.mp3",
-      flag: "/assets/img/us-flag.png",
-      label: "English",
-    },
-    lang2: {
-      src: "/assets/audios/dubbed_track2.wav",
-      flag: "/assets/img/span-flag.png",
-      label: "Spanish",
-    },
+    languages: [
+      {
+        src: "/assets/audios/website/en.mp3",
+        flag: "/assets/img/us-flag.png",
+        label: "English",
+      },
+      {
+        src: "/assets/audios/website/es.mp3",
+        flag: "/assets/img/span-flag.png",
+        label: "Spanish",
+      },
+      {
+        src: "/assets/audios/website/hi.mp3",
+        flag: "/assets/img/ind-flag.png",
+        label: "Hindi",
+      },
+    ],
   },
   {
     title: "Movie Dubbing",
     description:
       "Professional-grade movie dubbing that preserves emotional depth and character authenticity.",
-    type: "dubbing" as const,
+    type: "dubbing",
     video: "/assets/videos/video2.mp4",
     videoTitle: "MOVIE DEMO 1",
-    lang1: {
-      src: "/assets/audios/vocals2.mp3",
-      flag: "/assets/img/us-flag.png",
-      label: "English",
-    },
-    lang2: {
-      src: "/assets/audios/dubbed_track2.wav",
-      flag: "/assets/img/span-flag.png",
-      label: "Spanish",
-    },
+    languages: [
+      {
+        src: "/assets/audios/movie1/en.mp3",
+        flag: "/assets/img/us-flag.png",
+        label: "English",
+      },
+      {
+        src: "/assets/audios/movie1/es.mp3",
+        flag: "/assets/img/span-flag.png",
+        label: "Spanish",
+      },
+      {
+        src: "/assets/audios/movie1/hi.mp3",
+        flag: "/assets/img/ind-flag.png",
+        label: "Hindi",
+      },
+    ],
   },
   {
     title: "Movie Dubbing 2",
     description:
       "Another example of our high-quality movie dubbing capabilities across different genres.",
-    type: "dubbing" as const,
+    type: "dubbing",
     video: "/assets/videos/video2.mp4",
     videoTitle: "MOVIE DEMO 2",
-    lang1: {
-      src: "/assets/audios/vocals2.mp3",
-      flag: "/assets/img/us-flag.png",
-      label: "English",
-    },
-    lang2: {
-      src: "/assets/audios/dubbed_track2.wav",
-      flag: "/assets/img/span-flag.png",
-      label: "Spanish",
-    },
+    languages: [
+      {
+        src: "/assets/audios/movie2/en.mp3",
+        flag: "/assets/img/us-flag.png",
+        label: "English",
+      },
+      {
+        src: "/assets/audios/movie2/es.mp3",
+        flag: "/assets/img/span-flag.png",
+        label: "Spanish",
+      },
+      {
+        src: "/assets/audios/movie2/hi.mp3",
+        flag: "/assets/img/ind-flag.png",
+        label: "Hindi",
+      },
+    ],
   },
 ];
 
-const karaokeFeatures = [
+const karaokeFeatures: Array<KaraokeFeature> = [
   {
     title: "Professional Karaoke Creation",
     description:
       "Transform any song into a professional karaoke experience with our advanced audio separation technology.",
-    type: "karaoke" as const,
-    originalVideo: "/assets/videos/video_song_bar.mp4",
-    originalAudio: "/assets/audios/song_bar.mp3",
-    karaokeVideo: "/assets/videos/karaoke_output_bar.mp4",
+    type: "karaoke",
     videoTitle: "THE BAR SONG",
+    videos: {
+      full: "/assets/videos/karaoke1/full.mp4",
+      noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
+      noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
+    },
+    audios: {
+      full: "/assets/audios/karaoke1/full.mp3",
+      noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
+      noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
+    },
   },
   {
     title: "Advanced Karaoke Studio",
     description:
       "Experience perfect vocal isolation and instrumental track creation with our state-of-the-art AI technology.",
-    type: "karaoke" as const,
-    originalVideo: "/assets/videos/video_song_bar.mp4",
-    originalAudio: "/assets/audios/song_bar.mp3",
-    karaokeVideo: "/assets/videos/karaoke_output_bar.mp4",
+    type: "karaoke",
     videoTitle: "THE BAR SONG 2",
+    videos: {
+      full: "/assets/videos/karaoke2/full.mp4",
+      noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
+      noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
+    },
+    audios: {
+      full: "/assets/audios/karaoke2/full.mp3",
+      noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
+      noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
+    },
   },
 ];
 
@@ -117,7 +189,6 @@ export function HowItWorks() {
             </>
           }
           description=""
-          // description="Experience the future of content transformation"
         />
 
         <div className="mt-20 sm:mt-24 lg:mt-32 space-y-24">
@@ -143,23 +214,7 @@ export function HowItWorks() {
                     <LanguageSwitchPlayer
                       video={feature.video}
                       title={feature.videoTitle}
-                      languages={[
-                        {
-                          src: "/path/to/english.mp3",
-                          label: "English",
-                          flag: "/assets/img/us-flag.png",
-                        },
-                        {
-                          src: "/path/to/hindi.mp3",
-                          label: "Hindi",
-                          flag: "/assets/img/ind-flag.png",
-                        },
-                        {
-                          src: "/path/to/spanish.mp3",
-                          label: "Spanish",
-                          flag: "/assets/img/span-flag.png",
-                        },
-                      ]}
+                      languages={feature.languages}
                     />
                   </div>
                   <div className="flex flex-col gap-4">
@@ -195,12 +250,8 @@ export function HowItWorks() {
                 >
                   <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
                     <KaraokePlayer
-                      videos={{
-                        full: "/assets/videos/video_song_bar.mp4",
-                        noVocals: "/assets/videos/karaoke_output_bar.mp4",
-                        noLyrics: "/assets/videos/karaoke_output_bar.mp4",
-                      }}
-                      title="Karaoke Title"
+                      videos={feature.videos}
+                      title={feature.videoTitle}
                     />
                   </div>
                   <div className="flex flex-col gap-4">
