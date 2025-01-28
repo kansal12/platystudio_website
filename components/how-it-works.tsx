@@ -45,19 +45,14 @@ const features: Array<DubbingFeature> = [
     languages: [
       {
         src: "/assets/audios/Zelensky_Fridman1_raussian.wav",
-        flag: "/assets/img/span-flag.png",
-        label: "Rausian (original)",
+        flag: "/assets/img/raussia-flag.png",
+        label: "Raussian (original)",
       },
       {
-        src: "/assets/audios/Zelensky_Fridman1.wav",
+        src: "/assets/audios/Zelensky_Fridman1_english.wav",
         flag: "/assets/img/us-flag.png",
         label: "English (dubbed)",
       },
-      // {
-      //   src: "/assets/audios/dubbed_track2.wav",
-      //   flag: "/assets/img/ind-flag.png",
-      //   label: "Hindi",
-      // },
     ],
   },
   {
@@ -65,23 +60,18 @@ const features: Array<DubbingFeature> = [
     description:
       "Add professional voiceovers to your website content in multiple languages to enhance user engagement.",
     type: "dubbing",
-    video: "/assets/videos/video2.mp4",
+    video: "/assets/videos/Rahul_and_Ravish.mp4",
     videoTitle: "WEBSITE DEMO",
     languages: [
       {
-        src: "/assets/audios/vocals2.mp3",
-        flag: "/assets/img/us-flag.png",
-        label: "English",
-      },
-      {
-        src: "/assets/audios/dubbed_track2.wav",
-        flag: "/assets/img/span-flag.png",
-        label: "Spanish",
-      },
-      {
-        src: "/assets/audios/dubbed_track2.wav",
+        src: "/assets/audios/Rahul_and_Ravish_hindi.wav",
         flag: "/assets/img/ind-flag.png",
-        label: "Hindi",
+        label: "Hindi (original)",
+      },
+      {
+        src: "/assets/audios/Rahul_and_Ravish_english.wav",
+        flag: "/assets/img/us-flag.png",
+        label: "English (dubbed)",
       },
     ],
   },
@@ -90,23 +80,18 @@ const features: Array<DubbingFeature> = [
     description:
       "Professional-grade movie dubbing that preserves emotional depth and character authenticity.",
     type: "dubbing",
-    video: "/assets/videos/video2.mp4",
+    video: "/assets/videos/Kalyani_PTM.mp4",
     videoTitle: "MOVIE DEMO 1",
     languages: [
       {
-        src: "/assets/audios/vocals2.mp3",
+        src: "/assets/audios/Kalyani_PTM_English.wav",
         flag: "/assets/img/us-flag.png",
-        label: "English",
+        label: "English (original)",
       },
       {
-        src: "/assets/audios/dubbed_track2.wav",
+        src: "/assets/audios/Kalyani_PTM_spanish.wav",
         flag: "/assets/img/span-flag.png",
-        label: "Spanish",
-      },
-      {
-        src: "/assets/audios/dubbed_track2.wav",
-        flag: "/assets/img/ind-flag.png",
-        label: "Hindi",
+        label: "Spanish (dubbed)",
       },
     ],
   },
@@ -115,23 +100,18 @@ const features: Array<DubbingFeature> = [
     description:
       "Another example of our high-quality movie dubbing capabilities across different genres.",
     type: "dubbing",
-    video: "/assets/videos/video2.mp4",
+    video: "/assets/videos/Notting_Hill_3.mp4",
     videoTitle: "MOVIE DEMO 2",
     languages: [
       {
-        src: "/assets/audios/vocals2.mp3",
+        src: "/assets/audios/Notting_Hill_3_English.wav",
         flag: "/assets/img/us-flag.png",
-        label: "English",
+        label: "English (original)",
       },
       {
-        src: "/assets/audios/dubbed_track2.wav",
+        src: "/assets/audios/Notting_Hill_3_spanish.wav",
         flag: "/assets/img/span-flag.png",
-        label: "Spanish",
-      },
-      {
-        src: "/assets/audios/dubbed_track2.wav",
-        flag: "/assets/img/ind-flag.png",
-        label: "Hindi",
+        label: "Spanish (dubbed)",
       },
     ],
   },

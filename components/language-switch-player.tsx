@@ -159,7 +159,7 @@ export function LanguageSwitchPlayer({
 
   useEffect(() => {
     const handlePauseOthers = (
-      e: CustomEvent<{ currentId: string | null }>,
+      e: CustomEvent<{ currentId: string | null }>
     ) => {
       if (e.detail.currentId !== playerId && isPlaying) {
         videoRef.current?.pause();
@@ -170,12 +170,12 @@ export function LanguageSwitchPlayer({
 
     window.addEventListener(
       "pauseOtherPlayers",
-      handlePauseOthers as EventListener,
+      handlePauseOthers as EventListener
     );
     return () => {
       window.removeEventListener(
         "pauseOtherPlayers",
-        handlePauseOthers as EventListener,
+        handlePauseOthers as EventListener
       );
     };
   }, [playerId, isPlaying]);
@@ -209,7 +209,7 @@ export function LanguageSwitchPlayer({
         <video
           ref={videoRef}
           src={video}
-          poster="/assets/img/thumbnail-d.png"
+          // poster="/assets/img/thumbnail-d.png"
           className="h-full w-full"
           playsInline
           muted
@@ -224,7 +224,7 @@ export function LanguageSwitchPlayer({
         <div
           className={cn(
             "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
-            showControls ? "opacity-100" : "opacity-0",
+            showControls ? "opacity-100" : "opacity-0"
           )}
         >
           <div className="absolute inset-0 flex items-center justify-center">
@@ -232,7 +232,7 @@ export function LanguageSwitchPlayer({
               onClick={showReplayButton ? handleReplay : togglePlayPause}
               className={cn(
                 "flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white/20",
-                "active:scale-95",
+                "active:scale-95"
               )}
             >
               {showReplayButton ? (
