@@ -40,24 +40,24 @@ const features: Array<DubbingFeature> = [
     description:
       "Transform your blog content into engaging multilingual video presentations with natural voice synthesis.",
     type: "dubbing",
-    video: "/assets/videos/video2.mp4",
+    video: "/assets/videos/Zelensky_Fridman1.mp4",
     videoTitle: "BLOG DEMO",
     languages: [
       {
-        src: "/assets/audios/vocals2.mp3",
-        flag: "/assets/img/us-flag.png",
-        label: "English",
-      },
-      {
-        src: "/assets/audios/dubbed_track2.wav",
+        src: "/assets/audios/Zelensky_Fridman1_raussian.wav",
         flag: "/assets/img/span-flag.png",
-        label: "Spanish",
+        label: "Rausian (original)",
       },
       {
-        src: "/assets/audios/dubbed_track2.wav",
-        flag: "/assets/img/ind-flag.png",
-        label: "Hindi",
+        src: "/assets/audios/Zelensky_Fridman1.wav",
+        flag: "/assets/img/us-flag.png",
+        label: "English (dubbed)",
       },
+      // {
+      //   src: "/assets/audios/dubbed_track2.wav",
+      //   flag: "/assets/img/ind-flag.png",
+      //   label: "Hindi",
+      // },
     ],
   },
   {
