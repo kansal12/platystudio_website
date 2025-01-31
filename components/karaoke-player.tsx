@@ -1,20 +1,20 @@
 "use client";
 
-import { useState, useRef, useEffect, useId } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {
   Play,
   Pause,
   RotateCcw,
-  Music,
-  MicOffIcon as MusicOff,
-  Subtitles,
+  // Music,
+  // MicOffIcon as MusicOff,
+  // Subtitles,
 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { useVideoPlayer } from "@/contexts/video-player-context";
+// import { useVideoPlayer } from "@/contexts/video-player-context";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
-import { ModeButton } from "@/components/ui/mode-button";
+// import { ModeButton } from "@/components/ui/mode-button";
 
 // type VideoMode = "full" | "noVocals" | "noLyrics";
 type VideoMode = "original" | "karaoke";
@@ -31,7 +31,7 @@ interface KaraokePlayerProps {
 }
 
 export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
-  const playerId = useId();
+  // const playerId = useId();
   // const { setCurrentPlayingId } = useVideoPlayer();
   const [currentPlayingVideo, setCurrentPlayingVideo] =
     useState<VideoMode>("original");
@@ -44,7 +44,8 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   //   new Set(["full"])
   // );
   const [showReplayButton, setShowReplayButton] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const isTransitioning = false;
+  // const [isTransitioning, setIsTransitioning] = useState(false);
   const isDragging = false;
 
   const videoRefs = useRef<{ [key in VideoMode]: HTMLVideoElement | null }>({
