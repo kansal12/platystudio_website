@@ -36,7 +36,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   const [showControls, setShowControls] = useState(true);
 
   const [selectedModes, setSelectedModes] = useState<Set<VideoMode>>(
-    new Set(["full"]),
+    new Set(["full"])
   );
   const [showReplayButton, setShowReplayButton] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -62,7 +62,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   // Listen for global pause events
   useEffect(() => {
     const handlePauseOthers = (
-      e: CustomEvent<{ currentId: string | null }>,
+      e: CustomEvent<{ currentId: string | null }>
     ) => {
       if (e.detail.currentId !== playerId && isPlaying) {
         Object.values(videoRefs.current).forEach((video) => video?.pause());
@@ -72,12 +72,12 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
 
     window.addEventListener(
       "pauseOtherPlayers",
-      handlePauseOthers as EventListener,
+      handlePauseOthers as EventListener
     );
     return () => {
       window.removeEventListener(
         "pauseOtherPlayers",
-        handlePauseOthers as EventListener,
+        handlePauseOthers as EventListener
       );
     };
   }, [playerId, isPlaying]);
@@ -254,12 +254,10 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
               videoRefs.current[mode as VideoMode] = el;
             }}
             src={src}
-            poster="/assets/img/thumbnail-k.png"
+            // poster="/assets/img/thumbnail-k.png"
             className={cn(
               "absolute inset-0 h-full w-full transition-opacity duration-300",
-              selectedModes.has(mode as VideoMode)
-                ? "opacity-100"
-                : "opacity-0",
+              selectedModes.has(mode as VideoMode) ? "opacity-100" : "opacity-0"
             )}
             playsInline
           />
@@ -274,7 +272,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
         <div
           className={cn(
             "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
-            showControls ? "opacity-100" : "opacity-0",
+            showControls ? "opacity-100" : "opacity-0"
           )}
         >
           <div className="absolute inset-0 flex items-center justify-center">
@@ -283,7 +281,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
               className={cn(
                 "flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white/20",
                 "active:scale-95",
-                isTransitioning && "opacity-50 cursor-not-allowed",
+                isTransitioning && "opacity-50 cursor-not-allowed"
               )}
               disabled={isTransitioning}
             >
