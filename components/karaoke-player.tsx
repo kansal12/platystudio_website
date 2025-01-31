@@ -16,36 +16,43 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { ModeButton } from "@/components/ui/mode-button";
 
-type VideoMode = "full" | "noVocals" | "noLyrics";
+// type VideoMode = "full" | "noVocals" | "noLyrics";
+type VideoMode = "original" | "karaoke";
 
 interface KaraokePlayerProps {
   videos: {
-    full: string;
-    noVocals: string;
-    noLyrics: string;
+    // full: string;
+    // noVocals: string;
+    // noLyrics: string;
+    original: string;
+    karaoke: string;
   };
   title?: string;
 }
 
 export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   const playerId = useId();
-  const { setCurrentPlayingId } = useVideoPlayer();
+  // const { setCurrentPlayingId } = useVideoPlayer();
+  const [currentPlayingVideo, setCurrentPlayingVideo] =
+    useState<VideoMode>("original");
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showControls, setShowControls] = useState(true);
 
-  const [selectedModes, setSelectedModes] = useState<Set<VideoMode>>(
-    new Set(["full"])
-  );
+  // const [selectedModes, setSelectedModes] = useState<Set<VideoMode>>(
+  //   new Set(["full"])
+  // );
   const [showReplayButton, setShowReplayButton] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const isDragging = false;
 
   const videoRefs = useRef<{ [key in VideoMode]: HTMLVideoElement | null }>({
-    full: null,
-    noVocals: null,
-    noLyrics: null,
+    // full: null,
+    // noVocals: null,
+    // noLyrics: null,
+    original: null,
+    karaoke: null,
   });
 
   const containerElementRef = useRef<HTMLDivElement>(null);
@@ -60,27 +67,27 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   };
 
   // Listen for global pause events
-  useEffect(() => {
-    const handlePauseOthers = (
-      e: CustomEvent<{ currentId: string | null }>
-    ) => {
-      if (e.detail.currentId !== playerId && isPlaying) {
-        Object.values(videoRefs.current).forEach((video) => video?.pause());
-        setIsPlaying(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handlePauseOthers = (
+  //     e: CustomEvent<{ currentId: string | null }>
+  //   ) => {
+  //     if (e.detail.currentId !== playerId && isPlaying) {
+  //       Object.values(videoRefs.current).forEach((video) => video?.pause());
+  //       setIsPlaying(false);
+  //     }
+  //   };
 
-    window.addEventListener(
-      "pauseOtherPlayers",
-      handlePauseOthers as EventListener
-    );
-    return () => {
-      window.removeEventListener(
-        "pauseOtherPlayers",
-        handlePauseOthers as EventListener
-      );
-    };
-  }, [playerId, isPlaying]);
+  //   window.addEventListener(
+  //     "pauseOtherPlayers",
+  //     handlePauseOthers as EventListener
+  //   );
+  //   return () => {
+  //     window.removeEventListener(
+  //       "pauseOtherPlayers",
+  //       handlePauseOthers as EventListener
+  //     );
+  //   };
+  // }, [playerId, isPlaying]);
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -89,14 +96,18 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
   };
 
   const getCurrentVideo = () => {
-    if (selectedModes.has("noVocals") && selectedModes.has("noLyrics")) {
-      return videoRefs.current.noVocals; // Both modes selected
-    } else if (selectedModes.has("noVocals")) {
-      return videoRefs.current.noVocals;
-    } else if (selectedModes.has("noLyrics")) {
-      return videoRefs.current.noLyrics;
+    // if (selectedModes.has("noVocals") && selectedModes.has("noLyrics")) {
+    //   return videoRefs.current.noVocals; // Both modes selected
+    // } else if (selectedModes.has("noVocals")) {
+    //   return videoRefs.current.noVocals;
+    // } else if (selectedModes.has("noLyrics")) {
+    //   return videoRefs.current.noLyrics;
+    // }
+    // return videoRefs.current.full;
+    if (currentPlayingVideo === "karaoke") {
+      return videoRefs.current.karaoke;
     }
-    return videoRefs.current.full;
+    return videoRefs.current.original;
   };
 
   const togglePlayPause = () => {
@@ -105,10 +116,10 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
 
     if (isPlaying) {
       currentVideo.pause();
-      setCurrentPlayingId(null);
+      // setCurrentPlayingId(null);
     } else {
       currentVideo.play();
-      setCurrentPlayingId(playerId);
+      // setCurrentPlayingId(playerId);
     }
     setIsPlaying(!isPlaying);
   };
@@ -123,44 +134,69 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     setCurrentTime(newTime);
   };
 
-  const toggleMode = (mode: VideoMode) => {
-    setIsTransitioning(true);
-    const newModes = new Set(selectedModes);
+  // const toggleMode = (mode: VideoMode) => {
+  //   setIsTransitioning(true);
+  //   const newModes = new Set(selectedModes);
 
-    if (mode === "full") {
-      newModes.clear();
-      newModes.add("full");
-    } else {
-      newModes.delete("full");
-      if (newModes.has(mode)) {
-        newModes.delete(mode);
-        if (newModes.size === 0) newModes.add("full");
-      } else {
-        newModes.add(mode);
+  //   if (mode === "full") {
+  //     newModes.clear();
+  //     newModes.add("full");
+  //   } else {
+  //     newModes.delete("full");
+  //     if (newModes.has(mode)) {
+  //       newModes.delete(mode);
+  //       if (newModes.size === 0) newModes.add("full");
+  //     } else {
+  //       newModes.add(mode);
+  //     }
+  //   }
+
+  //   const currentTime = getCurrentVideo()?.currentTime || 0;
+  //   Object.values(videoRefs.current).forEach((video) => {
+  //     if (video) video.currentTime = currentTime;
+  //   });
+
+  //   setSelectedModes(newModes);
+  //   setTimeout(() => setIsTransitioning(false), 300);
+  // };
+
+  // const handleGenerateKaraoke = () => {
+  //   const newModes = new Set<VideoMode>(["noVocals", "noLyrics"]);
+  //   setSelectedModes(newModes);
+
+  //   const currentTime = getCurrentVideo()?.currentTime || 0;
+  //   Object.values(videoRefs.current).forEach((video) => {
+  //     if (video) video.currentTime = currentTime;
+  //   });
+
+  //   if (isPlaying) {
+  //     videoRefs.current.noVocals?.play();
+  //   }
+  // };
+
+  const playOriginal = () => {
+    setCurrentPlayingVideo("original");
+    const currentTime = getCurrentVideo()?.currentTime || 0;
+    Object.values(videoRefs.current).forEach((video) => {
+      if (video) {
+        video.currentTime = currentTime;
+        video.pause();
       }
-    }
-
-    const currentTime = getCurrentVideo()?.currentTime || 0;
-    Object.values(videoRefs.current).forEach((video) => {
-      if (video) video.currentTime = currentTime;
     });
-
-    setSelectedModes(newModes);
-    setTimeout(() => setIsTransitioning(false), 300);
+    videoRefs.current.original?.play();
+    setIsPlaying(true);
   };
-
-  const handleGenerateKaraoke = () => {
-    const newModes = new Set<VideoMode>(["noVocals", "noLyrics"]);
-    setSelectedModes(newModes);
-
+  const playKaraoke = () => {
+    setCurrentPlayingVideo("karaoke");
     const currentTime = getCurrentVideo()?.currentTime || 0;
     Object.values(videoRefs.current).forEach((video) => {
-      if (video) video.currentTime = currentTime;
+      if (video) {
+        video.currentTime = currentTime;
+        video.pause();
+      }
     });
-
-    if (isPlaying) {
-      videoRefs.current.noVocals?.play();
-    }
+    videoRefs.current.karaoke?.play();
+    setIsPlaying(true);
   };
 
   const handleReplay = () => {
@@ -171,7 +207,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     currentVideo.play();
     setIsPlaying(true);
     setShowReplayButton(false);
-    setCurrentPlayingId(playerId);
+    // setCurrentPlayingId(playerId);
   };
 
   useEffect(() => {
@@ -192,7 +228,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     const handleEnded = () => {
       setIsPlaying(false);
       setShowReplayButton(true);
-      setCurrentPlayingId(null);
+      // setCurrentPlayingId(null);
     };
 
     currentVideo.addEventListener("timeupdate", handleTimeUpdate);
@@ -204,7 +240,8 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
       currentVideo.removeEventListener("loadedmetadata", handleLoadedMetadata);
       currentVideo.removeEventListener("ended", handleEnded);
     };
-  }, [isDragging, setCurrentPlayingId, selectedModes]);
+  }, [isDragging]);
+  // }, [isDragging, setCurrentPlayingId, selectedModes]);
 
   // Handle clicks outside the player
   useEffect(() => {
@@ -228,15 +265,16 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     if (!inView && isPlaying) {
       getCurrentVideo()?.pause();
       setIsPlaying(false);
-      setCurrentPlayingId(null);
+      // setCurrentPlayingId(null);
     }
-  }, [inView, isPlaying, setCurrentPlayingId, selectedModes]);
+  }, [inView, isPlaying]);
+  // }, [inView, isPlaying, setCurrentPlayingId, selectedModes]);
 
-  const modes = [
-    { id: "full" as const, label: "Full", icon: Music },
-    { id: "noVocals" as const, label: "No Vocals", icon: MusicOff },
-    { id: "noLyrics" as const, label: "No Lyrics", icon: Subtitles },
-  ];
+  // const modes = [
+  //   { id: "full" as const, label: "Full", icon: Music },
+  //   { id: "noVocals" as const, label: "No Vocals", icon: MusicOff },
+  //   { id: "noLyrics" as const, label: "No Lyrics", icon: Subtitles },
+  // ];
 
   return (
     <div
@@ -247,6 +285,21 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
       onMouseMove={() => setShowControls(true)}
     >
       <div className="relative aspect-video bg-black">
+        {/* {Object.entries(videos).map(([mode, src]) => (
+          <video
+            key={mode}
+            ref={(el) => {
+              videoRefs.current[mode as VideoMode] = el;
+            }}
+            src={src}
+            poster="/assets/img/thumbnail-k.png"
+            className={cn(
+              "absolute inset-0 h-full w-full transition-opacity duration-300",
+              selectedModes.has(mode as VideoMode) ? "opacity-100" : "opacity-0"
+            )}
+            playsInline
+          />
+        ))} */}
         {Object.entries(videos).map(([mode, src]) => (
           <video
             key={mode}
@@ -257,7 +310,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
             // poster="/assets/img/thumbnail-k.png"
             className={cn(
               "absolute inset-0 h-full w-full transition-opacity duration-300",
-              selectedModes.has(mode as VideoMode) ? "opacity-100" : "opacity-0"
+              currentPlayingVideo === mode ? "block" : "hidden"
             )}
             playsInline
           />
@@ -296,8 +349,8 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
-            <div className="flex items-center justify-between gap-2 sm:gap-3">
-              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 min-w-0">
+            <div className="flex items-center justify-start gap-2 sm:gap-3">
+              {/* <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 min-w-0">
                 {modes.map(({ id, icon: Icon }) => (
                   <ModeButton
                     key={id}
@@ -312,8 +365,7 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
                     : modes.find((m) => m.id === Array.from(selectedModes)[0])
                         ?.label || "Select mode"}
                 </span>
-              </div>
-
+              </div> 
               <Button
                 variant="default"
                 size="sm"
@@ -321,6 +373,30 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
                 onClick={handleGenerateKaraoke}
               >
                 Generate Karaoke
+              </Button> */}
+              <Button
+                variant="default"
+                size="sm"
+                className={`h-6 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium py-0  ${
+                  currentPlayingVideo === "original"
+                    ? "opacity-100"
+                    : "opacity-50"
+                }`}
+                onClick={playOriginal}
+              >
+                original
+              </Button>
+              <Button
+                variant="default"
+                size="sm"
+                className={`h-6 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
+                  currentPlayingVideo === "karaoke"
+                    ? "opacity-100"
+                    : "opacity-50"
+                }`}
+                onClick={playKaraoke}
+              >
+                karaoke
               </Button>
             </div>
 

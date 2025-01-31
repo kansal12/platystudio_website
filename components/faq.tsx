@@ -76,7 +76,7 @@ export function FAQ() {
         </div>
         <div className="mt-16 text-center">
           <p className="text-muted-foreground">
-            Still have questions?{" "}
+            Still have questions?
             <a
               href="#contact"
               className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"

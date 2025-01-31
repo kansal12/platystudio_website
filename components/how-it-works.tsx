@@ -23,15 +23,17 @@ interface KaraokeFeature {
   type: "karaoke";
   videoTitle: string;
   videos: {
-    full: string;
-    noVocals: string;
-    noLyrics: string;
+    // full: string;
+    // noVocals: string;
+    // noLyrics: string;
+    original: string;
+    karaoke: string;
   };
-  audios: {
-    full: string;
-    noVocals: string;
-    noLyrics: string;
-  };
+  // audios: {
+  //   full: string;
+  //   noVocals: string;
+  //   noLyrics: string;
+  // };
 }
 
 const features: Array<DubbingFeature> = [
@@ -104,12 +106,12 @@ const features: Array<DubbingFeature> = [
     videoTitle: "MOVIE DEMO 2",
     languages: [
       {
-        src: "/assets/audios/Notting_Hill_3_English.wav",
+        src: "/assets/audios/Notting_Hill_3_English.m4a",
         flag: "/assets/img/us-flag.png",
         label: "English (original)",
       },
       {
-        src: "/assets/audios/Notting_Hill_3_spanish.wav",
+        src: "/assets/audios/Notting_Hill_3_spanish.m4a",
         flag: "/assets/img/span-flag.png",
         label: "Spanish (dubbed)",
       },
@@ -125,15 +127,19 @@ const karaokeFeatures: Array<KaraokeFeature> = [
     type: "karaoke",
     videoTitle: "THE BAR SONG",
     videos: {
-      full: "/assets/videos/karaoke_output_bar.mp4",
-      noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
-      noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
+      // full: "/assets/videos/karaoke_output_bar.mp4",
+      // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
+      // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
+      original: "/assets/videos/video_song_bar.mp4",
+      karaoke: "/assets/videos/karaoke_output_bar.mp4",
     },
-    audios: {
-      full: "/assets/audios/song_bar.mp3",
-      noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
-      noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
-    },
+    // audios: {
+    //   full: "/assets/audios/song_bar.mp3",
+    //   // noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
+    //   // noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
+    //   noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
+    //   noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
+    // },
   },
   {
     title: "Advanced Karaoke Studio",
@@ -142,15 +148,17 @@ const karaokeFeatures: Array<KaraokeFeature> = [
     type: "karaoke",
     videoTitle: "THE BAR SONG 2",
     videos: {
-      full: "/assets/videos/karaoke2/full.mp4",
-      noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
-      noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
+      // full: "/assets/videos/karaoke2/full.mp4",
+      // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
+      // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
+      original: "/assets/videos/video_song_perfect.mp4",
+      karaoke: "/assets/videos/karaoke_output_perfect.mp4",
     },
-    audios: {
-      full: "/assets/audios/karaoke2/full.mp3",
-      noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
-      noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
-    },
+    // audios: {
+    //   full: "/assets/audios/karaoke2/full.mp3",
+    //   noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
+    //   noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
+    // },
   },
 ];
 
@@ -163,7 +171,7 @@ export function HowItWorks() {
             <>
               <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
                 Unmatched quality
-              </span>{" "}
+              </span>
               <br />
               that speaks for itself
             </>

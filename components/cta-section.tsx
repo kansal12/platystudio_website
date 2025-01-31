@@ -57,7 +57,6 @@ export function CTASection() {
               Join the future of video production today
             </p>
           </div>
-
           {/* Stats Section */}
           <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-3">
             {[

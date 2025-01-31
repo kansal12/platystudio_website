@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <PreloadImages />
-      </head>{" "}
+      </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
         <Header />
         <VideoPlayerProvider>
