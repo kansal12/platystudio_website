@@ -38,82 +38,82 @@ interface KaraokeFeature {
 
 const features: Array<DubbingFeature> = [
   {
-    title: "Blog Dubbing",
+    title: "In-Studio Conversation",
     description:
-      "Transform your blog content into engaging multilingual video presentations with natural voice synthesis.",
+      "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
     type: "dubbing",
     video: "/assets/videos/Zelensky_Fridman1.mp4",
-    videoTitle: "BLOG DEMO",
+    videoTitle: "Zelenskyy-Fridman",
     languages: [
       {
         src: "/assets/audios/Zelensky_Fridman1_raussian.wav",
         flag: "/assets/img/raussia-flag.png",
-        label: "Raussian (original)",
+        label: "Russian (Original)",
       },
       {
         src: "/assets/audios/Zelensky_Fridman1_english.wav",
         flag: "/assets/img/us-flag.png",
-        label: "English (dubbed)",
+        label: "English (Dubbed)",
       },
     ],
   },
   {
-    title: "Website Narration",
+    title: "On-Location Interview",
     description:
-      "Add professional voiceovers to your website content in multiple languages to enhance user engagement.",
+      "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
     type: "dubbing",
     video: "/assets/videos/Rahul_and_Ravish.mp4",
-    videoTitle: "WEBSITE DEMO",
+    videoTitle: "RAGA-Ravish",
     languages: [
       {
         src: "/assets/audios/Rahul_and_Ravish_hindi.wav",
         flag: "/assets/img/ind-flag.png",
-        label: "Hindi (original)",
+        label: "Hindi (Original)",
       },
       {
         src: "/assets/audios/Rahul_and_Ravish_english.wav",
         flag: "/assets/img/us-flag.png",
-        label: "English (dubbed)",
+        label: "English (Dubbed)",
       },
     ],
   },
   {
-    title: "Movie Dubbing",
+    title: "Academic Public Talk",
     description:
-      "Professional-grade movie dubbing that preserves emotional depth and character authenticity.",
+      "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
     type: "dubbing",
     video: "/assets/videos/Kalyani_PTM.mp4",
-    videoTitle: "MOVIE DEMO 1",
+    videoTitle: "Path to Maths- IAS Princeton",
     languages: [
       {
         src: "/assets/audios/Kalyani_PTM_English.wav",
         flag: "/assets/img/us-flag.png",
-        label: "English (original)",
+        label: "English (Original)",
       },
       {
         src: "/assets/audios/Kalyani_PTM_spanish.wav",
         flag: "/assets/img/span-flag.png",
-        label: "Spanish (dubbed)",
+        label: "Spanish (Dubbed)",
       },
     ],
   },
   {
-    title: "Movie Dubbing 2",
+    title: "Hollywood Movie",
     description:
-      "Another example of our high-quality movie dubbing capabilities across different genres.",
+      "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
     type: "dubbing",
     video: "/assets/videos/Notting_Hill_3.mp4",
-    videoTitle: "MOVIE DEMO 2",
+    videoTitle: "Notting Hill",
     languages: [
       {
         src: "/assets/audios/Notting_Hill_3_English.m4a",
         flag: "/assets/img/us-flag.png",
-        label: "English (original)",
+        label: "English (Original)",
       },
       {
         src: "/assets/audios/Notting_Hill_3_spanish.m4a",
         flag: "/assets/img/span-flag.png",
-        label: "Spanish (dubbed)",
+        label: "Spanish (Dubbed)",
       },
     ],
   },
@@ -121,17 +121,17 @@ const features: Array<DubbingFeature> = [
 
 const karaokeFeatures: Array<KaraokeFeature> = [
   {
-    title: "Professional Karaoke Creation",
+    title: "Professional-Grade Karaoke for OTTs",
     description:
-      "Transform any song into a professional karaoke experience with our advanced audio separation technology.",
+      "Turn any song into a high-quality karaoke experience with our advanced audio separation technology.",
     type: "karaoke",
     videoTitle: "THE BAR SONG",
     videos: {
       // full: "/assets/videos/karaoke_output_bar.mp4",
       // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
       // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
-      original: "/assets/videos/video_song_bar.mp4",
-      karaoke: "/assets/videos/karaoke_output_bar.mp4",
+      Original: "/assets/videos/video_song_bar.mp4",
+      Karaoke: "/assets/videos/karaoke_output_bar.mp4",
     },
     // audios: {
     //   full: "/assets/audios/song_bar.mp3",
@@ -142,7 +142,7 @@ const karaokeFeatures: Array<KaraokeFeature> = [
     // },
   },
   {
-    title: "Advanced Karaoke Studio",
+    title: "Works across music genres and languages",
     description:
       "Experience perfect vocal isolation and instrumental track creation with our state-of-the-art AI technology.",
     type: "karaoke",
@@ -151,8 +151,8 @@ const karaokeFeatures: Array<KaraokeFeature> = [
       // full: "/assets/videos/karaoke2/full.mp4",
       // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
       // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
-      original: "/assets/videos/video_song_perfect.mp4",
-      karaoke: "/assets/videos/karaoke_output_perfect.mp4",
+      Original: "/assets/videos/video_song_perfect.mp4",
+      Karaoke: "/assets/videos/karaoke_output_perfect.mp4",
     },
     // audios: {
     //   full: "/assets/audios/karaoke2/full.mp3",
