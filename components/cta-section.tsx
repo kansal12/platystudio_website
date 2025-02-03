@@ -46,7 +46,10 @@ export function CTASection() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4">
+          <div
+            id="schedule_demo"
+            className="mt-12 flex flex-col items-center justify-center gap-4"
+          >
             <RainbowButton
               className="bg-white px-8 py-6 text-black hover:bg-white/90"
               onClick={handleDemoClick}
