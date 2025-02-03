@@ -130,8 +130,8 @@ const karaokeFeatures: Array<KaraokeFeature> = [
       // full: "/assets/videos/karaoke_output_bar.mp4",
       // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
       // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
-      Original: "/assets/videos/video_song_bar.mp4",
-      Karaoke: "/assets/videos/karaoke_output_bar.mp4",
+      original: "/assets/videos/video_song_bar.mp4",
+      karaoke: "/assets/videos/karaoke_output_bar.mp4",
     },
     // audios: {
     //   full: "/assets/audios/song_bar.mp3",
@@ -151,8 +151,8 @@ const karaokeFeatures: Array<KaraokeFeature> = [
       // full: "/assets/videos/karaoke2/full.mp4",
       // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
       // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
-      Original: "/assets/videos/video_song_perfect.mp4",
-      Karaoke: "/assets/videos/karaoke_output_perfect.mp4",
+      original: "/assets/videos/video_song_perfect.mp4",
+      karaoke: "/assets/videos/karaoke_output_perfect.mp4",
     },
     // audios: {
     //   full: "/assets/audios/karaoke2/full.mp3",
