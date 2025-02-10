@@ -10,7 +10,7 @@ import {
   // MicOffIcon as MusicOff,
   // Subtitles,
 } from "lucide-react";
-import { Slider } from "@/components/ui/slider";
+import Slider from "./ui/slider";
 // import { useVideoPlayer } from "@/contexts/video-player-context";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
@@ -125,8 +125,8 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
     setIsPlaying(!isPlaying);
   };
 
-  const handleSeek = (value: number[]) => {
-    const newTime = value[0];
+  const handleSeek = (value: number) => {
+    const newTime = value;
     if (!Number.isFinite(newTime)) return;
 
     Object.values(videoRefs.current).forEach((video) => {
@@ -402,19 +402,12 @@ export function KaraokePlayer({ videos, title }: KaraokePlayerProps) {
             </div>
 
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="min-w-[35px] sm:min-w-[40px] text-center text-xs sm:text-sm text-white/80">
-                {formatTime(currentTime)}
-              </span>
               <Slider
-                value={[currentTime]}
+                value={currentTime}
                 max={duration}
                 step={0.1}
-                onValueChange={handleSeek}
-                className="flex-1"
+                onChange={handleSeek}
               />
-              <span className="min-w-[35px] sm:min-w-[40px] text-center text-xs sm:text-sm text-white/80">
-                {formatTime(duration)}
-              </span>
             </div>
           </div>
         </div>

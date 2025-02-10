@@ -3,18 +3,19 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { LanguageSwitchPlayer } from "@/components/language-switch-player";
 import { KaraokePlayer } from "@/components/karaoke-player";
+import DualVideoPlayer from "./DualVideoPlayer";
 
 interface DubbingFeature {
   title: string;
   description: string;
   type: "dubbing";
-  video: string;
   videoTitle: string;
-  languages: Array<{
-    src: string;
-    flag: string;
-    label: string;
-  }>;
+  originalVideo: string;
+  originalFlag: string;
+  originalLabel: string;
+  dubVidoe: string;
+  dubFlag: string;
+  dubLable: string;
 }
 
 interface KaraokeFeature {
@@ -42,80 +43,53 @@ const features: Array<DubbingFeature> = [
     description:
       "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
     type: "dubbing",
-    video: "/assets/videos/Zelensky_Fridman1.mp4",
     videoTitle: "Zelenskyy-Fridman",
-    languages: [
-      {
-        src: "/assets/audios/Zelensky_Fridman1_raussian.wav",
-        flag: "/assets/img/raussia-flag.png",
-        label: "Russian (Original)",
-      },
-      {
-        src: "/assets/audios/Zelensky_Fridman1_english.wav",
-        flag: "/assets/img/us-flag.png",
-        label: "English (Dubbed)",
-      },
-    ],
+    originalVideo: "/assets/videos/original_Zelensky_Fridman1.mp4",
+    originalFlag: "/assets/img/raussia-flag.png",
+    originalLabel: "Russian (Original)",
+    dubVidoe: "/assets/videos/dub_Zelensky_Fridman1.mp4",
+    dubFlag: "/assets/img/us-flag.png",
+    dubLable: "English (Dubbed)",
   },
   {
     title: "On-Location Interview",
     description:
       "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
     type: "dubbing",
-    video: "/assets/videos/Rahul_and_Ravish.mp4",
     videoTitle: "RAGA-Ravish",
-    languages: [
-      {
-        src: "/assets/audios/Rahul_and_Ravish_hindi.wav",
-        flag: "/assets/img/ind-flag.png",
-        label: "Hindi (Original)",
-      },
-      {
-        src: "/assets/audios/Rahul_and_Ravish_english.wav",
-        flag: "/assets/img/us-flag.png",
-        label: "English (Dubbed)",
-      },
-    ],
+    originalVideo: "/assets/videos/original_Rahul_and_Ravish.mp4",
+    originalFlag: "/assets/img/ind-flag.png",
+    originalLabel: "Hindi (Original)",
+    dubVidoe: "/assets/videos/dub_Rahul_and_Ravish.mp4",
+    dubFlag: "/assets/img/us-flag.png",
+    dubLable: "English (Dubbed)",
   },
   {
     title: "Academic Public Talk",
     description:
       "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
     type: "dubbing",
-    video: "/assets/videos/Kalyani_PTM.mp4",
     videoTitle: "Path to Maths- IAS Princeton",
-    languages: [
-      {
-        src: "/assets/audios/Kalyani_PTM_English.wav",
-        flag: "/assets/img/us-flag.png",
-        label: "English (Original)",
-      },
-      {
-        src: "/assets/audios/Kalyani_PTM_spanish.wav",
-        flag: "/assets/img/span-flag.png",
-        label: "Spanish (Dubbed)",
-      },
-    ],
+
+    originalVideo: "/assets/videos/original_Kalyani_PTM.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+    originalLabel: "English (Original)",
+    dubVidoe: "/assets/videos/dub_Kalyani_PTM.mp4",
+    dubFlag: "/assets/img/span-flag.png",
+    dubLable: "Spanish (Dubbed)",
   },
   {
     title: "Hollywood Movie",
     description:
       "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
     type: "dubbing",
-    video: "/assets/videos/Notting_Hill_3.mp4",
     videoTitle: "Notting Hill",
-    languages: [
-      {
-        src: "/assets/audios/Notting_Hill_3_English.m4a",
-        flag: "/assets/img/us-flag.png",
-        label: "English (Original)",
-      },
-      {
-        src: "/assets/audios/Notting_Hill_3_spanish.m4a",
-        flag: "/assets/img/span-flag.png",
-        label: "Spanish (Dubbed)",
-      },
-    ],
+    originalVideo: "/assets/videos/original_Notting_Hill_3.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+    originalLabel: "English (Original)",
+    dubVidoe: "/assets/videos/dub_Notting_Hill_3.mp4",
+    dubFlag: "/assets/img/span-flag.png",
+    dubLable: "Spanish (Dubbed)",
   },
 ];
 
@@ -199,10 +173,14 @@ export function HowItWorks() {
                   className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
                 >
                   <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
-                    <LanguageSwitchPlayer
-                      video={feature.video}
-                      title={feature.videoTitle}
-                      languages={feature.languages}
+                    <DualVideoPlayer
+                      originalVideo={feature.originalVideo}
+                      dubVideo={feature.dubVidoe}
+                      title={feature.title}
+                      originalFlag={feature.originalFlag}
+                      dubFlag={feature.dubFlag}
+                      originalLable={feature.originalLabel}
+                      dubLable={feature.dubLable}
                     />
                   </div>
                   <div className="flex flex-col gap-4">
@@ -217,41 +195,42 @@ export function HowItWorks() {
               ))}
             </div>
           </div>
-
-          {/* Karaoke Section */}
-          <div className="relative">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
-                Professional Karaoke Solutions
-              </h2>
-              <p className="text-base text-white/60">
-                Separate vocals and instrumentals for any pre-existing track
-                with unprecedented quality. Create perfectly time-synced
-                subtitles automatically using our advanced AI technology.
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {karaokeFeatures.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
-                >
-                  <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
-                    <KaraokePlayer
-                      videos={feature.videos}
-                      title={feature.videoTitle}
-                    />
+          <div>
+            {/* Karaoke Section */}
+            <div className="relative">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
+                  Professional Karaoke Solutions
+                </h2>
+                <p className="text-base text-white/60">
+                  Separate vocals and instrumentals for any pre-existing track
+                  with unprecedented quality. Create perfectly time-synced
+                  subtitles automatically using our advanced AI technology.
+                </p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {karaokeFeatures.map((feature) => (
+                  <div
+                    key={feature.title}
+                    className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
+                  >
+                    <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
+                      <KaraokePlayer
+                        videos={feature.videos}
+                        title={feature.videoTitle}
+                      />
+                    </div>
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-bold sm:text-2xl">
+                        {feature.title}
+                      </h3>
+                      <p className="text-base text-white/60 sm:text-lg">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-bold sm:text-2xl">
-                      {feature.title}
-                    </h3>
-                    <p className="text-base text-white/60 sm:text-lg">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
