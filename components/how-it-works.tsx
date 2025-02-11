@@ -43,10 +43,12 @@ const features: Array<DubbingFeature> = [
       "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
     type: "dubbing",
     videoTitle: "Zelenskyy-Fridman",
-    originalVideo: "/assets/videos/original_Zelensky_Fridman1.mp4",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
     originalFlag: "/assets/img/raussia-flag.png",
     originalLabel: "Original",
-    dubVidoe: "/assets/videos/dub_Zelensky_Fridman1.mp4",
+    dubVidoe:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
     dubFlag: "/assets/img/us-flag.png",
     dubLable: "Dubbed",
   },
@@ -56,10 +58,12 @@ const features: Array<DubbingFeature> = [
       "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
     type: "dubbing",
     videoTitle: "RAGA-Ravish",
-    originalVideo: "/assets/videos/original_Rahul_and_Ravish.mp4",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271247/original_Rahul_and_Ravish_i49dro.mp4",
     originalFlag: "/assets/img/ind-flag.png",
     originalLabel: "Original",
-    dubVidoe: "/assets/videos/dub_Rahul_and_Ravish.mp4",
+    dubVidoe:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739262509/phqqyxfyurmupwdl1gyp.mp4",
     dubFlag: "/assets/img/us-flag.png",
     dubLable: "Dubbed",
   },
@@ -70,10 +74,12 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Path to Maths- IAS Princeton",
 
-    originalVideo: "/assets/videos/original_Kalyani_PTM.mp4",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
     originalFlag: "/assets/img/us-flag.png",
     originalLabel: "Original",
-    dubVidoe: "/assets/videos/dub_Kalyani_PTM.mp4",
+    dubVidoe:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
     dubFlag: "/assets/img/span-flag.png",
     dubLable: "Dubbed",
   },
@@ -83,10 +89,12 @@ const features: Array<DubbingFeature> = [
       "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
     type: "dubbing",
     videoTitle: "Notting Hill",
-    originalVideo: "/assets/videos/original_Notting_Hill_3.mp4",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271312/English_Notting_Hill_cwc5wf.mp4",
     originalFlag: "/assets/img/us-flag.png",
     originalLabel: "Original",
-    dubVidoe: "/assets/videos/dub_Notting_Hill_3.mp4",
+    dubVidoe:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/Spanish_Notting_Hill_eskyrv.mp4",
     dubFlag: "/assets/img/span-flag.png",
     dubLable: "Dubbed",
   },

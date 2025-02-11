@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import Slider from "./ui/slider";
 import { Button } from "./ui/button";
+import { useVideoPlayer } from "@/contexts/video-player-context";
 
 type VideoMode = "original" | "karaoke";
 
@@ -29,6 +30,35 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
 
+  const playerId = useId();
+  const { setCurrentPlayingId } = useVideoPlayer();
+
+  // Listen for global pause events
+  useEffect(() => {
+    const handlePauseOthers = (
+      e: CustomEvent<{ currentId: string | null }>
+    ) => {
+      if (e.detail.currentId !== playerId && isPlaying) {
+        if (activeVideo === "original" && originalVideoRef.current)
+          originalVideoRef.current.pause();
+        if (activeVideo === "karaoke" && karokeVideoRef.current)
+          karokeVideoRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    window.addEventListener(
+      "pauseOtherPlayers",
+      handlePauseOthers as EventListener
+    );
+    return () => {
+      window.removeEventListener(
+        "pauseOtherPlayers",
+        handlePauseOthers as EventListener
+      );
+    };
+  }, [playerId, isPlaying]);
+
   useEffect(() => {
     // Preload both videos to ensure smooth transition
     if (originalVideoRef.current) originalVideoRef.current.load();
@@ -36,6 +66,7 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({
   }, [videos]);
 
   const handlePlay = (VideoMode: VideoMode) => {
+    setCurrentPlayingId(playerId);
     if (VideoMode === "original") {
       if (karokeVideoRef.current) karokeVideoRef.current.pause();
       if (originalVideoRef.current) {
@@ -79,6 +110,7 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({
   };
 
   const handleReplay = () => {
+    setCurrentPlayingId(playerId);
     if (activeVideo === "original" && originalVideoRef.current) {
       originalVideoRef.current.play();
       setActiveVideo("original");
@@ -98,6 +130,7 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({
         karokeVideoRef.current.pause();
       setIsPlaying(false);
     } else {
+      setCurrentPlayingId(playerId);
       if (activeVideo === "original" && originalVideoRef.current) {
         originalVideoRef.current.play();
       }

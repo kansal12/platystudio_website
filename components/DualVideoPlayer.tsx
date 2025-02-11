@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { FlagButton } from "@/components/ui/flag-button";
 import Slider from "./ui/slider";
 import { Button } from "./ui/button";
-import Image from "next/image";
+import { useVideoPlayer } from "@/contexts/video-player-context";
 
 interface DualVideoPlayerProps {
   originalVideo: string;
@@ -37,6 +37,35 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
 
+  const playerId = useId();
+  const { setCurrentPlayingId } = useVideoPlayer();
+
+  // Listen for global pause events
+  useEffect(() => {
+    const handlePauseOthers = (
+      e: CustomEvent<{ currentId: string | null }>
+    ) => {
+      if (e.detail.currentId !== playerId && isPlaying) {
+        if (activeVideo === "original" && originalVideoRef.current)
+          originalVideoRef.current.pause();
+        if (activeVideo === "dub" && dubVideoRef.current)
+          dubVideoRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    window.addEventListener(
+      "pauseOtherPlayers",
+      handlePauseOthers as EventListener
+    );
+    return () => {
+      window.removeEventListener(
+        "pauseOtherPlayers",
+        handlePauseOthers as EventListener
+      );
+    };
+  }, [playerId, isPlaying]);
+
   useEffect(() => {
     // Preload both videos to ensure smooth transition
     if (originalVideoRef.current) originalVideoRef.current.load();
@@ -44,6 +73,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   }, [originalVideo, dubVideo]);
 
   const handlePlay = (videoType: videoType) => {
+    setCurrentPlayingId(playerId);
     if (videoType === "original") {
       if (dubVideoRef.current) dubVideoRef.current.pause();
       if (originalVideoRef.current) {
@@ -87,6 +117,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   };
 
   const handleReplay = () => {
+    setCurrentPlayingId(playerId);
     if (activeVideo === "original" && originalVideoRef.current) {
       originalVideoRef.current.play();
       setActiveVideo("original");
@@ -106,6 +137,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         dubVideoRef.current.pause();
       setIsPlaying(false);
     } else {
+      setCurrentPlayingId(playerId);
       if (activeVideo === "original" && originalVideoRef.current) {
         originalVideoRef.current.play();
       }
