@@ -1,7 +1,6 @@
 "use client";
 
 import { SectionHeading } from "@/components/ui/section-heading";
-import { LanguageSwitchPlayer } from "@/components/language-switch-player";
 import KaraokePlayer from "@/components/karaoke-player";
 import DualVideoPlayer from "./DualVideoPlayer";
 

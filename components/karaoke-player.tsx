@@ -1,7 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
-import { FlagButton } from "@/components/ui/flag-button";
 import Slider from "./ui/slider";
 import { Button } from "./ui/button";
 
@@ -89,11 +88,6 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({ videos, title }) => {
     }
   };
 
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  };
   const handleEnded = () => {
     setIsPlaying(false);
     setShowReplayButton(true);

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { FlagButton } from "@/components/ui/flag-button";
@@ -23,8 +23,6 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   originalLable,
   dubLable,
 }) => {
-  const originalVideoRef = useRef<HTMLVideoElement>(null);
-  const dubVideoRef = useRef<HTMLVideoElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [activeVideo, setActiveVideo] = useState<videoType>("original");
@@ -153,11 +151,6 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
     }
   };
 
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-  };
   const handleEnded = () => {
     setIsPlaying(false);
     setShowReplayButton(true);
