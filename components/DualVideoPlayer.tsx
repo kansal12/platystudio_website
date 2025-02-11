@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { FlagButton } from "@/components/ui/flag-button";
@@ -12,6 +12,7 @@ interface DualVideoPlayerProps {
   dubFlag: string;
   originalLable: string;
   dubLable: string;
+  thumbnail?: string;
 }
 type videoType = "original" | "dub";
 const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
@@ -22,8 +23,11 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   dubFlag,
   originalLable,
   dubLable,
+  thumbnail,
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const originalVideoRef = useRef<HTMLVideoElement>(null);
+  const dubVideoRef = useRef<HTMLVideoElement>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [activeVideo, setActiveVideo] = useState<videoType>("original");
   const [duration, setDuration] = useState<number>(0);
@@ -31,133 +35,80 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
 
+  useEffect(() => {
+    // Preload both videos to ensure smooth transition
+    if (originalVideoRef.current) originalVideoRef.current.load();
+    if (dubVideoRef.current) dubVideoRef.current.load();
+  }, [originalVideo, dubVideo]);
+
   const handlePlay = (videoType: videoType) => {
-    // if (videoType === "original") {
-    //   if (dubVideoRef.current) dubVideoRef.current.pause();
-    //   if (originalVideoRef.current) {
-    //     originalVideoRef.current.currentTime = currentTime;
-    //     originalVideoRef.current.play();
-    //     setActiveVideo("original");
-    //   }
-    // } else {
-    //   if (originalVideoRef.current) originalVideoRef.current.pause();
-    //   if (dubVideoRef.current) {
-    //     dubVideoRef.current.currentTime = currentTime;
-    //     dubVideoRef.current.play();
-    //     setActiveVideo("dub");
-    //   }
-    // }
-    if (videoRef.current) {
-      const newSrc = videoType === "original" ? originalVideo : dubVideo;
-      if (videoRef.current.src !== newSrc) {
-        videoRef.current.pause();
-        videoRef.current.src = newSrc; // Change video source
-        videoRef.current.load(); // Reload the video
+    if (videoType === "original") {
+      if (dubVideoRef.current) dubVideoRef.current.pause();
+      if (originalVideoRef.current) {
+        originalVideoRef.current.currentTime = currentTime;
+        originalVideoRef.current.play();
+        setActiveVideo("original");
       }
-      videoRef.current.currentTime = currentTime; // Maintain current progress
-      videoRef.current.play(); // Play the updated video
-      setActiveVideo(videoType);
-      setIsPlaying(true);
+    } else {
+      if (originalVideoRef.current) originalVideoRef.current.pause();
+      if (dubVideoRef.current) {
+        dubVideoRef.current.currentTime = currentTime;
+        dubVideoRef.current.play();
+        setActiveVideo("dub");
+      }
     }
-    // if (videoType === "original") {
-    //   if (videoRef.current) {
-    //     setActiveVideo("original");
-    //     videoRef.current.pause();
-    //     videoRef.current.currentTime = currentTime;
-    //     videoRef.current.play();
-    //   }
-    // } else {
-    //   if (videoRef.current) {
-    //     setActiveVideo("dub");
-    //     videoRef.current.pause();
-    //     videoRef.current.currentTime = currentTime;
-    //     videoRef.current.play();
-    //   }
-    // }
-    // setIsPlaying(true);
+    setIsPlaying(true);
   };
 
   const handleTimeUpdate = () => {
-    // if (activeVideo === "original" && originalVideoRef.current) {
-    //   setCurrentTime(originalVideoRef.current.currentTime);
-    // } else if (activeVideo === "dub" && dubVideoRef.current) {
-    //   setCurrentTime(dubVideoRef.current.currentTime);
-    // }
-    // if (originalVideoRef.current && dubVideoRef.current) {
-    //   const maxDuration = Math.max(
-    //     originalVideoRef.current.duration || 0,
-    //     dubVideoRef.current.duration || 0
-    //   );
-
-    //   setDuration(maxDuration);
-    // }
-    if (videoRef.current) {
-      setCurrentTime(videoRef.current.currentTime);
+    if (activeVideo === "original" && originalVideoRef.current) {
+      setCurrentTime(originalVideoRef.current.currentTime);
+    } else if (activeVideo === "dub" && dubVideoRef.current) {
+      setCurrentTime(dubVideoRef.current.currentTime);
     }
-    if (videoRef.current) {
-      const maxDuration = videoRef.current.duration;
-      setDuration(maxDuration || duration || 0); // this will avoid slider jump backend and forth when we switch video
+    if (originalVideoRef.current && dubVideoRef.current) {
+      const maxDuration = Math.max(
+        originalVideoRef.current.duration || 0,
+        dubVideoRef.current.duration || 0
+      );
+
+      setDuration(maxDuration);
     }
   };
 
   const handleSeek = (value: number) => {
     const newTime = value;
     setCurrentTime(newTime);
-    // if (originalVideoRef.current)
-    //   originalVideoRef.current.currentTime = newTime;
-    // if (dubVideoRef.current) dubVideoRef.current.currentTime = newTime;
-    if (videoRef.current) videoRef.current.currentTime = newTime;
+    if (originalVideoRef.current)
+      originalVideoRef.current.currentTime = newTime;
+    if (dubVideoRef.current) dubVideoRef.current.currentTime = newTime;
   };
 
   const handleReplay = () => {
-    // if (activeVideo === "original" && originalVideoRef.current) {
-    //   originalVideoRef.current.play();
-    //   setActiveVideo("original");
-    // } else if (activeVideo === "dub" && dubVideoRef.current) {
-    //   dubVideoRef.current.play();
-    //   setActiveVideo("dub");
-    // }
-    // setIsPlaying(true);
-    // setShowReplayButton(false);
-    if (activeVideo === "original" && videoRef.current) {
+    if (activeVideo === "original" && originalVideoRef.current) {
+      originalVideoRef.current.play();
       setActiveVideo("original");
-      videoRef.current.play();
-    } else if (activeVideo === "dub" && videoRef.current) {
+    } else if (activeVideo === "dub" && dubVideoRef.current) {
+      dubVideoRef.current.play();
       setActiveVideo("dub");
-      videoRef.current.play();
     }
     setIsPlaying(true);
     setShowReplayButton(false);
   };
 
   const togglePlayPause = () => {
-    // if (isPlaying) {
-    //   if (activeVideo === "original" && originalVideoRef.current)
-    //     originalVideoRef.current.pause();
-    //   if (activeVideo === "dub" && dubVideoRef.current)
-    //     dubVideoRef.current.pause();
-    //   setIsPlaying(false);
-    // } else {
-    //   if (activeVideo === "original" && originalVideoRef.current) {
-    //     originalVideoRef.current.play();
-    //   }
-    //   if (activeVideo === "dub" && dubVideoRef.current) {
-    //     dubVideoRef.current.play();
-    //   }
-    //   setIsPlaying(true);
-    // }
     if (isPlaying) {
-      if (activeVideo === "original" && videoRef.current)
-        videoRef.current.pause();
-      if (activeVideo === "dub" && videoRef.current) videoRef.current.pause();
+      if (activeVideo === "original" && originalVideoRef.current)
+        originalVideoRef.current.pause();
+      if (activeVideo === "dub" && dubVideoRef.current)
+        dubVideoRef.current.pause();
       setIsPlaying(false);
     } else {
-      if (activeVideo === "original" && videoRef.current) {
-        videoRef.current.currentTime = currentTime; // Maintain current progress
-        videoRef.current.play(); // Play the updated video
+      if (activeVideo === "original" && originalVideoRef.current) {
+        originalVideoRef.current.play();
       }
-      if (activeVideo === "dub" && videoRef.current) {
-        videoRef.current.play();
+      if (activeVideo === "dub" && dubVideoRef.current) {
+        dubVideoRef.current.play();
       }
       setIsPlaying(true);
     }
@@ -176,27 +127,30 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
       onMouseMove={() => setShowControls(true)}
     >
       <div className="relative aspect-video bg-black">
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
+        )}
         <video
-          // key={activeVideo} // Forces a re-render when activeVideo changes
-          ref={videoRef}
+          ref={originalVideoRef}
           className="h-full w-full"
+          onLoadedData={() => setIsLoading(false)}
+          poster={thumbnail}
           onTimeUpdate={handleTimeUpdate}
           onEnded={handleEnded}
-          //   style={
-          //     activeVideo === "original"
-          //       ? { display: "block" }
-          //       : { display: "none" }
-          //   }
+          style={
+            activeVideo === "original"
+              ? { display: "block" }
+              : { display: "none" }
+          }
           playsInline
           preload="true"
         >
-          <source
-            src={activeVideo === "original" ? originalVideo : dubVideo}
-            type="video/mp4"
-          />
+          <source src={originalVideo} type="video/mp4" />
         </video>
-        {/* <video
+        <video
           ref={dubVideoRef}
+          poster={thumbnail}
+          onLoadedData={() => setIsLoading(false)}
           className="h-full w-full"
           style={
             activeVideo === "dub" ? { display: "block" } : { display: "none" }
@@ -207,7 +161,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
           preload="true"
         >
           <source src={dubVideo} type="video/mp4" />
-        </video> */}
+        </video>
       </div>
 
       {title && (
@@ -275,81 +229,3 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 };
 
 export default DualVideoPlayer;
-
-// import React, { useRef, useEffect, useState } from "react";
-// import videojs from "video.js";
-// import "video.js/dist/video-js.css";
-
-// const VideoPlayer = ({ videoSrc, audioTracks }) => {
-//   const videoRef = useRef(null);
-//   const playerRef = useRef(null);
-//   const [selectedTrack, setSelectedTrack] = useState(audioTracks[0]);
-
-//   useEffect(() => {
-//     if (!playerRef.current) {
-//       playerRef.current = videojs(videoRef.current, {
-//         controls: true,
-//         responsive: true,
-//         fluid: true,
-//         sources: [{ src: videoSrc, type: "video/mp4" }],
-//       });
-//     }
-//     return () => {
-//       if (playerRef.current) {
-//         playerRef.current.dispose();
-//         playerRef.current = null;
-//       }
-//     };
-//   }, [videoSrc]);
-
-//   useEffect(() => {
-//     if (playerRef.current) {
-//       const videoElement = playerRef.current.el().querySelector("video");
-//       if (videoElement) {
-//         const existingAudio = videoElement.querySelector("audio");
-//         if (existingAudio) {
-//           existingAudio.remove();
-//         }
-
-//         const audioElement = document.createElement("audio");
-//         audioElement.src = selectedTrack.src;
-//         audioElement.crossOrigin = "anonymous";
-//         audioElement.autoplay = true;
-//         audioElement.volume = playerRef.current.volume();
-
-//         videoElement.appendChild(audioElement);
-
-//         audioElement
-//           .play()
-//           .catch((err) => console.error("Error playing audio track:", err));
-//       }
-//     }
-//   }, [selectedTrack]);
-
-//   return (
-//     <div>
-//       <div data-vjs-player>
-//         <video ref={videoRef} className="video-js vjs-default-skin" />
-//       </div>
-//       <div>
-//         <label>Audio Track: </label>
-//         <select
-//           onChange={(e) =>
-//             setSelectedTrack(
-//               audioTracks.find((track) => track.id === e.target.value)
-//             )
-//           }
-//           value={selectedTrack.id}
-//         >
-//           {audioTracks.map((track) => (
-//             <option key={track.id} value={track.id}>
-//               {track.label}
-//             </option>
-//           ))}
-//         </select>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default VideoPlayer;
