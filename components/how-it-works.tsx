@@ -11,10 +11,10 @@ interface DubbingFeature {
   videoTitle: string;
   originalVideo: string;
   originalFlag: string;
-  originalLabel: string;
+  // originalLabel: string;
   dubVidoe: string;
   dubFlag: string;
-  dubLable: string;
+  // dubLable: string;
 }
 
 interface KaraokeFeature {
@@ -46,11 +46,11 @@ const features: Array<DubbingFeature> = [
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
     originalFlag: "/assets/img/raussia-flag.png",
-    originalLabel: "Original",
+    // originalLabel: "Original",
     dubVidoe:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    dubLable: "Dubbed",
+    // dubLable: "Dubbed",
   },
   {
     title: "On-Location Interview",
@@ -61,11 +61,11 @@ const features: Array<DubbingFeature> = [
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271247/original_Rahul_and_Ravish_i49dro.mp4",
     originalFlag: "/assets/img/ind-flag.png",
-    originalLabel: "Original",
+    // originalLabel: "Original",
     dubVidoe:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739262509/phqqyxfyurmupwdl1gyp.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    dubLable: "Dubbed",
+    // dubLable: "Dubbed",
   },
   {
     title: "Academic Public Talk",
@@ -77,11 +77,11 @@ const features: Array<DubbingFeature> = [
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
     originalFlag: "/assets/img/us-flag.png",
-    originalLabel: "Original",
+    // originalLabel: "Original",
     dubVidoe:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    dubLable: "Dubbed",
+    // dubLable: "Dubbed",
   },
   {
     title: "Hollywood Movie",
@@ -92,11 +92,11 @@ const features: Array<DubbingFeature> = [
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271312/English_Notting_Hill_cwc5wf.mp4",
     originalFlag: "/assets/img/us-flag.png",
-    originalLabel: "Original",
+    // originalLabel: "Original",
     dubVidoe:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/Spanish_Notting_Hill_eskyrv.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    dubLable: "Dubbed",
+    // dubLable: "Dubbed",
   },
 ];
 
@@ -186,8 +186,8 @@ export function HowItWorks() {
                       title={feature.title}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
-                      originalLable={feature.originalLabel}
-                      dubLable={feature.dubLable}
+                      // originalLable={feature.originalLabel}
+                      // dubLable={feature.dubLable}
                     />
                     {/* <DualVideoPlayer
                       videoSrc="/assets/videos/original_Rahul_and_Ravish.mp4"

@@ -12,8 +12,6 @@ interface DualVideoPlayerProps {
   title: string;
   originalFlag: string;
   dubFlag: string;
-  originalLable: string;
-  dubLable: string;
   thumbnail?: string;
 }
 type videoType = "original" | "dub";
@@ -23,8 +21,6 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   title,
   originalFlag,
   dubFlag,
-  originalLable,
-  dubLable,
   thumbnail,
 }) => {
   const originalVideoRef = useRef<HTMLVideoElement>(null);
@@ -64,7 +60,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         handlePauseOthers as EventListener
       );
     };
-  }, [playerId, isPlaying]);
+  }, [playerId, isPlaying, activeVideo]);
 
   useEffect(() => {
     // Preload both videos to ensure smooth transition
@@ -229,23 +225,6 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 
         <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            {/* <FlagButton
-              key={"original"}
-              flag={originalFlag}
-              label={"original"}
-              isSelected={activeVideo === "original"}
-              onClick={() => handlePlay("original")}
-            />
-            <FlagButton
-              key={"dub"}
-              flag={dubFlag}
-              label={"dub"}
-              isSelected={activeVideo === "dub"}
-              onClick={() => handlePlay("dub")}
-            /> 
-            <span className="ml-1.5 sm:ml-2 text-xs sm:text-sm font-medium text-white">
-              {activeVideo === "original" ? originalLable : dubLable}
-            </span> */}
             <Button
               variant="default"
               size="sm"
@@ -254,19 +233,12 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               }`}
               onClick={() => handlePlay("original")}
             >
-              {/* <Image
-                src={originalFlag}
-                alt={originalLable}
-                fill
-                className="object-cover"
-              /> */}
               <FlagButton
                 key={"original"}
                 flag={originalFlag}
                 label={"original"}
               />
-              {/* {originalLable} */}
-              "Original"
+              Original
             </Button>
             <Button
               variant="default"
@@ -277,8 +249,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               onClick={() => handlePlay("dub")}
             >
               <FlagButton key={"dub"} flag={dubFlag} label={"dub"} />
-              {/* {dubLable} */}
-              "Dubbed"
+              Dubbed
             </Button>
           </div>
 

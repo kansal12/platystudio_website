@@ -57,7 +57,7 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({
         handlePauseOthers as EventListener
       );
     };
-  }, [playerId, isPlaying]);
+  }, [playerId, isPlaying, activeVideo]);
 
   useEffect(() => {
     // Preload both videos to ensure smooth transition
