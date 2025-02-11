@@ -270,3 +270,81 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 };
 
 export default DualVideoPlayer;
+
+// import React, { useRef, useEffect, useState } from "react";
+// import videojs from "video.js";
+// import "video.js/dist/video-js.css";
+
+// const VideoPlayer = ({ videoSrc, audioTracks }) => {
+//   const videoRef = useRef(null);
+//   const playerRef = useRef(null);
+//   const [selectedTrack, setSelectedTrack] = useState(audioTracks[0]);
+
+//   useEffect(() => {
+//     if (!playerRef.current) {
+//       playerRef.current = videojs(videoRef.current, {
+//         controls: true,
+//         responsive: true,
+//         fluid: true,
+//         sources: [{ src: videoSrc, type: "video/mp4" }],
+//       });
+//     }
+//     return () => {
+//       if (playerRef.current) {
+//         playerRef.current.dispose();
+//         playerRef.current = null;
+//       }
+//     };
+//   }, [videoSrc]);
+
+//   useEffect(() => {
+//     if (playerRef.current) {
+//       const videoElement = playerRef.current.el().querySelector("video");
+//       if (videoElement) {
+//         const existingAudio = videoElement.querySelector("audio");
+//         if (existingAudio) {
+//           existingAudio.remove();
+//         }
+
+//         const audioElement = document.createElement("audio");
+//         audioElement.src = selectedTrack.src;
+//         audioElement.crossOrigin = "anonymous";
+//         audioElement.autoplay = true;
+//         audioElement.volume = playerRef.current.volume();
+
+//         videoElement.appendChild(audioElement);
+
+//         audioElement
+//           .play()
+//           .catch((err) => console.error("Error playing audio track:", err));
+//       }
+//     }
+//   }, [selectedTrack]);
+
+//   return (
+//     <div>
+//       <div data-vjs-player>
+//         <video ref={videoRef} className="video-js vjs-default-skin" />
+//       </div>
+//       <div>
+//         <label>Audio Track: </label>
+//         <select
+//           onChange={(e) =>
+//             setSelectedTrack(
+//               audioTracks.find((track) => track.id === e.target.value)
+//             )
+//           }
+//           value={selectedTrack.id}
+//         >
+//           {audioTracks.map((track) => (
+//             <option key={track.id} value={track.id}>
+//               {track.label}
+//             </option>
+//           ))}
+//         </select>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default VideoPlayer;

@@ -2,7 +2,7 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
 import { LanguageSwitchPlayer } from "@/components/language-switch-player";
-import { KaraokePlayer } from "@/components/karaoke-player";
+import KaraokePlayer from "@/components/karaoke-player";
 import DualVideoPlayer from "./DualVideoPlayer";
 
 interface DubbingFeature {
@@ -182,6 +182,21 @@ export function HowItWorks() {
                       originalLable={feature.originalLabel}
                       dubLable={feature.dubLable}
                     />
+                    {/* <DualVideoPlayer
+                      videoSrc="/assets/videos/original_Rahul_and_Ravish.mp4"
+                      audioTracks={[
+                        {
+                          id: "en",
+                          label: "English",
+                          src: "/assets/audios/Rahul_and_Ravish_english.wav",
+                        },
+                        {
+                          id: "hi",
+                          label: "Hindi",
+                          src: "/assets/audios/Rahul_and_Ravish_hindi.wav",
+                        },
+                      ]}
+                    /> */}
                   </div>
                   <div className="flex flex-col gap-4">
                     <h3 className="text-xl font-bold sm:text-2xl">
