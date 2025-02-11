@@ -45,10 +45,10 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Zelenskyy-Fridman",
     originalVideo: "/assets/videos/original_Zelensky_Fridman1.mp4",
     originalFlag: "/assets/img/raussia-flag.png",
-    originalLabel: "Russian (Original)",
+    originalLabel: "Original",
     dubVidoe: "/assets/videos/dub_Zelensky_Fridman1.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    dubLable: "English (Dubbed)",
+    dubLable: "Dubbed",
   },
   {
     title: "On-Location Interview",
@@ -58,10 +58,10 @@ const features: Array<DubbingFeature> = [
     videoTitle: "RAGA-Ravish",
     originalVideo: "/assets/videos/original_Rahul_and_Ravish.mp4",
     originalFlag: "/assets/img/ind-flag.png",
-    originalLabel: "Hindi (Original)",
+    originalLabel: "Original",
     dubVidoe: "/assets/videos/dub_Rahul_and_Ravish.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    dubLable: "English (Dubbed)",
+    dubLable: "Dubbed",
   },
   {
     title: "Academic Public Talk",
@@ -72,10 +72,10 @@ const features: Array<DubbingFeature> = [
 
     originalVideo: "/assets/videos/original_Kalyani_PTM.mp4",
     originalFlag: "/assets/img/us-flag.png",
-    originalLabel: "English (Original)",
+    originalLabel: "Original",
     dubVidoe: "/assets/videos/dub_Kalyani_PTM.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    dubLable: "Spanish (Dubbed)",
+    dubLable: "Dubbed",
   },
   {
     title: "Hollywood Movie",
@@ -85,10 +85,10 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Notting Hill",
     originalVideo: "/assets/videos/original_Notting_Hill_3.mp4",
     originalFlag: "/assets/img/us-flag.png",
-    originalLabel: "English (Original)",
+    originalLabel: "Original",
     dubVidoe: "/assets/videos/dub_Notting_Hill_3.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    dubLable: "Spanish (Dubbed)",
+    dubLable: "Dubbed",
   },
 ];
 

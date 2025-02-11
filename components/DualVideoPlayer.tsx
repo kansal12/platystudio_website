@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { FlagButton } from "@/components/ui/flag-button";
 import Slider from "./ui/slider";
+import { Button } from "./ui/button";
+import Image from "next/image";
 
 interface DualVideoPlayerProps {
   originalVideo: string;
@@ -195,7 +197,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 
         <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <FlagButton
+            {/* <FlagButton
               key={"original"}
               flag={originalFlag}
               label={"original"}
@@ -208,10 +210,42 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               label={"dub"}
               isSelected={activeVideo === "dub"}
               onClick={() => handlePlay("dub")}
-            />
+            /> 
             <span className="ml-1.5 sm:ml-2 text-xs sm:text-sm font-medium text-white">
               {activeVideo === "original" ? originalLable : dubLable}
-            </span>
+            </span> */}
+            <Button
+              variant="default"
+              size="sm"
+              className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium py-0  ${
+                activeVideo === "original" ? "opacity-100" : "opacity-50"
+              }`}
+              onClick={() => handlePlay("original")}
+            >
+              {/* <Image
+                src={originalFlag}
+                alt={originalLable}
+                fill
+                className="object-cover"
+              /> */}
+              <FlagButton
+                key={"original"}
+                flag={originalFlag}
+                label={"original"}
+              />
+              {originalLable}
+            </Button>
+            <Button
+              variant="default"
+              size="sm"
+              className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
+                activeVideo === "dub" ? "opacity-100" : "opacity-50"
+              }`}
+              onClick={() => handlePlay("dub")}
+            >
+              <FlagButton key={"dub"} flag={dubFlag} label={"dub"} />
+              {dubLable}
+            </Button>
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
