@@ -23,22 +23,33 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({ videos, title }) => {
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
 
   const handlePlay = (VideoMode: VideoMode) => {
-    if (VideoMode === "original") {
-      if (videoRef.current) {
-        setActiveVideo("original");
+    // if (VideoMode === "original") {
+    //   if (videoRef.current) {
+    //     setActiveVideo("original");
+    //     videoRef.current.pause();
+    //     videoRef.current.currentTime = currentTime;
+    //     videoRef.current.play();
+    //   }
+    // } else {
+    //   if (videoRef.current) {
+    //     setActiveVideo("karaoke");
+    //     videoRef.current.pause();
+    //     videoRef.current.currentTime = currentTime;
+    //     videoRef.current.play();
+    //   }
+    if (videoRef.current) {
+      const newSrc =
+        VideoMode === "original" ? videos.original : videos.karaoke;
+      if (videoRef.current.src !== newSrc) {
         videoRef.current.pause();
-        videoRef.current.currentTime = currentTime;
-        videoRef.current.play();
+        videoRef.current.src = newSrc; // Change video source
+        videoRef.current.load(); // Reload the video
       }
-    } else {
-      if (videoRef.current) {
-        setActiveVideo("karaoke");
-        videoRef.current.pause();
-        videoRef.current.currentTime = currentTime;
-        videoRef.current.play();
-      }
+      videoRef.current.currentTime = currentTime; // Maintain current progress
+      videoRef.current.play(); // Play the updated video
+      setActiveVideo(VideoMode);
+      setIsPlaying(true);
     }
-    setIsPlaying(true);
   };
 
   const handleTimeUpdate = () => {
@@ -48,7 +59,7 @@ const KaraokePlayer: React.FC<KaraokePlayerProps> = ({ videos, title }) => {
     if (videoRef.current) {
       const maxDuration = videoRef.current.duration;
 
-      setDuration(maxDuration);
+      setDuration(maxDuration || duration || 0); // this will avoid slider jump backend and forth when we switch video
     }
   };
 

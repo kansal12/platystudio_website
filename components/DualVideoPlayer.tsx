@@ -47,22 +47,34 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
     //     setActiveVideo("dub");
     //   }
     // }
-    if (videoType === "original") {
-      if (videoRef.current) {
-        setActiveVideo("original");
+    if (videoRef.current) {
+      const newSrc = videoType === "original" ? originalVideo : dubVideo;
+      if (videoRef.current.src !== newSrc) {
         videoRef.current.pause();
-        videoRef.current.currentTime = currentTime;
-        videoRef.current.play();
+        videoRef.current.src = newSrc; // Change video source
+        videoRef.current.load(); // Reload the video
       }
-    } else {
-      if (videoRef.current) {
-        setActiveVideo("dub");
-        videoRef.current.pause();
-        videoRef.current.currentTime = currentTime;
-        videoRef.current.play();
-      }
+      videoRef.current.currentTime = currentTime; // Maintain current progress
+      videoRef.current.play(); // Play the updated video
+      setActiveVideo(videoType);
+      setIsPlaying(true);
     }
-    setIsPlaying(true);
+    // if (videoType === "original") {
+    //   if (videoRef.current) {
+    //     setActiveVideo("original");
+    //     videoRef.current.pause();
+    //     videoRef.current.currentTime = currentTime;
+    //     videoRef.current.play();
+    //   }
+    // } else {
+    //   if (videoRef.current) {
+    //     setActiveVideo("dub");
+    //     videoRef.current.pause();
+    //     videoRef.current.currentTime = currentTime;
+    //     videoRef.current.play();
+    //   }
+    // }
+    // setIsPlaying(true);
   };
 
   const handleTimeUpdate = () => {
@@ -84,8 +96,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
     }
     if (videoRef.current) {
       const maxDuration = videoRef.current.duration;
-
-      setDuration(maxDuration);
+      setDuration(maxDuration || duration || 0); // this will avoid slider jump backend and forth when we switch video
     }
   };
 
@@ -142,7 +153,8 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
       setIsPlaying(false);
     } else {
       if (activeVideo === "original" && videoRef.current) {
-        videoRef.current.play();
+        videoRef.current.currentTime = currentTime; // Maintain current progress
+        videoRef.current.play(); // Play the updated video
       }
       if (activeVideo === "dub" && videoRef.current) {
         videoRef.current.play();
@@ -165,7 +177,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
     >
       <div className="relative aspect-video bg-black">
         <video
-          //   ref={originalVideoRef}
+          // key={activeVideo} // Forces a re-render when activeVideo changes
           ref={videoRef}
           className="h-full w-full"
           onTimeUpdate={handleTimeUpdate}
