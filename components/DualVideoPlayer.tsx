@@ -265,7 +265,8 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
                 flag={originalFlag}
                 label={"original"}
               />
-              {originalLable}
+              {/* {originalLable} */}
+              "Original"
             </Button>
             <Button
               variant="default"
@@ -276,7 +277,8 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               onClick={() => handlePlay("dub")}
             >
               <FlagButton key={"dub"} flag={dubFlag} label={"dub"} />
-              {dubLable}
+              {/* {dubLable} */}
+              "Dubbed"
             </Button>
           </div>
 
