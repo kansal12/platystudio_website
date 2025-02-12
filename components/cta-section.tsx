@@ -18,7 +18,7 @@ export function CTASection() {
               Ready to Transform Your Content?
             </div>
             <h2 className="mt-8 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Experience the Power of <br />
+              Experience the <br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
                 AI-Powered Innovation
               </span>

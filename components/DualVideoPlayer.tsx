@@ -229,7 +229,9 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               variant="default"
               size="sm"
               className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium py-0  ${
-                activeVideo === "original" ? "opacity-100" : "opacity-50"
+                activeVideo === "original"
+                  ? "opacity-100 outline outline-2 outline-[#9333ea]"
+                  : "opacity-75 "
               }`}
               onClick={() => handlePlay("original")}
             >
@@ -243,8 +245,10 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
             <Button
               variant="default"
               size="sm"
-              className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
-                activeVideo === "dub" ? "opacity-100" : "opacity-50"
+              className={`h-6 sm:h-8 px-2 box-border text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
+                activeVideo === "dub"
+                  ? "opacity-100 outline outline-2 outline-[#9333ea]"
+                  : "opacity-75"
               }`}
               onClick={() => handlePlay("dub")}
             >

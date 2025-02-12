@@ -63,7 +63,7 @@ const features: Array<DubbingFeature> = [
     originalFlag: "/assets/img/ind-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739262509/phqqyxfyurmupwdl1gyp.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354378/English_Rahul_and_Ravish2_tjm8wv.mp4",
     dubFlag: "/assets/img/us-flag.png",
     // dubLable: "Dubbed",
   },
@@ -94,7 +94,7 @@ const features: Array<DubbingFeature> = [
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/Spanish_Notting_Hill_eskyrv.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354379/Spanish_Notting_Hill2_skcg3h.mp4",
     dubFlag: "/assets/img/span-flag.png",
     // dubLable: "Dubbed",
   },
