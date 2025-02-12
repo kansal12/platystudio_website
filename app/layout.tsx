@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" href="/favicon.svg" />
         <PreloadImages />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>

@@ -20,7 +20,7 @@ export function Features() {
                 Capabilities
               </span>
               <br />
-              that sets us apart
+              that set us apart
             </>
           }
           description=""

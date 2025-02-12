@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -5,6 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { DemoDialog } from "./demo-dialog";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -50,6 +54,8 @@ const faqs = [
 ];
 
 export function FAQ() {
+  const [showDemo, setShowDemo] = useState(false);
+  const handleDemoClick = () => setShowDemo(true);
   return (
     <section
       className="container mx-auto relative py-20 sm:py-28 lg:py-36"
@@ -79,6 +85,7 @@ export function FAQ() {
             Still have questions?
             <a
               href="#contact"
+              onClick={handleDemoClick}
               className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
             >
               Contact our team
@@ -86,6 +93,7 @@ export function FAQ() {
           </p>
         </div>
       </div>
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
     </section>
   );
 }

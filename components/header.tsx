@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { DemoDialog } from "@/components/demo-dialog";
@@ -24,36 +29,36 @@ export function Header() {
               </Link>
             </div>
             <nav className="hidden md:flex md:items-center md:space-x-8">
-            <Link
-              href="#features"
-              className="text-sm font-medium hover:text-white/80 transition-colors"
-            >
-              Features
-            </Link>
-            <Link
-              href="#how-it-works"
-              className="text-sm font-medium hover:text-white/80 transition-colors"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium hover:text-white/80 transition-colors"
-            >
-              Contact
-            </Link>
-            <Link
-              href="https://kansal12.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium hover:text-white/80 transition-colors"
-            >
-              Blog
-            </Link>
-          </nav>
+              <Link
+                href="#features"
+                className="text-sm font-medium hover:text-white/80 transition-colors"
+              >
+                Features
+              </Link>
+              <Link
+                href="#how-it-works"
+                className="text-sm font-medium hover:text-white/80 transition-colors"
+              >
+                How It Works
+              </Link>
+              <Link
+                href="#contact"
+                className="text-sm font-medium hover:text-white/80 transition-colors"
+              >
+                Contact
+              </Link>
+              <Link
+                href="https://kansal12.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium hover:text-white/80 transition-colors"
+              >
+                Blog
+              </Link>
+            </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <RainbowButton 
+            <RainbowButton
               className="hidden md:inline-flex"
               onClick={() => setShowDemo(true)}
             >
@@ -67,39 +72,63 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] px-6 bg-black/95">
                 <nav className="flex flex-col space-y-4 mt-8">
-                  <Link href="#features" className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg">
-                    Features
-                  </Link>
-                  <Link href="#how-it-works" className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg">
-                    How It Works
-                  </Link>
-                  <Link href="#pricing" className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg">
-                    Pricing
-                  </Link>
-                  <Link href="#contact" className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg">
-                    Contact
-                  </Link>
-                  <Link 
-                    href="https://kansal12.github.io/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
-                  >
-                    Blog
-                  </Link>
-                  <RainbowButton 
-                    className="mt-4 w-full"
-                    onClick={() => setShowDemo(true)}
-                  >
-                    Schedule Demo
-                  </RainbowButton>
+                  <SheetClose asChild>
+                    <Link
+                      href="#features"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      Features
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="#how-it-works"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      How It Works
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="#pricing"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      Pricing
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="#contact"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      Contact
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="https://kansal12.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      Blog
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <RainbowButton
+                      className="mt-4 w-full"
+                      onClick={() => setShowDemo(true)}
+                    >
+                      Schedule Demo
+                    </RainbowButton>
+                  </SheetClose>
                 </nav>
               </SheetContent>
             </Sheet>
           </div>
         </div>
       </div>
-    <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
     </header>
   );
 }
