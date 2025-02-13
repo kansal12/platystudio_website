@@ -59,7 +59,7 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "RAGA-Ravish",
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271247/original_Rahul_and_Ravish_i49dro.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739423550/Original_Rahul_and_Ravish_h7kvje.mp4",
     originalFlag: "/assets/img/ind-flag.png",
     // originalLabel: "Original",
     dubVidoe:
