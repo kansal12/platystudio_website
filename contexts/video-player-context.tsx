@@ -26,12 +26,12 @@ export function VideoPlayerProvider({
         window.dispatchEvent(
           new CustomEvent("pauseOtherPlayers", {
             detail: { currentId: id },
-          }),
+          })
         );
       }
       setCurrentPlayingId(id);
     },
-    [currentPlayingId],
+    [currentPlayingId]
   );
 
   return (
@@ -46,4 +46,8 @@ export function VideoPlayerProvider({
   );
 }
 
-export const useVideoPlayer = () => useContext(VideoPlayerContext);
+// export const useVideoPlayer = () => useContext(VideoPlayerContext);
+export const useVideoPlayer = () => {
+  // console.trace("useVideoPlayer called");
+  return useContext(VideoPlayerContext);
+};

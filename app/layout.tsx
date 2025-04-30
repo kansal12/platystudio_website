@@ -1,6 +1,6 @@
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { VideoPlayerProvider } from "@/contexts/video-player-context";
 import { Header } from "@/components/header";
 import { PreloadImages } from "@/components/preload-images";
 import { Footer } from "@/components/footer";
@@ -9,22 +9,22 @@ import { NextSeo } from "next-seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Platy.Studio - The AI Video Production Studio",
-  description: "Create Box-office quality Dubbing and Karaoke with AI",
-  metadataBase: new URL("https://platy.studio"),
-  alternates: {
-    canonical: "https://platy.studio",
-  },
-  openGraph: {
-    title: "Platy Studio - AI-Powered Dubbing & Voiceover",
-    description:
-      "High-quality AI dubbing services for content creators and businesses.",
-    url: "https://platy.studio/",
-    siteName: "Platy Studio",
-    type: "website",
-  },
-};
+// export const metadata: Metadata = {
+//   title: "Platy.Studio - The AI Video Production Studio",
+//   description: "Create Box-office quality Dubbing and Karaoke with AI",
+//   metadataBase: new URL("https://platy.studio"),
+//   alternates: {
+//     canonical: "https://platy.studio",
+//   },
+//   openGraph: {
+//     title: "Platy Studio - AI-Powered Dubbing & Voiceover",
+//     description:
+//       "High-quality AI dubbing services for content creators and businesses.",
+//     url: "https://platy.studio/",
+//     siteName: "Platy Studio",
+//     type: "website",
+//   },
+// };
 
 export default function RootLayout({
   children,
@@ -51,9 +51,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
         <Header />
-        <VideoPlayerProvider>
-          <main className="max-w-7xl mx-auto">{children}</main>
-        </VideoPlayerProvider>
+
+        <main className="max-w-7xl mx-auto">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, RotateCcw } from "lucide-react";
