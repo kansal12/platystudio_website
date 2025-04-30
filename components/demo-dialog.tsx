@@ -96,15 +96,15 @@ export function DemoDialog({
               <div className="grid gap-2">
                 <Label htmlFor="phone">Phone *</Label>
                 <div className="flex gap-2">
-                  <Select defaultValue="+1">
+                  <Select
+                    defaultValue="+1"
+                    onValueChange={(value) => setPhoneCode(value)}
+                  >
                     <SelectTrigger className="w-[120px]">
                       <SelectValue placeholder="Code" />
                     </SelectTrigger>
                     <SelectContent>
-                      <ScrollArea
-                        className="h-[200px] "
-                        onChange={(e) => setPhoneCode(e.target.value)}
-                      >
+                      <ScrollArea className="h-[200px] ">
                         <SelectItem value="+1">+1 (US)</SelectItem>
                         <SelectItem value="+44">+44 (UK)</SelectItem>
                         <SelectItem value="+91">+91 (IN)</SelectItem>

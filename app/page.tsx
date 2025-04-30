@@ -8,14 +8,14 @@ import { VideoPlayerProvider } from "@/contexts/video-player-context";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      <VideoPlayerProvider>
+    <VideoPlayerProvider>
+      <div className="relative min-h-screen w-full overflow-hidden">
         <HeroSection />
         <HowItWorks />
         <Features />
         <CTASection />
-      </VideoPlayerProvider>
-      <FAQ />
-    </div>
+        <FAQ />
+      </div>
+    </VideoPlayerProvider>
   );
 }

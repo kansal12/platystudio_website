@@ -7,7 +7,7 @@ type VideoPlayerContextType = {
   setCurrentPlayingId: (id: string | null) => void;
 };
 
-const VideoPlayerContext = createContext<VideoPlayerContextType>({
+const VideoPlayerContext = createContext<VideoPlayerContextType | undefined>({
   currentPlayingId: null,
   setCurrentPlayingId: () => {},
 });
@@ -48,6 +48,16 @@ export function VideoPlayerProvider({
 
 // export const useVideoPlayer = () => useContext(VideoPlayerContext);
 export const useVideoPlayer = () => {
-  // console.trace("useVideoPlayer called");
-  return useContext(VideoPlayerContext);
+  try {
+    const context = useContext(VideoPlayerContext);
+    if (!context) {
+      // console.trace("useVideoPlayer called");
+      throw new Error(
+        "useVideoPlayer must be used within a VideoPlayerProvider"
+      );
+    }
+    return context;
+  } catch (error) {
+    console.error("Error in useVideoPlayer:", error);
+  }
 };
