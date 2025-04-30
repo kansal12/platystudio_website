@@ -36,6 +36,12 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
 
   const playerId = useId();
+  // try {
+
+  // } catch (error) {
+  //   console.error("Error in DualVideoPlayer:", error);
+
+  // }
   const { setCurrentPlayingId } = useVideoPlayer();
 
   // Listen for global pause events

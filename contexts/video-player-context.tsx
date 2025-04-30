@@ -48,16 +48,14 @@ export function VideoPlayerProvider({
 
 // export const useVideoPlayer = () => useContext(VideoPlayerContext);
 export const useVideoPlayer = () => {
-  try {
-    const context = useContext(VideoPlayerContext);
-    if (!context) {
-      // console.trace("useVideoPlayer called");
-      throw new Error(
-        "useVideoPlayer must be used within a VideoPlayerProvider"
-      );
-    }
-    return context;
-  } catch (error) {
-    console.error("Error in useVideoPlayer:", error);
+  // try {
+  const context = useContext(VideoPlayerContext);
+  if (!context) {
+    // console.trace("useVideoPlayer called");
+    throw new Error("useVideoPlayer must be used within a VideoPlayerProvider");
   }
+  return context;
+  // } catch (error) {
+  //   console.error("Error in useVideoPlayer:", error);
+  // }
 };
