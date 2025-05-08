@@ -79,7 +79,7 @@ const items = [
   {
     title: "Multi-language Support",
     description:
-      "Support for 30+ languages for both dubbing and karaoke creation, helping you reach a global audience.",
+      "Support for 20+ languages for both dubbing and karaoke creation, helping you reach a global audience.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage

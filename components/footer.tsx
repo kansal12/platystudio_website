@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+// import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 
 export function Footer() {
@@ -29,9 +30,10 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-white/10 bg-black/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        {/* <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"> */}
+        <div className="flex gap-12 justify-between">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 w-[500px]">
             <h3 className="text-lg font-bold">Platy.Studio</h3>
             <p className="text-sm text-white/60">
               Seattle-based AI video production studio specializing in
@@ -41,20 +43,23 @@ export function Footer() {
               <Link href="#" className="text-white/60 hover:text-white">
                 <Github className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-white/60 hover:text-white">
+              {/* <Link href="#" className="text-white/60 hover:text-white">
                 <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-white/60 hover:text-white">
+              </Link> */}
+              <Link
+                href="https://www.linkedin.com/company/platy-studio/posts/?feedView=all"
+                className="text-white/60 hover:text-white"
+              >
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-white/60 hover:text-white">
+              {/* <Link href="#" className="text-white/60 hover:text-white">
                 <Instagram className="h-5 w-5" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
           {/* Solutions */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h3 className="text-lg font-bold">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -78,37 +83,57 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-white/60 hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-white/60 hover:text-white">
+                <Link href="careers" className="text-white/60 hover:text-white">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-white/60 hover:text-white">
+                <Link
+                  href="http://blog.platy.studio/"
+                  className="text-white/60 hover:text-white"
+                >
                   Blog
                 </Link>
               </li>
+            </ul>
+          </div>
+          {/* Legal */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold">Legal</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-white/60 hover:text-white">
-                  Press Kit
+                <Link href="/term" className="text-white/60 hover:text-white">
+                  Term
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/security"
+                  className="text-white/60 hover:text-white"
+                >
+                  Security
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-white/60 hover:text-white"
+                >
+                  Privacy
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-[250px]">
             <h3 className="text-lg font-bold">Stay Updated</h3>
             <p className="text-sm text-white/60">
               Subscribe to our newsletter for the latest updates and insights.

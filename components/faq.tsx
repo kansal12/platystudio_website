@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "What languages are supported for dubbing?",
     answer:
-      "We currently support dubbing in 40+ languages including English, Spanish, French, German, Japanese, Korean, Mandarin, Hindi, and more. Our AI models are continuously trained on new languages to expand our coverage. Contact us for specific language requirements.",
+      "We currently support dubbing in 20+ languages including English, Spanish, French, German, Japanese, Korean, Mandarin, Hindi, and more. Our AI models are continuously trained on new languages to expand our coverage. Contact us for specific language requirements.",
   },
   {
     question: "How accurate is the vocal separation for karaoke creation?",

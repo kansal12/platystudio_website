@@ -24,14 +24,16 @@ export function CTASection() {
               </span>
             </h2>
             <div className="mt-8 flex flex-col gap-6 text-lg text-white/60 sm:text-xl">
-              <p className="text-white/80">Trusted by Industry Leaders</p>
+              <p className="text-white/80">
+                Top quality Solutions for professionals shaping global content
+              </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
                 {[
-                  "Film Producers",
-                  "OTT Platforms",
+                  "Brands",
                   "Content Creators",
-                  "Production Houses",
-                  "Studio Directors",
+                  "Marketing Agencies",
+                  "Movie Producers",
+                  "OTT Platforms",
                   "Media Companies",
                 ].map((role, index) => (
                   <div
@@ -70,7 +72,7 @@ export function CTASection() {
               },
               {
                 label: "Languages Supported",
-                value: "40+",
+                value: "20+",
                 description: "And growing every month",
               },
               {

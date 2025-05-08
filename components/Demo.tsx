@@ -1,7 +1,7 @@
 "use client";
 
 import { SectionHeading } from "@/components/ui/section-heading";
-import KaraokePlayer from "@/components/karaoke-player";
+// import KaraokePlayer from "@/components/karaoke-player";
 import DualVideoPlayer from "./DualVideoPlayer";
 
 interface DubbingFeature {
@@ -17,24 +17,24 @@ interface DubbingFeature {
   // dubLable: string;
 }
 
-interface KaraokeFeature {
-  title: string;
-  description: string;
-  type: "karaoke";
-  videoTitle: string;
-  videos: {
-    // full: string;
-    // noVocals: string;
-    // noLyrics: string;
-    original: string;
-    karaoke: string;
-  };
-  // audios: {
-  //   full: string;
-  //   noVocals: string;
-  //   noLyrics: string;
-  // };
-}
+// interface KaraokeFeature {
+//   title: string;
+//   description: string;
+//   type: "karaoke";
+//   videoTitle: string;
+//   videos: {
+//     // full: string;
+//     // noVocals: string;
+//     // noLyrics: string;
+//     original: string;
+//     karaoke: string;
+//   };
+//   // audios: {
+//   //   full: string;
+//   //   noVocals: string;
+//   //   noLyrics: string;
+//   // };
+// }
 
 const features: Array<DubbingFeature> = [
   {
@@ -100,52 +100,55 @@ const features: Array<DubbingFeature> = [
   },
 ];
 
-const karaokeFeatures: Array<KaraokeFeature> = [
-  {
-    title: "Professional-Grade Karaoke for OTTs",
-    description:
-      "Turn any song into a high-quality karaoke experience with our advanced audio separation technology.",
-    type: "karaoke",
-    videoTitle: "THE BAR SONG",
-    videos: {
-      // full: "/assets/videos/karaoke_output_bar.mp4",
-      // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
-      // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
-      original: "/assets/videos/video_song_bar.mp4",
-      karaoke: "/assets/videos/karaoke_output_bar.mp4",
-    },
-    // audios: {
-    //   full: "/assets/audios/song_bar.mp3",
-    //   // noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
-    //   // noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
-    //   noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
-    //   noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
-    // },
-  },
-  {
-    title: "Works across music genres and languages",
-    description:
-      "Experience perfect vocal isolation and instrumental track creation with our state-of-the-art AI technology.",
-    type: "karaoke",
-    videoTitle: "THE BAR SONG 2",
-    videos: {
-      // full: "/assets/videos/karaoke2/full.mp4",
-      // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
-      // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
-      original: "/assets/videos/video_song_perfect.mp4",
-      karaoke: "/assets/videos/karaoke_output_perfect.mp4",
-    },
-    // audios: {
-    //   full: "/assets/audios/karaoke2/full.mp3",
-    //   noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
-    //   noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
-    // },
-  },
-];
+// const karaokeFeatures: Array<KaraokeFeature> = [
+//   {
+//     title: "Professional-Grade Karaoke for OTTs",
+//     description:
+//       "Turn any song into a high-quality karaoke experience with our advanced audio separation technology.",
+//     type: "karaoke",
+//     videoTitle: "THE BAR SONG",
+//     videos: {
+//       // full: "/assets/videos/karaoke_output_bar.mp4",
+//       // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
+//       // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
+//       original: "/assets/videos/video_song_bar.mp4",
+//       karaoke: "/assets/videos/karaoke_output_bar.mp4",
+//     },
+//     // audios: {
+//     //   full: "/assets/audios/song_bar.mp3",
+//     //   // noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
+//     //   // noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
+//     //   noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
+//     //   noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
+//     // },
+//   },
+//   {
+//     title: "Works across music genres and languages",
+//     description:
+//       "Experience perfect vocal isolation and instrumental track creation with our state-of-the-art AI technology.",
+//     type: "karaoke",
+//     videoTitle: "THE BAR SONG 2",
+//     videos: {
+//       // full: "/assets/videos/karaoke2/full.mp4",
+//       // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
+//       // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
+//       original: "/assets/videos/video_song_perfect.mp4",
+//       karaoke: "/assets/videos/karaoke_output_perfect.mp4",
+//     },
+//     // audios: {
+//     //   full: "/assets/audios/karaoke2/full.mp3",
+//     //   noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
+//     //   noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
+//     // },
+//   },
+// ];
 
-export function HowItWorks() {
+export function Demo() {
   return (
-    <section className="relative pt-0 sm:pt-0 lg:pt-0" id="how-it-works">
+    <section
+      className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
+      id="Demos"
+    >
       <div className="px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={
@@ -219,7 +222,7 @@ export function HowItWorks() {
           </div>
           <div>
             {/* Karaoke Section */}
-            <div className="relative">
+            {/* <div className="relative">
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
                   Professional Karaoke Solutions
@@ -253,7 +256,7 @@ export function HowItWorks() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

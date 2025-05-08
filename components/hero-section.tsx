@@ -13,8 +13,9 @@ export function HeroSection() {
           The AI Video Production Studio
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/60 sm:text-lg md:text-lg lg:text-xl px-10 md:px-0">
-          Platy Studio is the ultimate way to create box-office-quality dubs and
-          karaoke tracks.
+          Platy Studio is the ultimate way to create box-office-quality dubs{" "}
+          {/*and
+           karaoke tracks. */}
         </p>
         <div className="mt-10 flex items-center justify-center gap-6">
           <RainbowButton

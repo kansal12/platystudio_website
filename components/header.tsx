@@ -36,17 +36,12 @@ export function Header() {
                 Features
               </Link>
               <Link
-                href="#how-it-works"
+                href="#Demos"
                 className="text-sm font-medium hover:text-white/80 transition-colors"
               >
-                How It Works
+                Demos
               </Link>
-              <Link
-                href="#contact"
-                className="text-sm font-medium hover:text-white/80 transition-colors"
-              >
-                Contact
-              </Link>
+
               <Link
                 href="https://kansal12.github.io/"
                 target="_blank"
@@ -82,7 +77,7 @@ export function Header() {
                   </SheetClose>
                   <SheetClose asChild>
                     <Link
-                      href="#how-it-works"
+                      href="#Demo"
                       className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
                     >
                       How It Works
