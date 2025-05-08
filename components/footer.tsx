@@ -31,9 +31,9 @@ export function Footer() {
     <footer className="w-full border-t border-white/10 bg-black/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         {/* <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"> */}
-        <div className="flex gap-12 justify-between">
+        <div className="flex-col gap-12 justify-between md:flex-col">
           {/* Company Info */}
-          <div className="space-y-4 w-[500px]">
+          <div className="space-y-4 max-w-[500px]">
             <h3 className="text-lg font-bold">Platy.Studio</h3>
             <p className="text-sm text-white/60">
               Seattle-based AI video production studio specializing in

@@ -57,9 +57,7 @@ export function Header() {
               className="hidden md:inline-flex"
               onClick={() => setShowDemo(true)}
             >
-              {/* <Link href={"/?popup=true"} scroll={false}> */}
               Schedule Demo
-              {/* </Link> */}
             </RainbowButton>
             <Sheet>
               <SheetTrigger asChild>
@@ -101,9 +99,7 @@ export function Header() {
                       className="mt-4 w-full"
                       onClick={() => setShowDemo(true)}
                     >
-                      {/* <Link href={"/?popup=true"} scroll={false}> */}
                       Schedule Demo
-                      {/* </Link> */}
                     </RainbowButton>
                   </SheetClose>
                 </nav>
