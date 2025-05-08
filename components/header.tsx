@@ -57,7 +57,9 @@ export function Header() {
               className="hidden md:inline-flex"
               onClick={() => setShowDemo(true)}
             >
+              {/* <Link href={"/?popup=true"} scroll={false}> */}
               Schedule Demo
+              {/* </Link> */}
             </RainbowButton>
             <Sheet>
               <SheetTrigger asChild>
@@ -80,25 +82,10 @@ export function Header() {
                       href="#Demo"
                       className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
                     >
-                      How It Works
+                      Demo
                     </Link>
                   </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#pricing"
-                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
-                    >
-                      Pricing
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#contact"
-                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
-                    >
-                      Contact
-                    </Link>
-                  </SheetClose>
+
                   <SheetClose asChild>
                     <Link
                       href="https://kansal12.github.io/"
@@ -114,7 +101,9 @@ export function Header() {
                       className="mt-4 w-full"
                       onClick={() => setShowDemo(true)}
                     >
+                      {/* <Link href={"/?popup=true"} scroll={false}> */}
                       Schedule Demo
+                      {/* </Link> */}
                     </RainbowButton>
                   </SheetClose>
                 </nav>

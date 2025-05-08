@@ -5,11 +5,33 @@ import { Demo } from "@/components/Demo";
 import { FAQ } from "@/components/faq";
 import { CTASection } from "@/components/cta-section";
 import { VideoPlayerProvider } from "@/contexts/video-player-context";
+import { DemoScheduler } from "@/components/demo-scheduler";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("popup") === "true") {
+      setModalOpen(true);
+    }
+  }, []);
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    router.push("/"); // Clear the query params
+  };
   return (
     <VideoPlayerProvider>
       <div className="relative min-h-screen w-full overflow-hidden">
+        <DemoScheduler
+          setShowDialog={setModalOpen}
+          showDialog={isModalOpen}
+          onClose={handleCloseModal}
+        />
         <HeroSection />
         <Demo />
         <Features />

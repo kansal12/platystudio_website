@@ -19,26 +19,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function DemoScheduler({ showDialog, setShowDialog, onClose }) {
-  // const [isMinimized, setIsMinimized] = React.useState(false);
-  // const [showDialog, setShowDialog] = React.useState(false);
+export default function DemoScheduler() {
+  const [isMinimized, setIsMinimized] = React.useState(false);
+  const [showDialog, setShowDialog] = React.useState(true);
 
-  // React.useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (!isMinimized) {
-  //       setShowDialog(true);
-  //     }
-  //   }, 60000); // 1 minute
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isMinimized) {
+        setShowDialog(true);
+      }
+    }, 60000); // 1 minute
 
-  //   return () => clearTimeout(timer);
-  // }, [isMinimized]);
-
-  // React.useEffect(() => {
-  //   const query = new URLSearchParams(window.location.search);
-  //   if (query.get("popup") === "true") {
-  //     setShowDialog(true);
-  //   }
-  // }, []);
+    return () => clearTimeout(timer);
+  }, [isMinimized]);
 
   return (
     <Dialog open={showDialog} onOpenChange={setShowDialog}>
@@ -85,11 +78,10 @@ export function DemoScheduler({ showDialog, setShowDialog, onClose }) {
         <div className="flex justify-between">
           <Button
             variant="outline"
-            // onClick={() => {
-            //   setShowDialog(false);
-            //   // setIsMinimized(true);
-            // }}
-            onClick={onClose}
+            onClick={() => {
+              setShowDialog(false);
+              setIsMinimized(true);
+            }}
           >
             Minimize
           </Button>
