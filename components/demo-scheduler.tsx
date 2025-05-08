@@ -19,7 +19,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function DemoScheduler({ showDialog, setShowDialog, onClose }) {
+interface DemoSchedulerProps {
+  showDialog: boolean;
+  setShowDialog: (value: boolean) => void;
+  onClose: () => void;
+}
+
+export function DemoScheduler({
+  showDialog,
+  setShowDialog,
+  onClose,
+}: DemoSchedulerProps) {
   // const [isMinimized, setIsMinimized] = React.useState(false);
   // const [showDialog, setShowDialog] = React.useState(false);
 
