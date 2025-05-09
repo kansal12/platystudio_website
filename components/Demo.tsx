@@ -147,7 +147,7 @@ export function Demo() {
   return (
     <section
       className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
-      id="Demos"
+      id="Demo"
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <SectionHeading

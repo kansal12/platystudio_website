@@ -36,31 +36,83 @@ export function DemoDialog({
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   // Simulate API call
+  //   // await new Promise((resolve) => setTimeout(resolve, 1000));
+  //   const res = await fetch("/api/upload-csv", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       name,
+  //       phone: `${phoneCode} ${phone}`,
+  //       email,
+  //       message,
+  //     }),
+  //   });
+
+  //   setIsSubmitting(false);
+  //   if (res.ok) setIsSubmitted(true);
+
+  //   setIsSubmitted(false);
+  //   onOpenChange(false);
+  //   // // Close dialog after showing success message
+  //   // setTimeout(() => {
+  //   // }, 2000);
+  // };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
-    const res = await fetch("/api/upload-csv", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        phone: `${phoneCode} ${phone}`,
-        email,
-        message,
-      }),
-    });
+    const payload = {
+      name,
+      phone: `${phoneCode} ${phone}`,
+      email,
+      message,
+    };
 
-    setIsSubmitting(false);
-    if (res.ok) setIsSubmitted(true);
+    try {
+      // Concurrently call both APIs
+      const [csvResponse, emailResponse] = await Promise.all([
+        fetch("/api/upload-csv", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+        fetch("/api/send-emails", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+      ]);
 
-    setIsSubmitted(false);
-    onOpenChange(false);
-    // // Close dialog after showing success message
-    // setTimeout(() => {
-    // }, 2000);
+      // Handle both responses
+      if (csvResponse.ok && emailResponse.ok) {
+        setIsSubmitted(true);
+        alert("Your details were submitted successfully!");
+      } else {
+        // Check which request failed
+        const csvError = !csvResponse.ok ? await csvResponse.json() : null;
+        const emailError = !emailResponse.ok
+          ? await emailResponse.json()
+          : null;
+
+        alert(`Error submitting form:\n
+        CSV Upload: ${csvError ? csvError.message : "Success"}\n
+        Email Sending: ${emailError ? emailError.message : "Success"}
+      `);
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(false);
+      onOpenChange(false);
+    }
   };
 
   return (
