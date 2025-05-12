@@ -13,15 +13,15 @@ export async function POST(req: Request) {
 
   try {
     // Send email to the user
-    await sendEmail({
-      to: email,
-      subject: "Thank you for contacting us!",
-      html: `<p>Hi ${name},</p><p>We have received your message: "${message}".</p><p>We will get back to you soon.</p>`,
-    });
+    // await sendEmail({
+    //   to: email,
+    //   subject: "Thank you for contacting us!",
+    //   html: `<p>Hi ${name},</p><p>We have received your message: "${message}".</p><p>We will get back to you soon.</p>`,
+    // });
 
     // Send email to admin
     await sendEmail({
-      to: "chiranjivrao09@gmail.com",
+      to: "kansal@platy.studio ",
       subject: "New Contact Form Submission",
       html: `<p>New message from ${name} (${email}):</p><p>${message}</p>`,
     });
