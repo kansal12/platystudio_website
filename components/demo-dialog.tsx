@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export function DemoDialog({
   open,
@@ -82,7 +83,7 @@ export function DemoDialog({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         }),
-        fetch("/api/send-emails", {
+        fetch("/api/send-email", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -92,7 +93,7 @@ export function DemoDialog({
       // Handle both responses
       if (csvResponse.ok && emailResponse.ok) {
         setIsSubmitted(true);
-        alert("Your details were submitted successfully!");
+        toast.success("Your details were submitted successfully!");
       } else {
         // Check which request failed
         const csvError = !csvResponse.ok ? await csvResponse.json() : null;
@@ -100,14 +101,14 @@ export function DemoDialog({
           ? await emailResponse.json()
           : null;
 
-        alert(`Error submitting form:\n
+        toast.error(`Error submitting form:\n
         CSV Upload: ${csvError ? csvError.message : "Success"}\n
         Email Sending: ${emailError ? emailError.message : "Success"}
       `);
       }
     } catch (error) {
       console.error("Submission Error:", error);
-      alert("An unexpected error occurred. Please try again.");
+      toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
       setIsSubmitted(false);

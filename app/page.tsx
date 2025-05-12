@@ -8,6 +8,7 @@ import { VideoPlayerProvider } from "@/contexts/video-player-context";
 import { DemoScheduler } from "@/components/demo-scheduler";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Home() {
   const router = useRouter();
@@ -38,6 +39,7 @@ export default function Home() {
         <CTASection />
         <FAQ />
       </div>
+      <ToastContainer />
     </VideoPlayerProvider>
   );
 }
