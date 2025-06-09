@@ -9,7 +9,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 export function Features() {
   return (
     <section
-      className="container mx-auto relative py-24 sm:py-28 lg:py-36 flex justify-center"
+      className="container mx-auto relative pb-24 sm:pb-28 lg:pb-36 flex justify-center"
       id="features"
     >
       <div className="px-4 sm:px-6 lg:px-8 ">

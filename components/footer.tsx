@@ -29,9 +29,8 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-white/10 bg-black/50 backdrop-blur-xl">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        {/* <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4"> */}
-        <div className="flex-col gap-12 justify-between md:flex-col">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="space-y-4 max-w-[500px]">
             <h3 className="text-lg font-bold">Platy.Studio</h3>
@@ -40,7 +39,10 @@ export function Footer() {
               high-quality dubbing and karaoke solutions.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-white/60 hover:text-white">
+              <Link
+                href="#"
+                className="text-white/60 hover:text-white transition-colors"
+              >
                 <Github className="h-5 w-5" />
               </Link>
               {/* <Link href="#" className="text-white/60 hover:text-white">
@@ -48,7 +50,7 @@ export function Footer() {
               </Link> */}
               <Link
                 href="https://www.linkedin.com/company/platy-studio/posts/?feedView=all"
-                className="text-white/60 hover:text-white"
+                className="text-white/60 hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
@@ -90,14 +92,17 @@ export function Footer() {
             <h3 className="text-lg font-bold">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="careers" className="text-white/60 hover:text-white">
+                <Link
+                  href="careers"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
                   Careers
                 </Link>
               </li>
               <li>
                 <Link
                   href="http://blog.platy.studio/"
-                  className="text-white/60 hover:text-white"
+                  className="text-white/60 hover:text-white transition-colors"
                 >
                   Blog
                 </Link>
@@ -109,14 +114,17 @@ export function Footer() {
             <h3 className="text-lg font-bold">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/term" className="text-white/60 hover:text-white">
+                <Link
+                  href="/term"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
                   Term
                 </Link>
               </li>
               <li>
                 <Link
                   href="/security"
-                  className="text-white/60 hover:text-white"
+                  className="text-white/60 hover:text-white transition-colors"
                 >
                   Security
                 </Link>
@@ -124,7 +132,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-white/60 hover:text-white"
+                  className="text-white/60 hover:text-white transition-colors"
                 >
                   Privacy
                 </Link>
@@ -151,6 +159,7 @@ export function Footer() {
                   type="submit"
                   variant="outline"
                   disabled={isSubscribing}
+                  className="mt-2 sm:mt-0"
                 >
                   {isSubscribing ? "Subscribing..." : "Subscribe"}
                 </Button>
@@ -165,18 +174,27 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 flex flex-col items-center justify-between space-y-4 border-t border-white/10 pt-8 text-sm md:flex-row md:space-y-0">
-          <p className="text-white/60">
+        <div className="mt-12 sm:mt-16 flex flex-col items-center justify-between space-y-4 border-t border-white/10 pt-8 text-sm md:flex-row md:space-y-0">
+          <p className="text-white/60 text-center md:text-left">
             © {new Date().getFullYear()} Platy.Studio. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <Link href="#" className="text-white/60 hover:text-white">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-white/60 hover:text-white">
+            <Link
+              href="#"
+              className="text-white/60 hover:text-white transition-colors"
+            >
               Cookie Policy
             </Link>
           </div>

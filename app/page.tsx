@@ -9,6 +9,8 @@ import { DemoScheduler } from "@/components/demo-scheduler";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { BrandLogos } from "@/components/brand-logos";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   const router = useRouter();
@@ -34,8 +36,10 @@ export default function Home() {
           onClose={handleCloseModal}
         />
         <HeroSection />
+        <BrandLogos />
         <Demo />
         <Features />
+        <Testimonials />
         <CTASection />
         <FAQ />
       </div>
