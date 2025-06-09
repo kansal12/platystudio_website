@@ -6,24 +6,12 @@ import { SectionHeading } from "@/components/ui/section-heading";
 
 const brands = [
   {
-    name: "Brand 1",
-    logo: "/disney.png",
+    name: "Mesh.ai",
+    logo: "/mesh.jpg",
   },
   {
-    name: "Brand 2",
-    logo: "/disney.png",
-  },
-  {
-    name: "Brand 3",
-    logo: "/disney.png",
-  },
-  {
-    name: "Brand 4",
-    logo: "/disney.png",
-  },
-  {
-    name: "Brand 5",
-    logo: "/disney.png",
+    name: "Enthu.ai",
+    logo: "/enthu.jpg",
   },
 ];
 
@@ -57,7 +45,7 @@ export function BrandLogos() {
                   alt={brand.name}
                   width={120}
                   height={40}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300 brightness-200 filter invert"
+                  className="object-contain  transition-all duration-300 brightness-200 filter invert"
                 />
               </div>
             ))}

@@ -1,6 +1,5 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   PrevButton,
@@ -14,48 +13,20 @@ import {
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-// const testimonials = [
-//   {
-//     quote:
-//       "Platy.Studio has revolutionized our dubbing process. The quality is incredible, and the time savings are enormous.",
-//     author: "Maria Garcia",
-//     title: "Head of Content, StreamFlix",
-//   },
-//   {
-//     quote:
-//       "The karaoke feature has transformed how we create music content. Our audience engagement has never been higher.",
-//     author: "James Wilson",
-//     title: "Product Director, MusicBox",
-//   },
-//   {
-//     quote:
-//       "As a movie producer, I'm amazed by the quality of dubbing. It's indistinguishable from traditional methods.",
-//     author: "Alex Chen",
-//     title: "Executive Producer, FilmCraft Studios",
-//   },
-// ];
-
 const testimonials = [
   {
     quote:
-      "This platform has transformed how we handle our business operations. The efficiency gains are remarkable.",
-    author: "John Doe",
-    position: "CEO, TechCorp",
-    avatar: "/avatar.png",
+      "Platy Studio’s dubbing quality is unreal. They made our product demos feel native in the target non-English language — effortlessly.",
+    author: "Rahul Singh",
+    position: "COO, Mesh.ai",
+    avatar: "/mesh_rahul.jpg",
   },
   {
     quote:
-      "The best decision we made was implementing this solution. Our team's productivity has increased significantly.",
-    author: "Jane Smith",
-    position: "Founder, InnovateX",
-    avatar: "/avatar.png",
-  },
-  {
-    quote:
-      "Outstanding support and a platform that truly delivers on its promises. Highly recommended!",
-    author: "Mike Johnson",
-    position: "CTO, FutureTech",
-    avatar: "/avatar.png",
+      "Platy Studio’s dubbing was so natural, it felt like our production agency had recorded each version from scratch using the best voice artists.",
+    author: "Tushar Jain",
+    position: "CEO, Enthu.ai",
+    avatar: "/enthu_tushar.jpg",
   },
 ];
 
