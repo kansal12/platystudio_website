@@ -36,7 +36,7 @@ export default function Home() {
           onClose={handleCloseModal}
         />
         <HeroSection />
-        <BrandLogos />
+        {/* <BrandLogos /> */}
         <Demo />
         <Features />
         <Testimonials />
