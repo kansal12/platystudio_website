@@ -43,7 +43,7 @@ export function BrandLogos() {
                 <Image
                   src={brand.logo}
                   alt={brand.name}
-                  width={120}
+                  width={70}
                   height={40}
                   className="object-contain  transition-all duration-300 brightness-200 filter invert"
                 />
