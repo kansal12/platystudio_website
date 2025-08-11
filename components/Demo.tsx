@@ -37,36 +37,67 @@ interface DubbingFeature {
 // }
 
 const features: Array<DubbingFeature> = [
-  {
-    title: "In-Studio Conversation",
-    description:
-      "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
-    type: "dubbing",
-    videoTitle: "Zelenskyy-Fridman",
-    originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
-    originalFlag: "/assets/img/raussia-flag.png",
-    // originalLabel: "Original",
-    dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
-    dubFlag: "/assets/img/us-flag.png",
-    // dubLable: "Dubbed",
-  },
-  {
-    title: "On-Location Interview",
-    description:
-      "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
-    type: "dubbing",
-    videoTitle: "RAGA-Ravish",
-    originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739423550/Original_Rahul_and_Ravish_h7kvje.mp4",
-    originalFlag: "/assets/img/ind-flag.png",
-    // originalLabel: "Original",
-    dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354378/English_Rahul_and_Ravish2_tjm8wv.mp4",
-    dubFlag: "/assets/img/us-flag.png",
-    // dubLable: "Dubbed",
-  },
+  // {
+  //   title: "In-Studio Conversation",
+  //   description:
+  //     "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
+  //   type: "dubbing",
+  //   videoTitle: "Zelenskyy-Fridman",
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
+  //   originalFlag: "/assets/img/raussia-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
+  //   dubFlag: "/assets/img/us-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
+  // {
+  //   title: "On-Location Interview",
+  //   description:
+  //     "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
+  //   type: "dubbing",
+  //   videoTitle: "RAGA-Ravish",
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739423550/Original_Rahul_and_Ravish_h7kvje.mp4",
+  //   originalFlag: "/assets/img/ind-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354378/English_Rahul_and_Ravish2_tjm8wv.mp4",
+  //   dubFlag: "/assets/img/us-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
+  // {
+  //   title: "Academic Public Talk",
+  //   description:
+  //     "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
+  //   type: "dubbing",
+  //   videoTitle: "Path to Maths- IAS Princeton",
+
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
+  //   originalFlag: "/assets/img/us-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
+  //   dubFlag: "/assets/img/span-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
+  // {
+  //   title: "Hollywood Movie",
+  //   description:
+  //     "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
+  //   type: "dubbing",
+  //   videoTitle: "Notting Hill",
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271312/English_Notting_Hill_cwc5wf.mp4",
+  //   originalFlag: "/assets/img/us-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354379/Spanish_Notting_Hill2_skcg3h.mp4",
+  //   dubFlag: "/assets/img/span-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
   {
     title: "Academic Public Talk",
     description:
@@ -84,20 +115,80 @@ const features: Array<DubbingFeature> = [
     // dubLable: "Dubbed",
   },
   {
-    title: "Hollywood Movie",
+    title: "Technology News",
     description:
-      "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
+      "High-quality, scalable dubs for any genre—fast, seamless multilingual content for YouTube producers",
     type: "dubbing",
-    videoTitle: "Notting Hill",
+    videoTitle: "CNET Humanoid",
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271312/English_Notting_Hill_cwc5wf.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354379/Spanish_Notting_Hill2_skcg3h.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
     dubFlag: "/assets/img/span-flag.png",
     // dubLable: "Dubbed",
   },
+  {
+    title: "Podcasts and News",
+    description:
+      "Dub any conversation or interview while preserving original accent, spatial effects, non-verbal cues, and emotions.",
+    type: "dubbing",
+    videoTitle: "Zelenskyy-Fridman",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
+    originalFlag: "/assets/img/raussia-flag.png",
+    // originalLabel: "Original",
+    dubVidoe:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
+    dubFlag: "/assets/img/us-flag.png",
+    // dubLable: "Dubbed",
+  },
+  {
+    title: "High Quality Lip Sync",
+    description:
+      "Use AI-driven phoneme mapping and emotional analysis to align lip movements with dubbed audio while preserving original emotions.",
+    type: "dubbing",
+    videoTitle: "Logitech Lipsync",
+    originalVideo:
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+    // originalLabel: "Original",
+    dubVidoe:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
+    dubFlag: "/assets/img/france_flag.webp",
+    // dubLable: "Dubbed",
+  },
+  // {
+  //   title: "Theatrical Quality Global Dubs",
+  //   description:
+  //     "Seamlessly dub films and dramas into any language—preserving every emotion for a true cinematic experience, at scale.",
+  //   type: "dubbing",
+  //   videoTitle: "Ruby Ring",
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
+  //   originalFlag: "/assets/img/raussia-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
+  //   dubFlag: "/assets/img/us-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
+  // {
+  //   title: "Expand Your Ads' Global Reach",
+  //   description:
+  //     "Scale your campaigns effortlessly and connect with millions in their native language.",
+  //   type: "dubbing",
+  //   videoTitle: "Trip Advisor",
+  //   originalVideo:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
+  //   originalFlag: "/assets/img/raussia-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
+  //   dubFlag: "/assets/img/us-flag.png",
+  //   // dubLable: "Dubbed",
+  // },
 ];
 
 // const karaokeFeatures: Array<KaraokeFeature> = [
