@@ -36,7 +36,7 @@ export function Header() {
                 Features
               </Link>
               <Link
-                href="#Demo"
+                href="/demos"
                 className="text-sm font-medium hover:text-white/80 transition-colors"
               >
                 Demos
