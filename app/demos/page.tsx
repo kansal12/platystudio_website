@@ -10,7 +10,7 @@ interface DubbingFeature {
   videoTitle: string;
   originalVideo: string;
   originalFlag: string;
-  dubVidoe: string;
+  dubVideo: string;
   dubFlag: string;
 }
 
@@ -26,7 +26,7 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
-    dubVidoe:
+    dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
     dubFlag: "/assets/img/span-flag.png",
   },
@@ -40,7 +40,7 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
-    dubVidoe:
+    dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
     dubFlag: "/assets/img/span-flag.png",
   },
@@ -54,7 +54,7 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
     originalFlag: "/assets/img/raussia-flag.png",
 
-    dubVidoe:
+    dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
     dubFlag: "/assets/img/us-flag.png",
   },
@@ -68,7 +68,7 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
-    dubVidoe:
+    dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
     dubFlag: "/assets/img/france_flag.webp",
   },
@@ -77,23 +77,23 @@ const features: Array<DubbingFeature> = [
 export default function Demos() {
   return (
     <section
-      className="mt-20 relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
+      className="mt-24 relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
       id="Demo"
     >
       <SectionHeading
         title={
-          <>
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+          <div className="sm:py-24 lg:py-12">
+            <span className=" bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
               Unmatched quality
             </span>
             <br />
             that speaks for itself
-          </>
+          </div>
         }
         description=""
       />
       <div className="px-4 sm:px-6 lg:px-8">
-        <div className=" sm:mt-24 lg:mt-32 space-y-24">
+        <div className="  space-y-24">
           {/* Dubbing Section */}
           <div className="relative">
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -115,7 +115,7 @@ export default function Demos() {
                   <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
                     <DualVideoPlayer
                       originalVideo={feature.originalVideo}
-                      dubVideo={feature.dubVidoe}
+                      dubVideo={feature.dubVideo}
                       title={feature.title}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
