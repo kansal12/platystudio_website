@@ -6,25 +6,61 @@ import { Input } from "@/components/ui/input";
 // import { Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import { Github, Linkedin } from "lucide-react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export function Footer() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isSubscribing, setIsSubscribing] = useState(false);
+  const [email, setEmail] = useState("");
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubscribing(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const payload = {
+      name: "Subscriber",
+      email,
+      message: "Subscribe to newsletter",
+    };
 
-    setIsSubscribing(false);
-    setIsSubscribed(true);
+    try {
+      // Concurrently call both APIs
+      const [csvResponse, emailResponse] = await Promise.all([
+        fetch("/api/upload-subscribe-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+        fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+      ]);
 
-    // Reset after 3 seconds
-    // setTimeout(() => {
-    //   setIsSubscribed(false);
-    // }, 3000);
+      // Handle both responses
+      if (csvResponse.ok && emailResponse.ok) {
+        setIsSubscribed(true);
+        toast.success("Your details were submitted successfully!");
+      } else {
+        // Check which request failed
+        const csvError = !csvResponse.ok ? await csvResponse.json() : null;
+        const emailError = !emailResponse.ok
+          ? await emailResponse.json()
+          : null;
+
+        toast.error(`Error submitting form:\n
+          CSV Upload: ${csvError ? csvError.message : "Success"}\n
+          Email Sending: ${emailError ? emailError.message : "Success"}
+        `);
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      toast.error("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubscribing(false);
+      setIsSubscribed(false);
+    }
   };
 
   return (
@@ -149,10 +185,13 @@ export function Footer() {
             <form onSubmit={handleSubscribe} className="space-y-2">
               <div className="flex flex-col sm:flex-row sm:space-x-2">
                 <Input
+                  id="email"
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email address"
                   className="bg-white/5 border-white/10"
+                  onChange={(e) => setEmail(e.target.value)}
                   required
+                  value={email}
                   disabled={isSubscribing}
                 />
                 <Button
