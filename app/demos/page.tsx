@@ -72,6 +72,22 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
     dubFlag: "/assets/img/france_flag.webp",
   },
+  {
+    title: "Global News",
+    description:
+      "Perfect sync with video and lipsync with the new language for viewing experience that builds customer trust",
+    type: "dubbing",
+    videoTitle: "CNN News",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756109604/CNN%20Original.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1755625045/CNN_Dubbed_LipSync.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+
+  }
 ];
 
 export default function Demos() {

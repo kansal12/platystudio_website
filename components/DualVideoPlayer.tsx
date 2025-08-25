@@ -77,6 +77,11 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   }, [originalVideo, dubVideo]);
 
   const handlePlay = (videoType: videoType) => {
+    // tell all other players to pause
+    window.dispatchEvent(
+      new CustomEvent("pauseOtherPlayers", { detail: { currentId: playerId } })
+    );
+
     setCurrentPlayingId(playerId);
     if (videoType === "original") {
       if (dubVideoRef.current) dubVideoRef.current.pause();
