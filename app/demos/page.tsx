@@ -73,21 +73,101 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/france_flag.webp",
   },
   {
-    title: "Global News",
+    title: "Global Politics",
     description:
       "Perfect sync with video and lipsync with the new language for viewing experience that builds customer trust",
     type: "dubbing",
     videoTitle: "CNN News",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756109604/CNN%20Original.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151261/Original_ev1mfy.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1755625045/CNN_Dubbed_LipSync.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
     dubFlag: "/assets/img/in-flag.png",
+  },
 
-  }
+  {
+    title: "Global News",
+    description:
+      "Perfect sync with video and lipsync with the new language for viewing experience that builds customer trust",
+    type: "dubbing",
+    videoTitle: "Firstpost News",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756150993/Original_English_evapzd.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151052/Hindi_Dub_v2_mt6n9t.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+  },
+
+  {
+    title: "Yoga",
+    description:
+      "Perfect emotions and feel for most engaging viewing experience",
+    type: "dubbing",
+    videoTitle: "Mady Morrison",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155957/video_edited_dkehkw.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155945/Mady_English_DemoDub_Watermark_foeljf.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+  },
+
+  {
+    title: "Lifestyle",
+    description:
+      "Perfect background sounds and echo for the most authentic experience",
+    type: "dubbing",
+    videoTitle: "Never Too Small",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154402/video_edited_nfmvnl.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154058/NeverTooSmall_French_Watermark_vkr2yp.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+  },
+  {
+    title: "Architecture",
+    description:
+      "Perfect replication of French Accent into English for the most authentic experience",
+    type: "dubbing",
+    videoTitle: "Architectural Digest",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155471/video_edited_xk8hkm.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+  },
+
+  {
+    title: "Turkish Drama",
+    description:
+      "Perfect time and emotion sync with the original Video",
+    type: "dubbing",
+    videoTitle: "Ruby Ring",
+
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160370/Ruby_Ring_Demo_d9y18y.mp4",
+    dubFlag: "/assets/img/in-flag.png",
+  },
+
+
 ];
 
 export default function Demos() {
