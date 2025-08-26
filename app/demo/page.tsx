@@ -13,6 +13,7 @@ interface DubbingFeature {
   originalFlag: string;
   dubVideo: string;
   dubFlag: string;
+  thumbnail: string;
 }
 
 const features: Array<DubbingFeature> = [
@@ -25,12 +26,13 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Lip Sync",
 
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151261/Original_ev1mfy.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
-    dubFlag: "/assets/img/span-flag.png",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
+    dubFlag: "/assets/img/ind-flag.png",
+    thumbnail: "",
   },
   {
     id: 2,
@@ -45,7 +47,8 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
-    dubFlag: "/assets/img/span-flag.png",
+    dubFlag: "/assets/img/france_flag.webp",
+    thumbnail: "",
   },
   {
     id: 3,
@@ -56,11 +59,12 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multi-spatial Cloning",
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
-    originalFlag: "/assests/img/turkey_flag.png",
+    originalFlag: "/assets/img/turkey_flag.png",
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160370/Ruby_Ring_Demo_d9y18y.mp4",
     dubFlag: "/assets/img/us-flag.png",
+    thumbnail: "",
   },
   {
     id: 4,
@@ -71,11 +75,12 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multi-spatial Cloning",
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154402/video_edited_nfmvnl.mp4",
-    originalFlag: "/assets/img/us-flag.png",
+    originalFlag: "/assets/img/en-flag.webp",
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154058/NeverTooSmall_French_Watermark_vkr2yp.mp4",
     dubFlag: "/assets/img/france_flag.webp",
+    thumbnail: "",
   },
   {
     id: 5,
@@ -90,7 +95,8 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
-    dubFlag: "/assets/img/ind-flag.png",
+    dubFlag: "/assets/img/span-flag.png",
+    thumbnail: "",
   },
 
   {
@@ -107,7 +113,8 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1747559032/hw2pujvy9b2bngpoclek.mp4",
-    dubFlag: "/assets/img/ind-flag.png",
+    dubFlag: "/assets/img/span-flag.png",
+    thumbnail: "",
   },
 
   {
@@ -120,11 +127,12 @@ const features: Array<DubbingFeature> = [
 
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155957/video_edited_dkehkw.mp4",
-    originalFlag: "/assets/img/us-flag.png",
+    originalFlag: "/assets/img/span-flag.png",
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155945/Mady_English_DemoDub_Watermark_foeljf.mp4",
-    dubFlag: "/assets/img/ind-flag.png",
+    dubFlag: "/assets/img/us-flag.png",
+    thumbnail: "",
   },
 
   {
@@ -141,7 +149,8 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
-    dubFlag: "/assets/img/ind-flag.png",
+    dubFlag: "/assets/img/span-flag.png",
+    thumbnail: "",
   },
   {
     id: 9,
@@ -153,11 +162,12 @@ const features: Array<DubbingFeature> = [
 
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155471/video_edited_xk8hkm.mp4",
-    originalFlag: "/assets/img/us-flag.png",
+    originalFlag: "/assets/img/france_flag.webp",
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
-    dubFlag: "/assets/img/ind-flag.png",
+    dubFlag: "/assets/img/us-flag.png",
+    thumbnail: "",
   },
 
   {
@@ -175,6 +185,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151052/Hindi_Dub_v2_mt6n9t.mp4",
     dubFlag: "/assets/img/ind-flag.png",
+    thumbnail: "",
   },
 ];
 
@@ -223,6 +234,7 @@ export default function Demos() {
                       title={feature.videoTitle}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
+                      thumbnail={feature.thumbnail}
                     />
                   </div>
                   <div className="flex flex-col gap-4">

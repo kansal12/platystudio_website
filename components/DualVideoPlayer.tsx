@@ -8,6 +8,12 @@ import Slider from "./ui/slider";
 import { Button } from "./ui/button";
 import { useVideoPlayer } from "@/contexts/video-player-context";
 
+function getCloudinaryThumbnail(videoUrl: string, second: number = 2) {
+  return videoUrl
+    .replace("/video/upload/", `/video/upload/so_${second}/`)
+    .replace(".mp4", ".jpg");
+}
+
 interface DualVideoPlayerProps {
   originalVideo: string;
   dubVideo: string;
@@ -183,7 +189,9 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
           ref={originalVideoRef}
           className="h-full w-full"
           onLoadedData={() => setIsLoading(false)}
-          poster={thumbnail}
+          poster={
+            thumbnail ? thumbnail : getCloudinaryThumbnail(originalVideo, 1)
+          }
           onTimeUpdate={handleTimeUpdate}
           onEnded={handleEnded}
           style={
@@ -192,13 +200,13 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               : { display: "none" }
           }
           playsInline
-          preload="true"
+          preload="metadata"
         >
           <source src={originalVideo} type="video/mp4" />
         </video>
         <video
           ref={dubVideoRef}
-          poster={thumbnail}
+          poster={thumbnail ? thumbnail : getCloudinaryThumbnail(dubVideo, 1)}
           onLoadedData={() => setIsLoading(false)}
           className="h-full w-full"
           style={
@@ -207,7 +215,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setShowReplayButton(true)}
           playsInline
-          preload="true"
+          preload="metadata"
         >
           <source src={dubVideo} type="video/mp4" />
         </video>
@@ -235,7 +243,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
             {showReplayButton && (
               <RotateCcw className="h-6 w-6 sm:h-8 sm:w-8" />
             )}
-            {showPlayPauseButton ? (
+            {showPlayPauseButton && !showReplayButton ? (
               isPlaying ? (
                 <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
               ) : (
