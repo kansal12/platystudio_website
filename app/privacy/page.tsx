@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
     <div className="p-8 space-y-8  mx-auto  mt-[100px]">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
       <p>
-        <strong>Effective Date:</strong> [Insert Date]
+        <strong>Effective Date:</strong> [June 20, 2025]
       </p>
       <p>
         At Platy.Studio, we are committed to protecting your privacy. This

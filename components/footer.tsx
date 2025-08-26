@@ -137,6 +137,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/demo"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Demo
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="http://blog.platy.studio/"
                   className="text-white/60 hover:text-white transition-colors"
                 >
@@ -154,7 +162,7 @@ export function Footer() {
                   href="/term"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Term
+                  Terms of Service
                 </Link>
               </li>
               <li>
@@ -170,7 +178,15 @@ export function Footer() {
                   href="/privacy"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Privacy
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/copyright-policy"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Copyright Policy
                 </Link>
               </li>
             </ul>
@@ -215,9 +231,9 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-12 sm:mt-16 flex flex-col items-center justify-between space-y-4 border-t border-white/10 pt-8 text-sm md:flex-row md:space-y-0">
           <p className="text-white/60 text-center md:text-left">
-            © {new Date().getFullYear()} Platy.Studio. All rights reserved.
+            © {new Date().getFullYear()} Platy Studio LLC. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {/* <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <Link
               href="#"
               className="text-white/60 hover:text-white transition-colors"
@@ -236,7 +252,7 @@ export function Footer() {
             >
               Cookie Policy
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

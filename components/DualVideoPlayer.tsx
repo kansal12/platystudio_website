@@ -29,11 +29,13 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   const dubVideoRef = useRef<HTMLVideoElement>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [activeVideo, setActiveVideo] = useState<videoType>("original");
+  const [activeVideo, setActiveVideo] = useState<videoType>("dub");
   const [duration, setDuration] = useState<number>(0);
   const [showControls, setShowControls] = useState<boolean>(true);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
+  const [showPlayPauseButton, setSshowPlayPauseButton] =
+    useState<boolean>(true);
 
   const playerId = useId();
   // try {
@@ -139,6 +141,10 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   };
 
   const togglePlayPause = () => {
+    // tell all other players to pause
+    window.dispatchEvent(
+      new CustomEvent("pauseOtherPlayers", { detail: { currentId: playerId } })
+    );
     if (isPlaying) {
       if (activeVideo === "original" && originalVideoRef.current)
         originalVideoRef.current.pause();
@@ -226,12 +232,17 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               "active:scale-95"
             )}
           >
-            {showReplayButton ? (
+            {showReplayButton && (
               <RotateCcw className="h-6 w-6 sm:h-8 sm:w-8" />
-            ) : isPlaying ? (
-              <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
+            )}
+            {showPlayPauseButton ? (
+              isPlaying ? (
+                <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
+              ) : (
+                <Play className="h-6 w-6 sm:h-8 sm:w-8 pl-0.5 sm:pl-1" />
+              )
             ) : (
-              <Play className="h-6 w-6 sm:h-8 sm:w-8 pl-0.5 sm:pl-1" />
+              <> </>
             )}
           </button>
         </div>

@@ -18,7 +18,7 @@ export function FlagButton({
 // onClick,
 FlagButtonProps) {
   return (
-    <motion.button
+    <motion.span
       // onClick={onClick}
       className={cn(
         "relative h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 overflow-hidden rounded-full transition-all duration-300"
@@ -35,6 +35,6 @@ FlagButtonProps) {
         fill
         className="object-cover"
       />
-    </motion.button>
+    </motion.span>
   );
 }

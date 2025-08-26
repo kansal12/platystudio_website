@@ -4,6 +4,7 @@ import DualVideoPlayer from "@/components/DualVideoPlayer";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 interface DubbingFeature {
+  id: number;
   title: string;
   description: string;
   type: "dubbing";
@@ -16,11 +17,12 @@ interface DubbingFeature {
 
 const features: Array<DubbingFeature> = [
   {
-    title: "Academic Public Talk",
+    id: 1,
+    title: "Natural lip synchronization",
     description:
-      "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
+      "Our advanced AI seamlessly edits video to perfectly align lip movements with the new language.",
     type: "dubbing",
-    videoTitle: "Path to Maths- IAS Princeton",
+    videoTitle: "Lip Sync",
 
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
@@ -31,53 +33,56 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/span-flag.png",
   },
   {
-    title: "Technology News",
+    id: 2,
+    title: "Lip Sync in 4K",
     description:
-      "High-quality, scalable dubs for any genre—fast, seamless multilingual content for YouTube producers",
+      "Delivering precise mouth movement synchronization for ultra-realistic video dubbing and localization for any video resolution.",
     type: "dubbing",
-    videoTitle: "CNET Humanoid",
-    originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
-    originalFlag: "/assets/img/us-flag.png",
-
-    dubVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
-    dubFlag: "/assets/img/span-flag.png",
-  },
-  {
-    title: "Podcasts and News",
-    description:
-      "Dub any conversation or interview while preserving original accent, spatial effects, non-verbal cues, and emotions.",
-    type: "dubbing",
-    videoTitle: "Zelenskyy-Fridman",
-    originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
-    originalFlag: "/assets/img/raussia-flag.png",
-
-    dubVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
-    dubFlag: "/assets/img/us-flag.png",
-  },
-  {
-    title: "High Quality Lip Sync",
-    description:
-      "Use AI-driven phoneme mapping and emotional analysis to align lip movements with dubbed audio while preserving original emotions.",
-    type: "dubbing",
-    videoTitle: "Logitech Lipsync",
+    videoTitle: "Lip Sync",
     originalVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
+    dubFlag: "/assets/img/span-flag.png",
+  },
+  {
+    id: 3,
+    title: "Immersive Voice Replication",
+    description:
+      "Blending multiple voice and sound layers to create rich, cinematic audio experiences that feel natural and multidimensional.",
+    type: "dubbing",
+    videoTitle: "Multi-spatial Cloning",
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
+    originalFlag: "/assests/img/turkey_flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160370/Ruby_Ring_Demo_d9y18y.mp4",
+    dubFlag: "/assets/img/us-flag.png",
+  },
+  {
+    id: 4,
+    title: "Adaptive Vocal Presence",
+    description:
+      "Modulating tone, clarity, and projection to ensure voices remain consistent and impactful across diverse mic locations ",
+    type: "dubbing",
+    videoTitle: "Multi-spatial Cloning",
+    originalVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154402/video_edited_nfmvnl.mp4",
+    originalFlag: "/assets/img/us-flag.png",
+
+    dubVideo:
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154058/NeverTooSmall_French_Watermark_vkr2yp.mp4",
     dubFlag: "/assets/img/france_flag.webp",
   },
   {
-    title: "Global Politics",
-    description:
-      "Perfect sync with video and lipsync with the new language for viewing experience that builds customer trust",
+    id: 5,
+    title: "Big Screen to Shorts",
+    description: "Same cinematic quality for quick, shareable clips",
     type: "dubbing",
-    videoTitle: "CNN News",
+    videoTitle: "Long form to Reels",
 
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151261/Original_ev1mfy.mp4",
@@ -85,31 +90,33 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+    dubFlag: "/assets/img/ind-flag.png",
   },
 
   {
-    title: "Global News",
+    id: 6,
+    title: "Format flexibility",
     description:
-      "Perfect sync with video and lipsync with the new language for viewing experience that builds customer trust",
+      "Ensuring precision and impact across all formats- optimized for bite-sized Reels",
     type: "dubbing",
-    videoTitle: "Firstpost News",
+    videoTitle: " Long form to Reels",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756150993/Original_English_evapzd.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1747559039/p34wd2dcx2wsjxcxa5os.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151052/Hindi_Dub_v2_mt6n9t.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1747559032/hw2pujvy9b2bngpoclek.mp4",
+    dubFlag: "/assets/img/ind-flag.png",
   },
 
   {
-    title: "Yoga",
+    id: 7,
+    title: "Precision for Specialized Storytelling",
     description:
-      "Perfect emotions and feel for most engaging viewing experience",
+      "Designed to adapt across specialized content categories like yoga and wellness",
     type: "dubbing",
-    videoTitle: "Mady Morrison",
+    videoTitle: "Niche Content",
 
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155957/video_edited_dkehkw.mp4",
@@ -117,30 +124,32 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155945/Mady_English_DemoDub_Watermark_foeljf.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+    dubFlag: "/assets/img/ind-flag.png",
   },
 
   {
-    title: "Lifestyle",
+    id: 8,
+    title: "Customized for every Genre",
     description:
-      "Perfect background sounds and echo for the most authentic experience",
+      "Purpose-built to capture the nuances of unique content types, helping creators connect deeply with targeted communities",
     type: "dubbing",
-    videoTitle: "Never Too Small",
+    videoTitle: "Niche Content",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154402/video_edited_nfmvnl.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154058/NeverTooSmall_French_Watermark_vkr2yp.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
+    dubFlag: "/assets/img/ind-flag.png",
   },
   {
-    title: "Architecture",
+    id: 9,
+    title: "Accent Authenticity at Scale",
     description:
-      "Perfect replication of French Accent into English for the most authentic experience",
+      "Harness AI to reproduce and shift accents effortlessly, ensuring speech remains authentic across global audiences and content formats",
     type: "dubbing",
-    videoTitle: "Architectural Digest",
+    videoTitle: "Multiple Accents",
 
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155471/video_edited_xk8hkm.mp4",
@@ -148,26 +157,25 @@ const features: Array<DubbingFeature> = [
 
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+    dubFlag: "/assets/img/ind-flag.png",
   },
 
   {
-    title: "Turkish Drama",
+    id: 10,
+    title: "One voice, multiple accents",
     description:
-      "Perfect time and emotion sync with the original Video",
+      "Faithfully replicate native accents or transform them for your customers, enabling seamless localization and culturally resonant dubbing.",
     type: "dubbing",
-    videoTitle: "Ruby Ring",
+    videoTitle: "Multiple Accents",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756150993/Original_English_evapzd.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160370/Ruby_Ring_Demo_d9y18y.mp4",
-    dubFlag: "/assets/img/in-flag.png",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151052/Hindi_Dub_v2_mt6n9t.mp4",
+    dubFlag: "/assets/img/ind-flag.png",
   },
-
-
 ];
 
 export default function Demos() {
@@ -212,7 +220,7 @@ export default function Demos() {
                     <DualVideoPlayer
                       originalVideo={feature.originalVideo}
                       dubVideo={feature.dubVideo}
-                      title={feature.title}
+                      title={feature.videoTitle}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
                     />
@@ -230,6 +238,12 @@ export default function Demos() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full  mt-6 mb-12 py-4">
+        <p className="text-muted-foreground text-center">
+          All copyrights and intellectual property rights remain the exclusive
+          property of the original creators.
+        </p>
       </div>
     </section>
   );

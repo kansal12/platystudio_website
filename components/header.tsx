@@ -36,10 +36,10 @@ export function Header() {
                 Features
               </Link>
               <Link
-                href="/demos"
+                href="/demo"
                 className="text-sm font-medium hover:text-white/80 transition-colors"
               >
-                Demos
+                Demo
               </Link>
 
               <Link
@@ -77,7 +77,7 @@ export function Header() {
                   </SheetClose>
                   <SheetClose asChild>
                     <Link
-                      href="#Demo"
+                      href="/demo"
                       className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
                     >
                       Demo
