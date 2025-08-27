@@ -222,11 +222,9 @@ export default function Demos() {
 
               </h2>
               <p className="text-base text-white/60">
-                
-                Preserve Voice Quality, Emotions, Timing, Prosody and 10 other
-                voice characteristics. Our AI ensures perfect synchronization
-                while maintaining the authenticity of the original performance.
-              </p>
+              <br />
+              Retains the original voice’s timbre, style, emotion, and timing&mdash;along with spatial depth, background sounds, and perfect lip-sync.
+              </p>  
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (
