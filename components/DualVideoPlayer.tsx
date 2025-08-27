@@ -7,7 +7,6 @@ import { FlagButton } from "@/components/ui/flag-button";
 import Slider from "./ui/slider";
 import { Button } from "./ui/button";
 import { useVideoPlayer } from "@/contexts/video-player-context";
-import { usePlayerControls } from "@/hooks/usePlayerControls";
 
 function getCloudinaryThumbnail(videoUrl: string, second: number = 2) {
   return videoUrl
@@ -34,7 +33,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 }) => {
   const originalVideoRef = useRef<HTMLVideoElement>(null);
   const dubVideoRef = useRef<HTMLVideoElement>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [activeVideo, setActiveVideo] = useState<videoType>("dub");
   const [duration, setDuration] = useState<number>(0);
@@ -192,8 +191,10 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         setSshowPlayPauseButton(true);
       }}
       onMouseLeave={() => {
-        isPlaying && setShowControls(false);
-        setSshowPlayPauseButton(false);
+        if (isPlaying) {
+          setShowControls(false);
+          setSshowPlayPauseButton(false);
+        }
       }}
       onMouseMove={() => setShowControls(true)}
       // Mobile touch support
@@ -218,7 +219,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         <video
           ref={originalVideoRef}
           className="h-full w-full"
-          onLoadedData={() => setIsLoading(false)}
+          // onLoadedData={() => setIsLoading(false)}
           poster={
             thumbnail ? thumbnail : getCloudinaryThumbnail(originalVideo, 1)
           }
@@ -237,7 +238,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         <video
           ref={dubVideoRef}
           poster={thumbnail ? thumbnail : getCloudinaryThumbnail(dubVideo, 1)}
-          onLoadedData={() => setIsLoading(false)}
+          // onLoadedData={() => setIsLoading(false)}
           className="h-full w-full"
           style={
             activeVideo === "dub" ? { display: "block" } : { display: "none" }

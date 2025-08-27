@@ -6,7 +6,7 @@ import { Client } from "basic-ftp";
 import os from "os";
 
 export async function POST(req: Request) {
-  const { name, phone, email, message } = await req.json();
+  const { email } = await req.json();
 
   // Format CSV content
   const csv = `email${os.EOL}${email}`;

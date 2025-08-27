@@ -9,7 +9,6 @@ import { DemoScheduler } from "@/components/demo-scheduler";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { BrandLogos } from "@/components/brand-logos";
 import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
