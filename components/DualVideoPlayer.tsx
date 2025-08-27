@@ -7,6 +7,7 @@ import { FlagButton } from "@/components/ui/flag-button";
 import Slider from "./ui/slider";
 import { Button } from "./ui/button";
 import { useVideoPlayer } from "@/contexts/video-player-context";
+import { usePlayerControls } from "@/hooks/usePlayerControls";
 
 function getCloudinaryThumbnail(videoUrl: string, second: number = 2) {
   return videoUrl
@@ -37,11 +38,18 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [activeVideo, setActiveVideo] = useState<videoType>("dub");
   const [duration, setDuration] = useState<number>(0);
-  const [showControls, setShowControls] = useState<boolean>(true);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
+  const [showControls, setShowControls] = useState<boolean>(true);
   const [showPlayPauseButton, setSshowPlayPauseButton] =
     useState<boolean>(true);
+  // const {
+  //   showControls,
+  //   showPlayPauseButton,
+  //   setShowControls,
+  //   setShowPlayPauseButton,
+  //   handlers,
+  // } = usePlayerControls(isPlaying);
 
   const playerId = useId();
   // try {
@@ -166,6 +174,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         dubVideoRef.current.play();
       }
       setIsPlaying(true);
+      setShowControls(false);
     }
   };
 
@@ -177,14 +186,35 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
   return (
     <div
       className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
-      onMouseEnter={() => setShowControls(true)}
-      onMouseLeave={() => isPlaying && setShowControls(false)}
+      // {...handlers}
+      onMouseEnter={() => {
+        setShowControls(true);
+        setSshowPlayPauseButton(true);
+      }}
+      onMouseLeave={() => {
+        isPlaying && setShowControls(false);
+        setSshowPlayPauseButton(false);
+      }}
       onMouseMove={() => setShowControls(true)}
+      // Mobile touch support
+      onTouchStart={() => {
+        setShowControls(true);
+        setSshowPlayPauseButton(true);
+      }}
+      // onTouchEnd={() => {
+      //   // optional: auto-hide after a delay
+      //   setTimeout(() => {
+      //     if (isPlaying) {
+      //       setShowControls(false);
+      //       setSshowPlayPauseButton(false);
+      //     }
+      //   }, 10000);
+      // }}
     >
       <div className="relative aspect-video bg-black">
-        {isLoading && (
+        {/* {isLoading && (
           <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
-        )}
+        )} */}
         <video
           ref={originalVideoRef}
           className="h-full w-full"
@@ -233,26 +263,28 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         )}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <button
-            onClick={showReplayButton ? handleReplay : togglePlayPause}
-            className={cn(
-              "flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white/20",
-              "active:scale-95"
-            )}
-          >
-            {showReplayButton && (
-              <RotateCcw className="h-6 w-6 sm:h-8 sm:w-8" />
-            )}
-            {showPlayPauseButton && !showReplayButton ? (
-              isPlaying ? (
-                <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
+          {showPlayPauseButton && (
+            <button
+              onClick={showReplayButton ? handleReplay : togglePlayPause}
+              className={cn(
+                "flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-transform hover:scale-105 hover:bg-white/20",
+                "active:scale-95"
+              )}
+            >
+              {showReplayButton && (
+                <RotateCcw className="h-6 w-6 sm:h-8 sm:w-8" />
+              )}
+              {!showReplayButton ? (
+                isPlaying ? (
+                  <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
+                ) : (
+                  <Play className="h-6 w-6 sm:h-8 sm:w-8 pl-0.5 sm:pl-1" />
+                )
               ) : (
-                <Play className="h-6 w-6 sm:h-8 sm:w-8 pl-0.5 sm:pl-1" />
-              )
-            ) : (
-              <> </>
-            )}
-          </button>
+                <> </>
+              )}
+            </button>
+          )}
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
