@@ -200,10 +200,10 @@ export default function Demos() {
         title={
           <div className="sm:py-24 lg:py-12">
             <span className=" bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-              Unmatched quality
+              Platy Studio Demos
             </span>
             <br />
-            that speaks for itself
+            
           </div>
         }
         description=""
@@ -214,9 +214,10 @@ export default function Demos() {
           <div className="relative">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
-                AI-Powered Dubbing Solutions
+                AI Powered Dubbing for Movies, OTTs, Reels, Ads and long form content creators 
               </h2>
               <p className="text-base text-white/60">
+                
                 Preserve Voice Quality, Emotions, Timing, Prosody and 10 other
                 voice characteristics. Our AI ensures perfect synchronization
                 while maintaining the authenticity of the original performance.
