@@ -19,7 +19,7 @@ interface DubbingFeature {
 const features: Array<DubbingFeature> = [
   {
     id: 1,
-    title: "Natural lip synchronization",
+    title: "Lip synchronization in 20+ languages",
     description:
       "Our advanced AI seamlessly edits video to perfectly align lip movements with the new language.",
     type: "dubbing",
@@ -32,11 +32,11 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
     dubFlag: "/assets/img/ind-flag.png",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756251375/CNN_rrfmgi.jpg",
   },
   {
     id: 2,
-    title: "Lip Sync in 4K",
+    title: "Lip Synchronization in 4K",
     description:
       "Delivering precise mouth movement synchronization for ultra-realistic video dubbing and localization for any video resolution.",
     type: "dubbing",
@@ -46,7 +46,7 @@ const features: Array<DubbingFeature> = [
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252576/Logitech_Lipsync_French.mp4-2_flzxeb.mp4",
     dubFlag: "/assets/img/france_flag.webp",
     thumbnail: "",
   },
@@ -57,6 +57,7 @@ const features: Array<DubbingFeature> = [
       "Blending multiple voice and sound layers to create rich, cinematic audio experiences that feel natural and multidimensional.",
     type: "dubbing",
     videoTitle: "Multi-spatial Cloning",
+    
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
     originalFlag: "/assets/img/turkey_flag.png",
@@ -70,7 +71,7 @@ const features: Array<DubbingFeature> = [
     id: 4,
     title: "Adaptive Vocal Presence",
     description:
-      "Modulating tone, clarity, and projection to ensure voices remain consistent and impactful across diverse mic locations ",
+      "Modulating tone, clarity, and projection to ensure voices remain consistent and impactful across diverse mic locations.",
     type: "dubbing",
     videoTitle: "Multi-spatial Cloning",
     originalVideo:
@@ -85,25 +86,25 @@ const features: Array<DubbingFeature> = [
   {
     id: 5,
     title: "Big Screen to Shorts",
-    description: "Same cinematic quality for quick, shareable clips",
+    description: "Maintain cinematic excellence even in bite-sized, attention-grabbing clips.",
     type: "dubbing",
     videoTitle: "Long form to Reels",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151261/Original_ev1mfy.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252918/Original_cxgfbs.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
-    dubFlag: "/assets/img/span-flag.png",
-    thumbnail: "",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252887/Dubbed_Lipsync_Watermark_pokwef.mp4",
+    dubFlag: "/assets/img/greek_flag.png",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254993/Roundglass_umlcxj.jpg",
   },
 
   {
     id: 6,
     title: "Format flexibility",
     description:
-      "Ensuring precision and impact across all formats- optimized for bite-sized Reels",
+      "Precise, impactful dubbing for bite-sized reels, adapting to changing voices and mic positions.",
     type: "dubbing",
     videoTitle: " Long form to Reels",
 
@@ -112,7 +113,7 @@ const features: Array<DubbingFeature> = [
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1747559032/hw2pujvy9b2bngpoclek.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756256072/Dubbed.mp4_thlwxa.mp4",
     dubFlag: "/assets/img/span-flag.png",
     thumbnail: "",
   },
@@ -121,7 +122,7 @@ const features: Array<DubbingFeature> = [
     id: 7,
     title: "Precision for Specialized Storytelling",
     description:
-      "Designed to adapt across specialized content categories like yoga and wellness",
+      "Designed to adapt across specialized content categories like yoga and wellness.",
     type: "dubbing",
     videoTitle: "Niche Content",
 
@@ -139,7 +140,7 @@ const features: Array<DubbingFeature> = [
     id: 8,
     title: "Customized for every Genre",
     description:
-      "Purpose-built to capture the nuances of unique content types, helping creators connect deeply with targeted communities",
+      "Purpose-built to capture the nuances of unique content types, helping creators connect deeply with targeted communities.",
     type: "dubbing",
     videoTitle: "Niche Content",
 
@@ -150,7 +151,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254711/CNET_dd5yt7.jpg",
   },
   {
     id: 9,
@@ -167,25 +168,25 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756255180/Architectural_Digest_tsk8t7.jpg",
   },
 
   {
     id: 10,
-    title: "One voice, multiple accents",
+    title: "Global Accent Versatility",
     description:
       "Faithfully replicate native accents or transform them for your customers, enabling seamless localization and culturally resonant dubbing.",
     type: "dubbing",
     videoTitle: "Multiple Accents",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756150993/Original_English_evapzd.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756254062/Original_after19_bszjkz.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151052/Hindi_Dub_v2_mt6n9t.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756254029/Dubbed_after19_sbjxkt.mp4",
     dubFlag: "/assets/img/ind-flag.png",
-    thumbnail: "",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756253622/thumbnail_yrkxpu.jpg",
   },
 ];
 

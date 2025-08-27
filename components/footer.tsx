@@ -71,8 +71,8 @@ export function Footer() {
           <div className="space-y-4 max-w-[500px]">
             <h3 className="text-lg font-bold">Platy.Studio</h3>
             <p className="text-sm text-white/60">
-              Seattle-based AI video production studio specializing in
-              high-quality dubbing and karaoke solutions.
+              Seattle-based AI video production studio 
+              specializing in high-quality dubbing solutions.
             </p>
             <div className="flex space-x-4">
               <Link
