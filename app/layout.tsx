@@ -4,6 +4,7 @@ import { PreloadImages } from "@/components/preload-images";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 import { Metadata } from "next";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +45,20 @@ export default function RootLayout({
             siteName: "Platy Studio",
           }}
         /> */}
+        {/* Google tag (gtag.js)  */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-BKLK1TYP9W"
+        ></Script>
+        <Script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-BKLK1TYP9W');
+          `}
+        </Script>
         <link rel="icon" href="/favicon.svg" />
         <PreloadImages />
       </head>
