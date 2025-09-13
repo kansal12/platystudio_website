@@ -85,11 +85,11 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
     };
   }, [playerId, isPlaying, activeVideo]);
 
-  useEffect(() => {
-    // Preload both videos to ensure smooth transition
-    if (originalVideoRef.current) originalVideoRef.current.load();
-    if (dubVideoRef.current) dubVideoRef.current.load();
-  }, [originalVideo, dubVideo]);
+  // useEffect(() => {
+  //   // Preload both videos to ensure smooth transition
+  //   if (originalVideoRef.current) originalVideoRef.current.load();
+  //   if (dubVideoRef.current) dubVideoRef.current.load();
+  // }, [originalVideo, dubVideo]);
 
   const handlePlay = (videoType: videoType) => {
     // tell all other players to pause
@@ -231,7 +231,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
               : { display: "none" }
           }
           playsInline
-          preload="metadata"
+          preload={activeVideo === "original" ? "metadata" : "none"}
         >
           <source src={originalVideo} type="video/mp4" />
         </video>
@@ -246,7 +246,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setShowReplayButton(true)}
           playsInline
-          preload="metadata"
+          preload={activeVideo === "dub" ? "metadata" : "none"}
         >
           <source src={dubVideo} type="video/mp4" />
         </video>

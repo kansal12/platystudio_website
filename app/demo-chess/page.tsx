@@ -26,14 +26,13 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Lip Sync",
 
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/play_720p.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151261/Original_ev1mfy.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://vz-c5817d00-065.b-cdn.net/8b09fa57-3e8b-4e64-91fc-43649def82c5/play_720p.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
     dubFlag: "/assets/img/ind-flag.png",
-    thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/thumbnail_e33af038.jpg",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756251375/CNN_rrfmgi.jpg",
   },
   {
     id: 2,
@@ -43,14 +42,13 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Lip Sync",
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/bd6cb778-3a9e-452f-b1d0-16a545c74a07/play_720p.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/play_720p.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252576/Logitech_Lipsync_French.mp4-2_flzxeb.mp4",
     dubFlag: "/assets/img/france_flag.webp",
-    thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/thumbnail.jpg",
+    thumbnail: "",
   },
   {
     id: 3,
@@ -59,7 +57,7 @@ const features: Array<DubbingFeature> = [
       "Blending multiple voice and sound layers to create rich, cinematic audio experiences that feel natural and multidimensional.",
     type: "dubbing",
     videoTitle: "Multi-spatial Cloning",
-
+    
     originalVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
     originalFlag: "/assets/img/turkey_flag.png",
@@ -88,8 +86,7 @@ const features: Array<DubbingFeature> = [
   {
     id: 5,
     title: "Big Screen to Shorts",
-    description:
-      "Maintain cinematic excellence even in bite-sized, attention-grabbing clips.",
+    description: "Maintain cinematic excellence even in bite-sized, attention-grabbing clips.",
     type: "dubbing",
     videoTitle: "Long form to Reels",
 
@@ -100,8 +97,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252887/Dubbed_Lipsync_Watermark_pokwef.mp4",
     dubFlag: "/assets/img/greek_flag.png",
-    thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254993/Roundglass_umlcxj.jpg",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254993/Roundglass_umlcxj.jpg",
   },
 
   {
@@ -155,8 +151,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
     dubFlag: "/assets/img/span-flag.png",
-    thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254711/CNET_dd5yt7.jpg",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254711/CNET_dd5yt7.jpg",
   },
   {
     id: 9,
@@ -173,8 +168,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756255180/Architectural_Digest_tsk8t7.jpg",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756255180/Architectural_Digest_tsk8t7.jpg",
   },
 
   {
@@ -192,8 +186,7 @@ const features: Array<DubbingFeature> = [
     dubVideo:
       "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756254029/Dubbed_after19_sbjxkt.mp4",
     dubFlag: "/assets/img/ind-flag.png",
-    thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756253622/thumbnail_yrkxpu.jpg",
+    thumbnail: "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756253622/thumbnail_yrkxpu.jpg",
   },
 ];
 
@@ -207,9 +200,13 @@ export default function Demos() {
         title={
           <div className="sm:py-24 lg:py-12">
             <span className=" bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-              Platy Studio Demos &nbsp;
+              Platy Studio Demos
+
+            &nbsp;
+
             </span>
             <br />
+            
           </div>
         }
         description=""
@@ -222,13 +219,12 @@ export default function Demos() {
               <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
                 AI Powered Dubbing for Movies, OTTs, Ads and Social Media
                 <br />
+
               </h2>
               <p className="text-base text-white/60">
-                <br />
-                Retains the original voice’s timbre, style, emotion, and
-                timing&mdash;along with spatial depth, background sounds, and
-                perfect lip-sync.
-              </p>
+              <br />
+              Retains the original voice’s timbre, style, emotion, and timing&mdash;along with spatial depth, background sounds, and perfect lip-sync.
+              </p>  
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (

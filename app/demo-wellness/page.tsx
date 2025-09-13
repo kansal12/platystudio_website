@@ -26,14 +26,16 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Lip Sync",
 
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/575e9d27-8fd0-46f3-9475-3d31329ad520/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
+    // dubVideo:
+    //   "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756151204/final_output_with_lipsync_iylpxi.mp4",
     dubVideo:
-      "https://vz-c5817d00-065.b-cdn.net/8b09fa57-3e8b-4e64-91fc-43649def82c5/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/3aca9cdb-e509-46bf-a388-ac8c6802a204/play_720p.mp4",
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/thumbnail_e33af038.jpg",
+      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756251375/CNN_rrfmgi.jpg",
   },
   {
     id: 2,
@@ -43,14 +45,13 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Lip Sync",
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/bd6cb778-3a9e-452f-b1d0-16a545c74a07/play_720p.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/play_720p.mp4",
+      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252576/Logitech_Lipsync_French.mp4-2_flzxeb.mp4",
     dubFlag: "/assets/img/france_flag.webp",
-    thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/thumbnail.jpg",
+    thumbnail: "",
   },
   {
     id: 3,
@@ -61,7 +62,7 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multi-spatial Cloning",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
+      "https://iframe.mediadelivery.net/play/490783/8a000203-2c12-401f-ac3b-f7b44f052e9f/play_720p.mp4",
     originalFlag: "/assets/img/turkey_flag.png",
 
     dubVideo:
