@@ -61,13 +61,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multi-spatial Cloning",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160779/Original_p1moga.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/play_720p.mp4",
     originalFlag: "/assets/img/turkey_flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756160370/Ruby_Ring_Demo_d9y18y.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/0ce2083a-2371-476a-a830-eeae62eceec6/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    thumbnail: "",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/thumbnail_c74b6c36.jpg",
   },
   {
     id: 4,
@@ -77,13 +78,14 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Multi-spatial Cloning",
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154402/video_edited_nfmvnl.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/4e31e437-b56a-4f27-8ed4-60b0d7a144e6/play_720p.mp4",
     originalFlag: "/assets/img/en-flag.webp",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756154058/NeverTooSmall_French_Watermark_vkr2yp.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/43353ed6-a68d-46e6-97ac-6102952cfcc8/play_720p.mp4",
     dubFlag: "/assets/img/france_flag.webp",
-    thumbnail: "",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/43353ed6-a68d-46e6-97ac-6102952cfcc8/thumbnail_0d608e8c.jpg",
   },
   {
     id: 5,
@@ -94,14 +96,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Long form to Reels",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252918/Original_cxgfbs.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/8bc21707-efa3-49e6-b6ca-1635bb63e7e2/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756252887/Dubbed_Lipsync_Watermark_pokwef.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/72603c44-cbfb-43d8-99d4-ce93e71edfdb/play_720p.mp4",
     dubFlag: "/assets/img/greek_flag.png",
     thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254993/Roundglass_umlcxj.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/72603c44-cbfb-43d8-99d4-ce93e71edfdb/thumbnail_5bfec1b2.jpg",
   },
 
   {
@@ -113,13 +115,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: " Long form to Reels",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1747559039/p34wd2dcx2wsjxcxa5os.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/a78ce083-0aef-436d-b554-f6e73c404da4/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756256072/Dubbed.mp4_thlwxa.mp4",
-    dubFlag: "/assets/img/span-flag.png",
-    thumbnail: "",
+      "https://vz-c5817d00-065.b-cdn.net/e940476c-2b3e-4855-822c-23075ba346a1/play_720p.mp4",
+    dubFlag: "/assets/img/raussia-flag.png",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/e940476c-2b3e-4855-822c-23075ba346a1/thumbnail.jpg",
   },
 
   {
@@ -131,13 +134,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Niche Content",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155957/video_edited_dkehkw.mp4",
-    originalFlag: "/assets/img/span-flag.png",
+      "https://vz-c5817d00-065.b-cdn.net/86cba5bd-7875-4883-b358-fa82f68af63c/play_720p.mp4",
+    originalFlag: "/assets/img/greman_flag.jpg",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155945/Mady_English_DemoDub_Watermark_foeljf.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
-    thumbnail: "",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/thumbnail.jpg",
   },
 
   {
@@ -149,14 +153,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Niche Content",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/1a3a5929-a622-4f72-a27b-bafd97f5a5d3/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/ec85f725-d68f-46ac-8953-9bba7ecbff30/play_720p.mp4",
     dubFlag: "/assets/img/span-flag.png",
     thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756254711/CNET_dd5yt7.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/ec85f725-d68f-46ac-8953-9bba7ecbff30/thumbnail.jpg",
   },
   {
     id: 9,
@@ -167,14 +171,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multiple Accents",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155471/video_edited_xk8hkm.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/e78e0c97-9aff-4890-9d47-2231c23562d5/play_720p.mp4",
     originalFlag: "/assets/img/france_flag.webp",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756155327/Architectural_Digest_EN_dgkrg4.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/5b47264e-b338-4cf0-ba62-f4182daa5432/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756255180/Architectural_Digest_tsk8t7.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/5b47264e-b338-4cf0-ba62-f4182daa5432/thumbnail.jpg",
   },
 
   {
@@ -186,14 +190,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multiple Accents",
 
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756254062/Original_after19_bszjkz.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/6867fef7-57a5-44d7-8773-39e1913e72b4/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1756254029/Dubbed_after19_sbjxkt.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/7f549a5a-09d3-4df5-b168-29c6eb4d0dc6/play_720p.mp4",
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
-      "https://res.cloudinary.com/dhrzu6irl/image/upload/v1756253622/thumbnail_yrkxpu.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/7f549a5a-09d3-4df5-b168-29c6eb4d0dc6/thumbnail.jpg",
   },
 ];
 

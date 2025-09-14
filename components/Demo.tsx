@@ -106,12 +106,14 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Path to Maths- IAS Princeton",
 
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/1fb564bc-07b5-45cd-b285-6752197a3c59/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/97cf24ad-077a-4dab-9809-119a38b004ab/play_720p.mp4",
     dubFlag: "/assets/img/span-flag.png",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/97cf24ad-077a-4dab-9809-119a38b004ab/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
   {
@@ -121,12 +123,14 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "CNET Humanoid",
     originalVideo:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/v1754934987/CNET_Humanoid_Original_yzz77b.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/1a3a5929-a622-4f72-a27b-bafd97f5a5d3/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754932205/Humanoid_CNET_Spanish_LipSync_ekxg7c.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/ec85f725-d68f-46ac-8953-9bba7ecbff30/play_720p.mp4",
     dubFlag: "/assets/img/span-flag.png",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/ec85f725-d68f-46ac-8953-9bba7ecbff30/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
   {
@@ -136,12 +140,14 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Zelenskyy-Fridman",
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/6d6f8a5e-eb25-4035-9750-b00e1959c560/playlist.m3u8",
     originalFlag: "/assets/img/raussia-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
   {
@@ -151,12 +157,14 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Logitech Lipsync",
     originalVideo:
-      "https://res.cloudinary.com/dctta3r6s/video/upload/v1754935514/video_edited_uwrubu.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/ceff1ebf-95b9-40a0-99f8-d1cb9eca1cbd/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://res.cloudinary.com/dhrzu6irl/video/upload/f_mp4,vc_h264,q_auto/v1750106565/Logitech_Lipsync_French_i2mdyk.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/9be8ca14-b5c4-4898-be0e-9db9bf57de92/play_720p.mp4",
     dubFlag: "/assets/img/france_flag.webp",
+    thumbnail:
+      "https://vz-c5817d00-065.b-cdn.net/9be8ca14-b5c4-4898-be0e-9db9bf57de92/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
   // {
@@ -280,6 +288,7 @@ export function Demo() {
                       title={feature.title}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
+                      thumbnail={feature.thumbnail}
                       // originalLable={feature.originalLabel}
                       // dubLable={feature.dubLable}
                     />
