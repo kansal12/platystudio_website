@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: "https://platy.studio",
   },
   openGraph: {
-    title: "Platy Studio - AI-Powered, Box-Office-Quality Dubbing",
+    title: "Platy Studio - AI Video Production",
     description:
-      "High-quality AI dubbing services for content creators and businesses.",
+      "Box-Office-Quality Dubbing for Movies, OTT, Content Creators and Businesses.",
     url: "https://platy.studio/",
     siteName: "Platy Studio",
     type: "website",
@@ -50,7 +50,7 @@ export default function RootLayout({
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-BKLK1TYP9W"
         ></Script>
-        <Script>
+        <Script id="google-analytics">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
