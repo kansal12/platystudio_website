@@ -59,7 +59,7 @@ export default function RootLayout({
             gtag('config', 'G-BKLK1TYP9W');
           `}
         </Script>
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/platy_icon.png" />
         <PreloadImages />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>
