@@ -107,11 +107,11 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Path to Maths- IAS Princeton",
 
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/1fb564bc-07b5-45cd-b285-6752197a3c59/play_720p.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
     originalFlag: "/assets/img/us-flag.png",
     // originalLabel: "Original",
     dubVidoe:
-      "https://vz-c5817d00-065.b-cdn.net/97cf24ad-077a-4dab-9809-119a38b004ab/play_720p.mp4",
+      "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
     dubFlag: "/assets/img/span-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/97cf24ad-077a-4dab-9809-119a38b004ab/thumbnail.jpg",
