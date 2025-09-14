@@ -14,6 +14,7 @@ interface DubbingFeature {
   // originalLabel: string;
   dubVidoe: string;
   dubFlag: string;
+  thumbnail: string;
   // dubLable: string;
 }
 
