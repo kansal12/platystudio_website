@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://platy.studio",
   },
   openGraph: {
-    title: "Platy Studio - AI-Powered Dubbing & Voiceover",
+    title: "Platy Studio - AI-Powered, Box-Office-Quality Dubbing",
     description:
       "High-quality AI dubbing services for content creators and businesses.",
     url: "https://platy.studio/",
@@ -34,12 +34,12 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         {/* <NextSeo
-          title="Platy Studio - AI-Powered Dubbing & Voiceover"
+          title="Platy Studio - AI-Powered, Box-Office-Quality Dubbing"
           description="High-quality AI dubbing services for content creators and businesses."
           canonical="https://platy.studio/"
           openGraph={{
             url: "https://platy.studio/",
-            title: "Platy Studio - AI-Powered Dubbing & Voiceover",
+            title: "Platy Studio - AI-Powered, Box-Office-Quality Dubbing",
             description:
               "High-quality AI dubbing services for content creators and businesses.",
             siteName: "Platy Studio",
