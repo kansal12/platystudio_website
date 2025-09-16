@@ -2,6 +2,10 @@
 
 import DualVideoPlayer from "@/components/DualVideoPlayer";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { useState } from "react";
+
+// type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps";
+type Tags = "All";
 
 interface DubbingFeature {
   id: number;
@@ -14,6 +18,7 @@ interface DubbingFeature {
   dubVideo: string;
   dubFlag: string;
   thumbnail: string;
+  tags: Tags[];
 }
 
 const features: Array<DubbingFeature> = [
@@ -34,6 +39,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/thumbnail_e33af038.jpg",
+    tags: ["1"],
   },
   {
     id: 2,
@@ -51,6 +57,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/france_flag.webp",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/thumbnail.jpg",
+    tags: ["Backend"],
   },
   {
     id: 3,
@@ -69,6 +76,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/thumbnail_c74b6c36.jpg",
+    tags: ["DevOps"],
   },
   {
     id: 4,
@@ -86,6 +94,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/france_flag.webp",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/43353ed6-a68d-46e6-97ac-6102952cfcc8/thumbnail_0d608e8c.jpg",
+    tags: ["Backend"],
   },
   {
     id: 5,
@@ -104,6 +113,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/greek_flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/72603c44-cbfb-43d8-99d4-ce93e71edfdb/thumbnail_5bfec1b2.jpg",
+    tags: ["AI"],
   },
 
   {
@@ -123,6 +133,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/raussia-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/e940476c-2b3e-4855-822c-23075ba346a1/thumbnail.jpg",
+    tags: ["Frontend"],
   },
 
   {
@@ -142,6 +153,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/thumbnail.jpg",
+    tags: ["DevOps"],
   },
 
   {
@@ -161,6 +173,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/span-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/ec85f725-d68f-46ac-8953-9bba7ecbff30/thumbnail.jpg",
+    tags: ["Design"],
   },
   {
     id: 9,
@@ -179,6 +192,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/5b47264e-b338-4cf0-ba62-f4182daa5432/thumbnail.jpg",
+    tags: ["Backend"],
   },
 
   {
@@ -198,10 +212,14 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/7f549a5a-09d3-4df5-b168-29c6eb4d0dc6/thumbnail.jpg",
+    tags: ["Backend"],
   },
 ];
 
 export default function Demos() {
+  const tags: Tags[] = ["All"];
+  const [activeTag, setActiveTag] = useState<Tags>("All");
+
   return (
     <section
       className="mt-24 relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
@@ -234,32 +252,52 @@ export default function Demos() {
                 perfect lip-sync.
               </p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
+            <div className="flex flex-wrap gap-3 p-4">
+              {tags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setActiveTag(tag)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 
+            ${
+              activeTag === tag
+                ? "bg-blue-600 text-white shadow-md"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
                 >
-                  <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
-                    <DualVideoPlayer
-                      originalVideo={feature.originalVideo}
-                      dubVideo={feature.dubVideo}
-                      title={feature.videoTitle}
-                      originalFlag={feature.originalFlag}
-                      dubFlag={feature.dubFlag}
-                      thumbnail={feature.thumbnail}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-bold sm:text-2xl">
-                      {feature.title}
-                    </h3>
-                    <p className="text-base text-white/60 sm:text-lg">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+                  {tag}
+                </button>
               ))}
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {features
+                .filter(
+                  (item) => item.tags.includes(activeTag) || activeTag === "All"
+                )
+                .map((feature) => (
+                  <div
+                    key={feature.title}
+                    className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
+                  >
+                    <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
+                      <DualVideoPlayer
+                        originalVideo={feature.originalVideo}
+                        dubVideo={feature.dubVideo}
+                        title={feature.videoTitle}
+                        originalFlag={feature.originalFlag}
+                        dubFlag={feature.dubFlag}
+                        thumbnail={feature.thumbnail}
+                      />
+                    </div>
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-bold sm:text-2xl">
+                        {feature.title}
+                      </h3>
+                      <p className="text-base text-white/60 sm:text-lg">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
