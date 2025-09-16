@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import "./globals.css";
 import { Metadata } from "next";
 import Script from "next/script";
+import Analytics from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,19 +47,7 @@ export default function RootLayout({
           }}
         /> */}
         {/* Google tag (gtag.js)  */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-BKLK1TYP9W"
-        ></Script>
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-BKLK1TYP9W');
-          `}
-        </Script>
+        <Analytics /> {/* 👈 GA & tracking run here */}
         <link rel="icon" href="/platy_icon.png" />
         <PreloadImages />
       </head>
