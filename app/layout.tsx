@@ -4,7 +4,6 @@ import { PreloadImages } from "@/components/preload-images";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 import { Metadata } from "next";
-import Script from "next/script";
 import Analytics from "@/components/analytics";
 
 const inter = Inter({ subsets: ["latin"] });

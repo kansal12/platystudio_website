@@ -1,30 +1,42 @@
 "use client";
 
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
+import { useEffect, useRef } from "react";
+
+declare global {
+  interface Window {
+    gtag?: (
+      type: "config" | "event",
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
+  }
+}
 
 export default function Analytics() {
   const pathname = usePathname();
+  const startTime = useRef<number>(Date.now());
 
-  // Track page views
   useEffect(() => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("config", "G-BKLK1TYP9W", {
+    // send page_view event on route change
+    if (window.gtag) {
+      window.gtag("event", "page_view", {
         page_path: pathname,
       });
     }
+
+    // reset timer on route change
+    startTime.current = Date.now();
   }, [pathname]);
 
-  // Track time spent
   useEffect(() => {
-    let startTime = Date.now();
-
     const handleBeforeUnload = () => {
-      let timeSpent = Date.now() - startTime;
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "time_spent", {
-          page_path: window.location.pathname,
+      const timeSpent = Date.now() - startTime.current;
+
+      if (window.gtag) {
+        window.gtag("event", "time_spent", {
+          page_path: pathname,
           time_spent_ms: timeSpent,
         });
       }
@@ -32,10 +44,9 @@ export default function Analytics() {
 
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
-      handleBeforeUnload();
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <>
