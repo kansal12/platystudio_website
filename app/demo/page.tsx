@@ -49,14 +49,14 @@ const features: Array<DubbingFeature> = [
     type: "dubbing",
     videoTitle: "Lip Sync",
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/bd6cb778-3a9e-452f-b1d0-16a545c74a07/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/ceff1ebf-95b9-40a0-99f8-d1cb9eca1cbd/play_480p.mp4",
     originalFlag: "/assets/img/us-flag.png",
 
     dubVideo:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/9be8ca14-b5c4-4898-be0e-9db9bf57de92/play_720p.mp4",
     dubFlag: "/assets/img/france_flag.webp",
     thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/b3561be5-d7bc-47f0-8127-4be1e3d9d8c5/thumbnail.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/9be8ca14-b5c4-4898-be0e-9db9bf57de92/thumbnail.jpg",
     tags: ["Backend"],
   },
   {

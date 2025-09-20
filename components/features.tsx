@@ -9,7 +9,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 export function Features() {
   return (
     <section
-      className="container mx-auto relative pb-24 sm:pb-28 lg:pb-36 flex justify-center"
+      className="container mx-auto relative  flex justify-center"
       id="features"
     >
       <div className="px-4 sm:px-6 lg:px-8 ">
@@ -17,10 +17,10 @@ export function Features() {
           title={
             <>
               <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                Capabilities
+                Intelligent Dubbing
               </span>
               <br />
-              that set us apart
+              that sets us apart
             </>
           }
           description=""
@@ -45,9 +45,9 @@ export function Features() {
 
 const items = [
   {
-    title: "Automated Lip Sync (Coming Soon)",
+    title: "Adaptive Translation",
     description:
-      "Advanced AI technology that automatically synchronizes lip movements with dubbed audio for a natural viewing experience.",
+      "Smartly adjusts pacing to keep translated audio in sync with the original video and pace.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
@@ -61,9 +61,9 @@ const items = [
     icon: <Layers className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Manual Supervision",
+    title: "Voice Cloning",
     description:
-      "Take control of our workflow management interface to further improve quality and bring creativity to your content.",
+      "Captures and replicates the speaker’s voice, volume, texture and style.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
@@ -77,9 +77,25 @@ const items = [
     icon: <Settings2 className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Multi-language Support",
+    title: "Emotive Nuance",
     description:
-      "Support for 20+ languages for both dubbing and karaoke creation, helping you reach a global audience.",
+      "Preserves subtle feelings and tone so performances stay authentic and impactful.",
+    header: (
+      <div className="relative w-full h-full min-h-[6rem]">
+        <OptimizedImage
+          src="/features/ott.png"
+          alt="Real-time Preview"
+          fill
+          className="object-cover rounded-xl"
+        />
+      </div>
+    ),
+    icon: <Play className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Background Sounds",
+    description:
+      "Preserves noise, ambience, and music for an authentic, theater-like experience.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
@@ -93,9 +109,9 @@ const items = [
     icon: <Globe2 className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Data Security",
+    title: "Idiomatic Translation",
     description:
-      "Enterprise-grade security with end-to-end encryption ensuring your content remains private and protected throughout the process.",
+      "Converts meaning and cultural nuance, not just words, for natural delivery.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
@@ -109,9 +125,9 @@ const items = [
     icon: <Shield className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Long Format Content",
+    title: "Lip Sync",
     description:
-      "Perfect for feature-length content - from Hollywood movies to commercial productions, maintaining consistent quality throughout.",
+      "Aligns speech seamlessly with lip movements for a believable on-screen match.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
@@ -123,21 +139,5 @@ const items = [
       </div>
     ),
     icon: <Film className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Real-time Preview",
-    description:
-      "Instantly preview your dubbed content with synchronized audio and visuals, enabling quick iterations and quality assurance.",
-    header: (
-      <div className="relative w-full h-full min-h-[6rem]">
-        <OptimizedImage
-          src="/features/ott.png"
-          alt="Real-time Preview"
-          fill
-          className="object-cover rounded-xl"
-        />
-      </div>
-    ),
-    icon: <Play className="h-4 w-4 text-neutral-500" />,
   },
 ];

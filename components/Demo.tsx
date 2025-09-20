@@ -3,6 +3,8 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 // import KaraokePlayer from "@/components/karaoke-player";
 import DualVideoPlayer from "./DualVideoPlayer";
+import { RainbowButton } from "./ui/rainbow-button";
+import { useRouter } from "next/navigation";
 
 interface DubbingFeature {
   title: string;
@@ -244,13 +246,14 @@ const features: Array<DubbingFeature> = [
 // ];
 
 export function Demo() {
+  const router = useRouter();
   return (
     <section
-      className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px]"
+      className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px] my-[100px]"
       id="Demo"
     >
       <div className="px-4 sm:px-6 lg:px-8">
-        <SectionHeading
+        {/* <SectionHeading
           title={
             <>
               <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
@@ -261,9 +264,9 @@ export function Demo() {
             </>
           }
           description=""
-        />
+        /> */}
 
-        <div className="mt-20 sm:mt-24 lg:mt-32 space-y-24">
+        <div className="">
           {/* Dubbing Section */}
           <div className="relative">
             <div className="text-center max-w-2xl mx-auto mb-12">
@@ -320,6 +323,14 @@ export function Demo() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <RainbowButton
+              className="hidden md:inline-flex"
+              onClick={() => router.push("/demo")}
+            >
+              See More Demos
+            </RainbowButton>
           </div>
           <div>
             {/* Karaoke Section */}

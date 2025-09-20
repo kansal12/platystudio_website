@@ -36,8 +36,8 @@ export default function Home() {
         />
         <HeroSection />
         {/* <BrandLogos /> */}
-        <Demo />
         <Features />
+        <Demo />
         <Testimonials />
         <CTASection />
         <FAQ />
