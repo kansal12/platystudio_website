@@ -4,8 +4,8 @@ import DualVideoPlayer from "@/components/DualVideoPlayer";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { useState } from "react";
 
-// type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps";
-type Tags = "All";
+type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps";
+// type Tags = "All";
 
 interface DubbingFeature {
   id: number;
@@ -39,7 +39,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/thumbnail_e33af038.jpg",
-    tags: ["1"],
+    tags: ["Backend"],
   },
   {
     id: 2,
