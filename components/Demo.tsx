@@ -96,7 +96,7 @@ const features: Array<DubbingFeature> = [
 export function Demo() {
   const router = useRouter();
   const iframeRef = useRef(null);
-  const playerRef = useRef(null);
+  const playerRef = useRef<Player | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
@@ -108,16 +108,11 @@ export function Demo() {
     playerRef.current.on("play", () => setIsPlaying(true));
     playerRef.current.on("pause", () => setIsPlaying(false));
 
-    return () => playerRef.current.destroy();
+    return () => {
+      playerRef.current?.destroy();
+    };
   }, []);
 
-  const handlePlayPause = () => {
-    if (isPlaying) {
-      playerRef.current.pause();
-    } else {
-      playerRef.current.play();
-    }
-  };
   return (
     <section
       className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px] my-[100px]"

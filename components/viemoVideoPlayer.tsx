@@ -142,21 +142,10 @@ import { useVideoPlayer } from "@/contexts/video-player-context";
 
 interface VimeoPlayerProps {
   originalVideo: string;
-  dubVideo: string;
-  title: string;
-  originalFlag: string;
-  dubFlag: string;
-  thumbnail?: string;
+  title?: string;
 }
 
-const VimeoPlayer: React.FC<VimeoPlayerProps> = ({
-  originalVideo,
-  dubVideo,
-  title,
-  originalFlag,
-  dubFlag,
-  thumbnail,
-}) => {
+const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<Player | null>(null);
 
