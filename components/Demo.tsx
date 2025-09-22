@@ -1,10 +1,13 @@
 "use client";
 
 import { SectionHeading } from "@/components/ui/section-heading";
-// import KaraokePlayer from "@/components/karaoke-player";
 import DualVideoPlayer from "./DualVideoPlayer";
 import { RainbowButton } from "./ui/rainbow-button";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import Player from "@vimeo/player";
+import VimeoWithProgress from "./viemoVideoPlayer";
+import VimeoPlayer from "./viemoVideoPlayer";
 
 interface DubbingFeature {
   title: string;
@@ -13,94 +16,12 @@ interface DubbingFeature {
   videoTitle: string;
   originalVideo: string;
   originalFlag: string;
-  // originalLabel: string;
   dubVidoe: string;
   dubFlag: string;
   thumbnail: string;
-  // dubLable: string;
 }
 
-// interface KaraokeFeature {
-//   title: string;
-//   description: string;
-//   type: "karaoke";
-//   videoTitle: string;
-//   videos: {
-//     // full: string;
-//     // noVocals: string;
-//     // noLyrics: string;
-//     original: string;
-//     karaoke: string;
-//   };
-//   // audios: {
-//   //   full: string;
-//   //   noVocals: string;
-//   //   noLyrics: string;
-//   // };
-// }
-
 const features: Array<DubbingFeature> = [
-  // {
-  //   title: "In-Studio Conversation",
-  //   description:
-  //     "Dub any conversation or interview into English or eight other languages while preserving non-verbal cues.",
-  //   type: "dubbing",
-  //   videoTitle: "Zelenskyy-Fridman",
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
-  //   originalFlag: "/assets/img/raussia-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
-  //   dubFlag: "/assets/img/us-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
-  // {
-  //   title: "On-Location Interview",
-  //   description:
-  //     "Preserve the on-location background noises and the speaker’s natural accent in the dubbed audio.",
-  //   type: "dubbing",
-  //   videoTitle: "RAGA-Ravish",
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739423550/Original_Rahul_and_Ravish_h7kvje.mp4",
-  //   originalFlag: "/assets/img/ind-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354378/English_Rahul_and_Ravish2_tjm8wv.mp4",
-  //   dubFlag: "/assets/img/us-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
-  // {
-  //   title: "Academic Public Talk",
-  //   description:
-  //     "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
-  //   type: "dubbing",
-  //   videoTitle: "Path to Maths- IAS Princeton",
-
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271315/original_Kalyani_PTM_wzer03.mp4",
-  //   originalFlag: "/assets/img/us-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
-  //   dubFlag: "/assets/img/span-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
-  // {
-  //   title: "Hollywood Movie",
-  //   description:
-  //     "Another example of our high-quality movie dubbing, preserving spatial sounds, emotional depth, and the character’s authenticity.",
-  //   type: "dubbing",
-  //   videoTitle: "Notting Hill",
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271312/English_Notting_Hill_cwc5wf.mp4",
-  //   originalFlag: "/assets/img/us-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739354379/Spanish_Notting_Hill2_skcg3h.mp4",
-  //   dubFlag: "/assets/img/span-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
   {
     title: "Academic Public Talk",
     description:
@@ -170,83 +91,33 @@ const features: Array<DubbingFeature> = [
       "https://vz-c5817d00-065.b-cdn.net/9be8ca14-b5c4-4898-be0e-9db9bf57de92/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
-  // {
-  //   title: "Theatrical Quality Global Dubs",
-  //   description:
-  //     "Seamlessly dub films and dramas into any language—preserving every emotion for a true cinematic experience, at scale.",
-  //   type: "dubbing",
-  //   videoTitle: "Ruby Ring",
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
-  //   originalFlag: "/assets/img/raussia-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
-  //   dubFlag: "/assets/img/us-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
-  // {
-  //   title: "Expand Your Ads' Global Reach",
-  //   description:
-  //     "Scale your campaigns effortlessly and connect with millions in their native language.",
-  //   type: "dubbing",
-  //   videoTitle: "Trip Advisor",
-  //   originalVideo:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271244/original_Zelensky_Fridman1_e8uqms.mp4",
-  //   originalFlag: "/assets/img/raussia-flag.png",
-  //   // originalLabel: "Original",
-  //   dubVidoe:
-  //     "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271243/dub_Zelensky_Fridman1_hezlr4.mp4",
-  //   dubFlag: "/assets/img/us-flag.png",
-  //   // dubLable: "Dubbed",
-  // },
 ];
-
-// const karaokeFeatures: Array<KaraokeFeature> = [
-//   {
-//     title: "Professional-Grade Karaoke for OTTs",
-//     description:
-//       "Turn any song into a high-quality karaoke experience with our advanced audio separation technology.",
-//     type: "karaoke",
-//     videoTitle: "THE BAR SONG",
-//     videos: {
-//       // full: "/assets/videos/karaoke_output_bar.mp4",
-//       // noVocals: "/assets/videos/karaoke1/no-vocals.mp4",
-//       // noLyrics: "/assets/videos/karaoke1/no-lyrics.mp4",
-//       original: "/assets/videos/video_song_bar.mp4",
-//       karaoke: "/assets/videos/karaoke_output_bar.mp4",
-//     },
-//     // audios: {
-//     //   full: "/assets/audios/song_bar.mp3",
-//     //   // noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
-//     //   // noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
-//     //   noVocals: "/assets/audios/karaoke1/no-vocals.mp3",
-//     //   noLyrics: "/assets/audios/karaoke1/no-lyrics.mp3",
-//     // },
-//   },
-//   {
-//     title: "Works across music genres and languages",
-//     description:
-//       "Experience perfect vocal isolation and instrumental track creation with our state-of-the-art AI technology.",
-//     type: "karaoke",
-//     videoTitle: "THE BAR SONG 2",
-//     videos: {
-//       // full: "/assets/videos/karaoke2/full.mp4",
-//       // noVocals: "/assets/videos/karaoke2/no-vocals.mp4",
-//       // noLyrics: "/assets/videos/karaoke2/no-lyrics.mp4",
-//       original: "/assets/videos/video_song_perfect.mp4",
-//       karaoke: "/assets/videos/karaoke_output_perfect.mp4",
-//     },
-//     // audios: {
-//     //   full: "/assets/audios/karaoke2/full.mp3",
-//     //   noVocals: "/assets/audios/karaoke2/no-vocals.mp3",
-//     //   noLyrics: "/assets/audios/karaoke2/no-lyrics.mp3",
-//     // },
-//   },
-// ];
 
 export function Demo() {
   const router = useRouter();
+  const iframeRef = useRef(null);
+  const playerRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    // Initialize Vimeo player
+    if (!iframeRef.current) return;
+    playerRef.current = new Player(iframeRef.current);
+
+    // Update play/pause state
+    playerRef.current.on("play", () => setIsPlaying(true));
+    playerRef.current.on("pause", () => setIsPlaying(false));
+
+    return () => playerRef.current.destroy();
+  }, []);
+
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      playerRef.current.pause();
+    } else {
+      playerRef.current.play();
+    }
+  };
   return (
     <section
       className="relative pt-0 sm:pt-0 lg:pt-0 scroll-mt-[70px] my-[100px]"
@@ -279,6 +150,25 @@ export function Demo() {
                 while maintaining the authenticity of the original performance.
               </p>
             </div>
+            {/* <div className="relative w-full pb-[56.25%] overflow-hidden bg-black">
+              <iframe
+                ref={iframeRef}
+                src={`https://player.vimeo.com/video/1116499503?controls=0`}
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Vimeo Player"
+              ></iframe>
+            </div>
+            <button
+              onClick={handlePlayPause}
+              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              {isPlaying ? "Pause" : "Play"}
+            </button> */}
+
+            <VimeoPlayer originalVideo="https://player.vimeo.com/video/1116499503?controls=0" />
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (
                 <div
@@ -293,24 +183,7 @@ export function Demo() {
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
                       thumbnail={feature.thumbnail}
-                      // originalLable={feature.originalLabel}
-                      // dubLable={feature.dubLable}
                     />
-                    {/* <DualVideoPlayer
-                      videoSrc="/assets/videos/original_Rahul_and_Ravish.mp4"
-                      audioTracks={[
-                        {
-                          id: "en",
-                          label: "English",
-                          src: "/assets/audios/Rahul_and_Ravish_english.wav",
-                        },
-                        {
-                          id: "hi",
-                          label: "Hindi",
-                          src: "/assets/audios/Rahul_and_Ravish_hindi.wav",
-                        },
-                      ]}
-                    /> */}
                   </div>
                   <div className="flex flex-col gap-4">
                     <h3 className="text-xl font-bold sm:text-2xl">
@@ -326,7 +199,7 @@ export function Demo() {
           </div>
           <div className="text-center mt-8">
             <RainbowButton
-              className="hidden md:inline-flex"
+              className="inline-flex"
               onClick={() => router.push("/demo")}
             >
               See More Demos

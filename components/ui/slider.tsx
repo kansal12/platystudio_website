@@ -30,7 +30,7 @@ const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <div className="flex items-center gap-3 w-full max-w-lg">
+    <div className="flex items-center gap-3 w-full ">
       <span className="text-white text-sm w-12 text-right">
         {formatTime(value)}
       </span>
