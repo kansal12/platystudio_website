@@ -116,7 +116,7 @@ const features: Array<DubbingFeature> = [
       "https://res.cloudinary.com/dctta3r6s/video/upload/v1739271314/spanish_Kalyani_PTM_eoia6e.mp4",
     dubFlag: "/assets/img/span-flag.png",
     thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/97cf24ad-077a-4dab-9809-119a38b004ab/thumbnail.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/1295b06c-6cb9-4771-83cf-f49d49a91420/thumbnail_8971f0d3.jpg",
     // dubLable: "Dubbed",
   },
   {
@@ -150,7 +150,7 @@ const features: Array<DubbingFeature> = [
       "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/thumbnail.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/thumbnail_35477268.jpg",
     // dubLable: "Dubbed",
   },
   {
