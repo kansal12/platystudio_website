@@ -145,25 +145,11 @@ export function Demo() {
                 while maintaining the authenticity of the original performance.
               </p>
             </div>
-            {/* <div className="relative w-full pb-[56.25%] overflow-hidden bg-black">
-              <iframe
-                ref={iframeRef}
-                src={`https://player.vimeo.com/video/1116499503?controls=0`}
-                className="absolute top-0 left-0 w-full h-full"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title="Vimeo Player"
-              ></iframe>
-            </div>
-            <button
-              onClick={handlePlayPause}
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-              {isPlaying ? "Pause" : "Play"}
-            </button> */}
-
-            <VimeoPlayer originalVideo="https://player.vimeo.com/video/1116499503?controls=0" />
+            {/* <div className="my-7">
+              {features.map((feature) => (
+                <VimeoPlayer originalVideo={feature.originalVideo} />
+              ))}
+            </div> */}
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (
                 <div
