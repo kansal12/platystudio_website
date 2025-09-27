@@ -6,7 +6,6 @@ import { RainbowButton } from "./ui/rainbow-button";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Player from "@vimeo/player";
-import VimeoWithProgress from "./viemoVideoPlayer";
 import VimeoPlayer from "./viemoVideoPlayer";
 
 interface DubbingFeature {
@@ -97,23 +96,6 @@ const viemoVideoId = ["1122400201"];
 
 export function Demo() {
   const router = useRouter();
-  const iframeRef = useRef(null);
-  const playerRef = useRef<Player | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    // Initialize Vimeo player
-    if (!iframeRef.current) return;
-    playerRef.current = new Player(iframeRef.current);
-
-    // Update play/pause state
-    playerRef.current.on("play", () => setIsPlaying(true));
-    playerRef.current.on("pause", () => setIsPlaying(false));
-
-    return () => {
-      playerRef.current?.destroy();
-    };
-  }, []);
 
   return (
     <section
@@ -150,6 +132,7 @@ export function Demo() {
             <div className="my-7">
               {viemoVideoId.map((videoId) => (
                 <VimeoPlayer
+                  key={videoId}
                   originalVideo={`https://player.vimeo.com/video/${videoId}?controls=0`}
                 />
               ))}
