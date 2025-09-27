@@ -144,14 +144,27 @@ interface VimeoPlayerProps {
   originalVideo: string;
   title?: string;
 }
+interface callbackParams {
+  audioDuration: number;
+}
 
 const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
+  const stopVimeoVideoPlay = 0.5; // this is the value, which stop video before reaching to last portion of the video
+
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<Player | null>(null);
 
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  const callbackParmas = useRef<callbackParams>({} as callbackParams);
+
+  useEffect(() => {
+    if (callbackParmas.current) {
+      callbackParmas.current.audioDuration = duration;
+    }
+  }, [duration]);
 
   useEffect(() => {
     if (!iframeRef.current) return;
@@ -164,6 +177,15 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
 
     // Listen for time updates
     player.on("timeupdate", (data: { seconds: number }) => {
+      const audioDuration = callbackParmas.current.audioDuration;
+      console.log("duration:", audioDuration);
+      console.log("data.seconds:", data.seconds);
+      console.log("diff:", audioDuration - data.seconds);
+      if (audioDuration && audioDuration - data.seconds <= stopVimeoVideoPlay) {
+        console.log("trigger handle end, diff:", audioDuration - data.seconds);
+        player.pause();
+        handleEnded();
+      }
       setCurrentTime(data.seconds);
     });
 
@@ -235,8 +257,14 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
   }, [playerId, isPlaying]);
 
   const handleReplay = () => {
+    if (!playerRef.current) return;
     setCurrentPlayingId(playerId);
     setIsPlaying(true);
+    // Set current time and immediately play (important for controls=0)
+    playerRef.current.setCurrentTime(0).then(() => {
+      playerRef.current?.play();
+    });
+    setCurrentTime(0);
     setShowReplayButton(false);
   };
 
@@ -247,7 +275,8 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
 
   return (
     <div
-      className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
+      // className="relative  mx-auto  group/player  rounded-lg border border-slate-200/20 bg-slate-100/10"
+      className="relative  mx-auto  group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
       // {...handlers}
       onMouseEnter={() => {
         setShowControls(true);
@@ -266,11 +295,13 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
         setSshowPlayPauseButton(true);
       }}
     >
-      <div className="relative aspect-video bg-black">
+      <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
+        {/* <div className="w-full h-full aspect-video bg-black "> */}
         <iframe
           ref={iframeRef}
           src={originalVideo}
           onEnded={handleEnded}
+          // className="w-full h-full"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder="0"
           allow="autoplay; picture-in-picture"
@@ -286,11 +317,11 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
       )}
       <div
         className={cn(
-          "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
+          "absolute w-full inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
           showControls ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute w-full inset-0 flex items-center justify-center">
           {showPlayPauseButton && (
             <button
               onClick={showReplayButton ? handleReplay : handlePlayPause}
@@ -318,7 +349,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
         <div className="absolute bottom-0 w-full left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
           <Slider
             value={currentTime}
-            max={duration}
+            max={duration - stopVimeoVideoPlay}
             step={0.01}
             onChange={handleSeek}
           />

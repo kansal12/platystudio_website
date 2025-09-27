@@ -93,6 +93,8 @@ const features: Array<DubbingFeature> = [
   },
 ];
 
+const viemoVideoId = ["1122400201"];
+
 export function Demo() {
   const router = useRouter();
   const iframeRef = useRef(null);
@@ -145,11 +147,13 @@ export function Demo() {
                 while maintaining the authenticity of the original performance.
               </p>
             </div>
-            {/* <div className="my-7">
-              {features.map((feature) => (
-                <VimeoPlayer originalVideo={feature.originalVideo} />
+            <div className="my-7">
+              {viemoVideoId.map((videoId) => (
+                <VimeoPlayer
+                  originalVideo={`https://player.vimeo.com/video/${videoId}?controls=0`}
+                />
               ))}
-            </div> */}
+            </div>
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (
                 <div
