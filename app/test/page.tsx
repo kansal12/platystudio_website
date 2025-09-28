@@ -89,7 +89,8 @@ const VimeoPlayer: React.FC = () => {
     //     setSshowPlayPauseButton(true);
     //   }}
     // >
-    <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
+    // <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
+    <div className="relative h-[360px] w-full">
       <iframe
         ref={iframeRef}
         src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
