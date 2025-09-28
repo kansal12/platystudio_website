@@ -89,21 +89,23 @@ const VimeoPlayer: React.FC = () => {
     //     setSshowPlayPauseButton(true);
     //   }}
     // >
-    // <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
-    <div className="relative h-[360px] w-full">
-      <iframe
-        ref={iframeRef}
-        src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
-        // width={width}
-        // height={height}
-        frameBorder="0"
-        allow=" fullscreen; picture-in-picture"
-        allowFullScreen
-        title="Vimeo Player"
-        className="absolute top-0 left-0 w-full h-full"
-      ></iframe>
+    <div className="w-full h-[80vh] max-h-fit mx-auto relative  bg-black ">
+      //{" "}
+      <div className="relative h-[360px] w-full">
+        <iframe
+          ref={iframeRef}
+          src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
+          // width={width}
+          // height={height}
+          frameBorder="0"
+          allow=" fullscreen; picture-in-picture"
+          allowFullScreen
+          title="Vimeo Player"
+          className="absolute top-0 left-0 w-full h-full"
+        ></iframe>
+      </div>
+      //{" "}
     </div>
-    // </div>
   );
 };
 
