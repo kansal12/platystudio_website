@@ -307,6 +307,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
           allow="autoplay; picture-in-picture"
           allowFullScreen
           title="Vimeo Player"
+          {...{ playsinline: "true" }}
         />
       </div>
 
