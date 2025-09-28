@@ -90,7 +90,7 @@ const VimeoPlayer: React.FC = () => {
     //   }}
     // >
     // <div className="relative h-[360px] w-full">
-    <div className="w-full h-[80vh] max-h-fit mx-auto relative  bg-black ">
+    <div className="w-full h-[40vh] sm:h-[80vh]  mx-auto relative  bg-black ">
       <iframe
         ref={iframeRef}
         src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
@@ -100,7 +100,7 @@ const VimeoPlayer: React.FC = () => {
         allow=" fullscreen; picture-in-picture"
         allowFullScreen
         title="Vimeo Player"
-        className="absolute top-0 left-0 w-full h-full"
+        className="  w-full h-full"
       ></iframe>
     </div>
     // </div>
