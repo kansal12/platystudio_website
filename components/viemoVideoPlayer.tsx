@@ -141,14 +141,14 @@ import Slider from "./ui/slider";
 import { useVideoPlayer } from "@/contexts/video-player-context";
 
 interface VimeoPlayerProps {
-  originalVideo: string;
+  videoId: string;
   title?: string;
 }
 interface callbackParams {
   audioDuration: number;
 }
 
-const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
+const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
   const stopVimeoVideoPlay = 0.5; // this is the value, which stop video before reaching to last portion of the video
 
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -297,18 +297,34 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
     >
       <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
         {/* <div className="w-full h-full aspect-video bg-black "> */}
-        <iframe
+        {/* <iframe
           ref={iframeRef}
-          src={originalVideo}
+          src={`https://player.vimeo.com/video/1122400201?controls=0&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
           onEnded={handleEnded}
           // className="w-full h-full"
           className="absolute top-0 left-0 w-full h-full"
           frameBorder="0"
-          allow="autoplay; picture-in-picture"
-          allowFullScreen
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
           title="Vimeo Player"
-          {...{ playsinline: "true" }}
-        />
+          {...{
+            playsinline: "true",
+            referrerpolicy: "strict-origin-when-cross-origin",
+          }}
+        /> */}
+        <iframe
+          src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&player_id=0&app_id=58479"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+          title="Moneyheist_Demo"
+        ></iframe>
       </div>
 
       {title && (

@@ -131,10 +131,7 @@ export function Demo() {
             </div>
             <div className="my-7">
               {viemoVideoId.map((videoId) => (
-                <VimeoPlayer
-                  key={videoId}
-                  originalVideo={`https://player.vimeo.com/video/${videoId}?controls=0`}
-                />
+                <VimeoPlayer key={videoId} videoId={videoId} />
               ))}
             </div>
             <div className="grid gap-4 md:grid-cols-2">
