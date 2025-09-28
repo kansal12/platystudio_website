@@ -141,14 +141,14 @@ import Slider from "./ui/slider";
 import { useVideoPlayer } from "@/contexts/video-player-context";
 
 interface VimeoPlayerProps {
-  originalVideo: string;
+  videoId: string;
   title?: string;
 }
 interface callbackParams {
   audioDuration: number;
 }
 
-const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
+const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
   const stopVimeoVideoPlay = 0.5; // this is the value, which stop video before reaching to last portion of the video
 
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -299,7 +299,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
         {/* <div className="w-full h-full aspect-video bg-black "> */}
         <iframe
           ref={iframeRef}
-          src={originalVideo}
+          src={`https://player.vimeo.com/video/${videoId}?controls=0`}
           onEnded={handleEnded}
           // className="w-full h-full"
           className="absolute top-0 left-0 w-full h-full"
