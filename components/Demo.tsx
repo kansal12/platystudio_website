@@ -1,13 +1,9 @@
 "use client";
 
-import { SectionHeading } from "@/components/ui/section-heading";
 import DualVideoPlayer from "./DualVideoPlayer";
 import { RainbowButton } from "./ui/rainbow-button";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import Player from "@vimeo/player";
-// import VimeoPlayer from "@/app/test/page";
-// import VimeoPlayer from "./viemoVideoPlayer";
+import VimeoPlayer from "./viemoVideoPlayer";
 
 interface DubbingFeature {
   title: string;
@@ -131,10 +127,9 @@ export function Demo() {
               </p>
             </div>
             <div className="my-7">
-              {/* {viemoVideoId.map((videoId) => (
+              {viemoVideoId.map((videoId) => (
                 <VimeoPlayer key={videoId} videoId={videoId} />
-              ))} */}
-              {/* <VimeoPlayer /> */}
+              ))}
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (

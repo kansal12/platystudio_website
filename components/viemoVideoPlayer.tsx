@@ -1,3 +1,137 @@
+// import React, { useEffect, useRef, useState } from "react";
+// import Player from "@vimeo/player";
+
+// interface VimeoPlayerProps {
+//   videoId: string;
+// }
+
+// const VimeoPlayer: React.FC = () => {
+//   const iframeRef = useRef<HTMLIFrameElement | null>(null);
+//   const playerRef = useRef<Player | null>(null);
+
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const [currentTime, setCurrentTime] = useState(0);
+//   const [duration, setDuration] = useState(0);
+
+//   useEffect(() => {
+//     if (!iframeRef.current) return;
+
+//     const player = new Player(iframeRef.current);
+//     playerRef.current = player;
+
+//     // Get video duration
+//     player.getDuration().then((time) => setDuration(time));
+
+//     // Listen for time updates
+//     player.on("timeupdate", (data: { seconds: number }) => {
+//       setCurrentTime(data.seconds);
+//     });
+
+//     // Play/Pause events
+//     player.on("play", () => setIsPlaying(true));
+//     player.on("pause", () => setIsPlaying(false));
+
+//     return () => {
+//       player.destroy();
+//     };
+//   }, []);
+
+//   const handlePlayPause = () => {
+//     if (!playerRef.current) return;
+//     if (isPlaying) playerRef.current.pause();
+//     else playerRef.current.play();
+//   };
+
+//   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     if (!playerRef.current) return;
+//     const time = parseFloat(e.target.value);
+
+//     // Set current time and immediately play (important for controls=0)
+//     playerRef.current.setCurrentTime(time).then(() => {
+//       playerRef.current?.play();
+//     });
+
+//     setCurrentTime(time);
+//   };
+
+//   const formatTime = (seconds: number) => {
+//     const min = Math.floor(seconds / 60);
+//     const sec = Math.floor(seconds % 60);
+//     return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+//   };
+
+//   return (
+//     <div
+//       className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
+//       // {...handlers}
+//       onMouseEnter={() => {
+//         setShowControls(true);
+//         setSshowPlayPauseButton(true);
+//       }}
+//       onMouseLeave={() => {
+//         if (isPlaying) {
+//           setShowControls(false);
+//           setSshowPlayPauseButton(false);
+//         }
+//       }}
+//       onMouseMove={() => setShowControls(true)}
+//       // Mobile touch support
+//       onTouchStart={() => {
+//         setShowControls(true);
+//         setSshowPlayPauseButton(true);
+//       }}
+//       // onTouchEnd={() => {
+//       //   // optional: auto-hide after a delay
+//       //   setTimeout(() => {
+//       //     if (isPlaying) {
+//       //       setShowControls(false);
+//       //       setSshowPlayPauseButton(false);
+//       //     }
+//       //   }, 10000);
+//       // }}
+//     >
+//       <div className="relative pb-[56.25%] h-0 overflow-hidden bg-black">
+//         <iframe
+//           ref={iframeRef}
+//           src={`https://player.vimeo.com/video/1116499503?controls=0&title=0&byline=0&portrait=0&dnt=1`}
+//           className="absolute top-0 left-0 w-full h-full"
+//           frameBorder="0"
+//           allow="autoplay; picture-in-picture"
+//           allowFullScreen
+//           title="Vimeo Player"
+//         />
+//       </div>
+
+//       <div className="mt-2 flex flex-col space-y-1">
+//         <button
+//           onClick={handlePlayPause}
+//           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+//         >
+//           {isPlaying ? "Pause" : "Play"}
+//         </button>
+
+//         {/* Progress bar */}
+//         <input
+//           type="range"
+//           min={0}
+//           max={duration}
+//           step={0.1}
+//           value={currentTime}
+//           onChange={handleSeek}
+//           className="w-full"
+//         />
+
+//         <div className="flex justify-between text-sm text-gray-700">
+//           <span>{formatTime(currentTime)}</span>
+//           <span>{formatTime(duration)}</span>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default VimeoPlayer;
+
 "use client";
 import React, { useEffect, useId, useRef, useState } from "react";
 import Player from "@vimeo/player";
@@ -7,21 +141,23 @@ import Slider from "./ui/slider";
 import { useVideoPlayer } from "@/contexts/video-player-context";
 
 interface VimeoPlayerProps {
-  videoId: string;
+  originalVideo: string;
   title?: string;
 }
 interface callbackParams {
   audioDuration: number;
 }
 
-const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
+const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ originalVideo, title }) => {
   const stopVimeoVideoPlay = 0.5; // this is the value, which stop video before reaching to last portion of the video
 
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<Player | null>(null);
+
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
   const callbackParmas = useRef<callbackParams>({} as callbackParams);
 
   useEffect(() => {
@@ -32,6 +168,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
 
   useEffect(() => {
     if (!iframeRef.current) return;
+
     const player = new Player(iframeRef.current);
     playerRef.current = player;
 
@@ -41,7 +178,11 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
     // Listen for time updates
     player.on("timeupdate", (data: { seconds: number }) => {
       const audioDuration = callbackParmas.current.audioDuration;
+      console.log("duration:", audioDuration);
+      console.log("data.seconds:", data.seconds);
+      console.log("diff:", audioDuration - data.seconds);
       if (audioDuration && audioDuration - data.seconds <= stopVimeoVideoPlay) {
+        console.log("trigger handle end, diff:", audioDuration - data.seconds);
         player.pause();
         handleEnded();
       }
@@ -55,7 +196,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
     return () => {
       player.destroy();
     };
-  }, [videoId]);
+  }, []);
 
   const handlePlayPause = () => {
     // tell all other players to pause
@@ -154,32 +295,20 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
         setSshowPlayPauseButton(true);
       }}
     >
-      <div className="w-full h-[80vh] max-h-fit mx-auto relative aspect-video bg-black ">
-        {/* <iframe
-          ref={iframeRef}
-          src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0"
-          frameBorder="0"
-          allow="fullscreen; picture-in-picture"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-          title="Moneyheist_Demo"
-        /> */}
+      <div className="w-full h-[40vh] sm:h-[80vh] mx-auto relative aspect-video bg-black ">
+        {/* <div className="w-full h-full aspect-video bg-black "> */}
         <iframe
           ref={iframeRef}
-          src={`https://player.vimeo.com/video/1122400201?badge=0&autopause=0&controls=0`}
-          // width={width}
-          // height={height}
+          src={originalVideo}
+          onEnded={handleEnded}
+          // className="w-full h-full"
+          className="absolute top-0 left-0 w-full h-full"
           frameBorder="0"
-          allow=" fullscreen; picture-in-picture"
+          allow="autoplay; picture-in-picture"
           allowFullScreen
           title="Vimeo Player"
-          className="absolute top-0 left-0 w-full h-full"
-        ></iframe>
+          {...{ playsinline: "true" }}
+        />
       </div>
 
       {title && (
