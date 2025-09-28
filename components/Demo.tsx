@@ -6,7 +6,7 @@ import { RainbowButton } from "./ui/rainbow-button";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Player from "@vimeo/player";
-import VimeoPlayer from "@/app/test/page";
+// import VimeoPlayer from "@/app/test/page";
 // import VimeoPlayer from "./viemoVideoPlayer";
 
 interface DubbingFeature {
@@ -134,7 +134,7 @@ export function Demo() {
               {/* {viemoVideoId.map((videoId) => (
                 <VimeoPlayer key={videoId} videoId={videoId} />
               ))} */}
-              <VimeoPlayer />
+              {/* <VimeoPlayer /> */}
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {features.map((feature) => (

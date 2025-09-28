@@ -3,21 +3,11 @@
 import Player from "@vimeo/player";
 import React, { useEffect, useRef, useState } from "react";
 
-interface VimeoPlayerProps {
-  videoId: string; // Vimeo video ID
-  width?: number;
-  height?: number;
-}
-
 interface CallbackParams {
   audioDuration: number;
 }
 
-const VimeoPlayer: React.FC<VimeoPlayerProps> = ({
-  videoId,
-  width = 640,
-  height = 360,
-}) => {
+const VimeoPlayer: React.FC = () => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const playerRef = useRef<Player | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -60,7 +50,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({
     return () => {
       player.destroy();
     };
-  }, [videoId]);
+  }, [iframeRef]);
 
   // Play/Pause toggle handler
   const handleToggle = async () => {
