@@ -295,7 +295,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
         setSshowPlayPauseButton(true);
       }}
     >
-      <div className="w-full h-[40vh] sm:h-[80vh] mx-auto relative aspect-video bg-black ">
+      <div className="w-full h-[40vh] sm:h-[80vh] mx-auto relative  bg-black ">
         {/* <div className="w-full h-full aspect-video bg-black "> */}
         <iframe
           ref={iframeRef}
