@@ -47,7 +47,7 @@ const items = [
   {
     title: "Adaptive Translation",
     description:
-      "Smartly adjusts pacing to keep translated audio in sync with the original video and pace.",
+      "Smartly adjusts pacing to keep translated audio in sync with the original video.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
