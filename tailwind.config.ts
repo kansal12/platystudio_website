@@ -9,6 +9,13 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        "5xl": "2560", // 👈 custom breakpoint
+        "3xl": "1440",
+        xl: "1024",
+        slg: "768",
+        ssm: "425",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
