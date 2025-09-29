@@ -92,10 +92,26 @@ const items = [
     ),
     icon: <Play className="h-4 w-4 text-neutral-500" />,
   },
+  // {
+  //   title: "Background Sounds",
+  //   description:
+  //     "Preserves noise, ambience, and music for an authentic, theater-like experience.",
+  //   header: (
+  //     <div className="relative w-full h-full min-h-[6rem]">
+  //       <OptimizedImage
+  //         src="/features/ml.png"
+  //         alt="Multi-language Support"
+  //         fill
+  //         className="object-cover rounded-xl"
+  //       />
+  //     </div>
+  //   ),
+  //   icon: <Globe2 className="h-4 w-4 text-neutral-500" />,
+  // },
   {
-    title: "Background Sounds",
+    title: "Human in the Loop",
     description:
-      "Preserves noise, ambience, and music for an authentic, theater-like experience.",
+      "Quality Check for translations and voice is done by an AI agent and smartly supervised by human for great results.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
