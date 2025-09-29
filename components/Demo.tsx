@@ -135,7 +135,7 @@ export function Demo() {
           <div className="relative">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
-                AI-Powered Dubbing Solutions
+                Setting new quality benchmarks in AI Powered Dubbing
               </h2>
               <p className="text-base text-white/60">
                 Preserve Voice Quality, Emotions, Timing, Prosody and 10 other
