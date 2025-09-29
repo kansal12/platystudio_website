@@ -111,7 +111,7 @@ const items = [
   {
     title: "Human in the Loop",
     description:
-      "Quality Check for translations and voice is done by an AI agent and smartly supervised by human for great results.",
+      "Quality Check is done by our AI agent and smartly supervised by humans for great results.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
