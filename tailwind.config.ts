@@ -10,11 +10,11 @@ export default {
   theme: {
     extend: {
       screens: {
-        "5xl": "2560", // 👈 custom breakpoint
-        "3xl": "1440",
-        xl: "1024",
-        slg: "768",
-        ssm: "425",
+        "5xl": "2560px", // 👈 custom breakpoint
+        "3xl": "1440px",
+        xl: "1024px",
+        slg: "768px",
+        ssm: "425px",
       },
       colors: {
         background: "hsl(var(--background))",
