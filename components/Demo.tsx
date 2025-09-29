@@ -54,22 +54,39 @@ const features: Array<DubbingFeature> = [
     // dubLable: "Dubbed",
   },
   {
-    title: "Podcasts and News",
+    title: "Precision for Specialized Storytelling",
     description:
-      "Dub any conversation or interview while preserving original accent, spatial effects, non-verbal cues, and emotions.",
+      "Designed to adapt across content categories while preserving original accent, spatial effects, non-verbal cues, and emotions.",
     type: "dubbing",
-    videoTitle: "Zelenskyy-Fridman",
+    videoTitle: "Mady-Morrisson",
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/6d6f8a5e-eb25-4035-9750-b00e1959c560/playlist.m3u8",
-    originalFlag: "/assets/img/raussia-flag.png",
+      "https://vz-c5817d00-065.b-cdn.net/86cba5bd-7875-4883-b358-fa82f68af63c/play_720p.mp4",
+    originalFlag: "/assets/img/greman_flag.jpg",
     // originalLabel: "Original",
     dubVidoe:
-      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/play_720p.mp4",
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
-      "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/thumbnail_35477268.jpg",
+      "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/thumbnail.jpg",
     // dubLable: "Dubbed",
   },
+  // {
+  //   title: "Podcasts and News",
+  //   description:
+  //     "Dub any conversation or interview while preserving original accent, spatial effects, non-verbal cues, and emotions.",
+  //   type: "dubbing",
+  //   videoTitle: "Zelenskyy-Fridman",
+  //   originalVideo:
+  //     "https://vz-c5817d00-065.b-cdn.net/6d6f8a5e-eb25-4035-9750-b00e1959c560/playlist.m3u8",
+  //   originalFlag: "/assets/img/raussia-flag.png",
+  //   // originalLabel: "Original",
+  //   dubVidoe:
+  //     "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/play_720p.mp4",
+  //   dubFlag: "/assets/img/us-flag.png",
+  //   thumbnail:
+  //     "https://vz-c5817d00-065.b-cdn.net/c29da669-2fb2-4d8e-9c08-1db9c7763293/thumbnail_35477268.jpg",
+  //   // dubLable: "Dubbed",
+  // },
   {
     title: "High Quality Lip Sync",
     description:
