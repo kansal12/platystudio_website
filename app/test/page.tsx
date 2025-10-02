@@ -93,7 +93,7 @@ const VimeoPlayer: React.FC = () => {
     <div className="w-full h-[40vh] sm:h-[80vh]  mx-auto relative  bg-black ">
       <iframe
         ref={iframeRef}
-        src="https://player.vimeo.com/video/1122400201?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
+        src="https://player.vimeo.com/video/1123828162?badge=0&autopause=0&watchlater=0&pip=0&title=0&like=0"
         // width={width}
         // height={height}
         frameBorder="0"
