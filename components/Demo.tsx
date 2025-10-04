@@ -134,10 +134,16 @@ export function Demo() {
           {/* Dubbing Section */}
           <div className="relative">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl">
-                Setting new quality benchmarks in AI Powered Dubbing
+              {/* <h2 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent sm:text-3xl"> */}
+              <h2 className="text-2xl font-bold mb-3   sm:text-3xl">
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                  Setting New Standards
+                </span>
+                <br />
+                in Dubbing with AI.
               </h2>
-              <p className="text-base text-white/60">
+              {/* <p className="text-base text-white/60"> */}
+              <p className="font-sans text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed flex-grow">
                 Preserve Voice Quality, Emotions, Timing, Prosody and 10 other
                 voice characteristics. Our AI ensures perfect synchronization
                 while maintaining the authenticity of the original performance.
