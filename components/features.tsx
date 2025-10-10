@@ -9,7 +9,7 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 export function Features() {
   return (
     <section
-      className="container mx-auto relative  flex justify-center"
+      className="container mx-auto relative  flex justify-center scroll-mt-[100px]"
       id="features"
     >
       <div className="px-4 sm:px-6 lg:px-8 ">
