@@ -13,9 +13,26 @@ import { useState } from "react";
 import { DemoDialog } from "@/components/demo-dialog";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 
 export function Header() {
   const [showDemo, setShowDemo] = useState(false);
+  const pathname = usePathname();
+  const [hash, setHash] = useState("");
+
+  React.useEffect(() => {
+    // Update when hash changes
+    const handleHashChange = () => {
+      setHash(window.location.hash);
+    };
+
+    handleHashChange(); // run on first load
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+  console.log("Current pathname:", pathname);
+
+  console.log("Current hash:", hash);
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,13 +48,21 @@ export function Header() {
             <nav className="hidden md:flex md:items-center md:space-x-8">
               <Link
                 href="/#features"
-                className="text-sm font-medium hover:text-white/80 transition-colors"
+                className={`text-sm font-medium hover:text-white/80 transition-colors ${
+                  hash === "#features"
+                    ? "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent"
+                    : ""
+                }`}
               >
                 Features
               </Link>
               <Link
                 href="/demo"
-                className="text-sm font-medium hover:text-white/80 transition-colors"
+                className={`text-sm font-medium hover:text-white/80 transition-colors ${
+                  pathname === "/demo"
+                    ? "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent"
+                    : ""
+                }`}
               >
                 Demo
               </Link>
