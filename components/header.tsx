@@ -30,7 +30,7 @@ export function Header() {
             </div>
             <nav className="hidden md:flex md:items-center md:space-x-8">
               <Link
-                href="#features"
+                href="/#features"
                 className="text-sm font-medium hover:text-white/80 transition-colors"
               >
                 Features
