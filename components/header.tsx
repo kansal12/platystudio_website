@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import {
   Sheet,
@@ -20,18 +20,27 @@ export function Header() {
   const pathname = usePathname();
   const [hash, setHash] = useState("");
 
-  React.useEffect(() => {
-    // Update when hash changes
-    const handleHashChange = () => {
-      setHash(window.location.hash);
+  useEffect(() => {
+    // Function to update the current hash
+    const updateHash = () => {
+      if (window.location.hash) {
+        setHash(window.location.hash);
+      } else {
+        setHash("");
+      }
     };
 
-    handleHashChange(); // run on first load
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-  console.log("Current pathname:", pathname);
+    // Run once on mount
+    updateHash();
 
+    // Listen for hash changes (e.g., when user clicks #features)
+    window.addEventListener("hashchange", updateHash);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("hashchange", updateHash);
+    };
+  }, []); // 👈 no dependencies — runs once
   console.log("Current hash:", hash);
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl">
@@ -48,21 +57,23 @@ export function Header() {
             <nav className="hidden md:flex md:items-center md:space-x-8">
               <Link
                 href="/#features"
-                className={`text-sm font-medium hover:text-white/80 transition-colors ${
-                  hash === "#features"
-                    ? "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent"
-                    : ""
-                }`}
+                className={`relative text-sm font-medium text-white/100 transition-all duration-300 hover:text-white/90
+    after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:content-[''] ${
+      hash === "#features"
+        ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text after:w-full after:bg-gradient-to-r after:from-blue-400 after:via-indigo-500 after:to-purple-600"
+        : ""
+    }`}
               >
                 Features
               </Link>
               <Link
                 href="/demo"
-                className={`text-sm font-medium hover:text-white/80 transition-colors ${
-                  pathname === "/demo"
-                    ? "bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent"
-                    : ""
-                }`}
+                className={`relative text-sm font-medium text-white/100 transition-all duration-300 hover:text-white/90
+    after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:content-[''] ${
+      pathname === "/demo"
+        ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text after:w-full after:bg-gradient-to-r after:from-blue-400 after:via-indigo-500 after:to-purple-600"
+        : ""
+    }`}
               >
                 Demo
               </Link>
@@ -71,7 +82,12 @@ export function Header() {
                 href="https://kansal12.github.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:text-white/80 transition-colors"
+                className={`relative text-sm font-medium text-white/100 transition-all duration-300 hover:text-white/90
+    after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:content-[''] ${
+      hash === "/blog"
+        ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text after:w-full after:bg-gradient-to-r after:from-blue-400 after:via-indigo-500 after:to-purple-600"
+        : ""
+    }`}
               >
                 Blog
               </Link>
@@ -94,7 +110,7 @@ export function Header() {
                 <nav className="flex flex-col space-y-4 mt-8">
                   <SheetClose asChild>
                     <Link
-                      href="#features"
+                      href="/#features"
                       className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
                     >
                       Features
