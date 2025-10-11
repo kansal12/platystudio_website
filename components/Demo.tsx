@@ -107,7 +107,15 @@ const features: Array<DubbingFeature> = [
   },
 ];
 
-const viemoVideoId = ["1123828162"];
+const viemoVideo = [
+  {
+    id: "1123828162",
+    videoTitle: "Money Heist by Netflix",
+    title: "Entertainment Content",
+    description:
+      "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
+  },
+];
 
 export function Demo() {
   const router = useRouter();
@@ -163,8 +171,27 @@ export function Demo() {
               </p>
             </div>
             <div className="my-7">
-              {viemoVideoId.map((videoId) => (
-                <VimeoPlayer key={videoId} videoId={videoId} />
+              {viemoVideo.map((video) => (
+                <div
+                  key={video.title}
+                  className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
+                >
+                  <div className="relative aspect-[16/9]  overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
+                    <VimeoPlayer
+                      key={video.id}
+                      videoId={video.id}
+                      title={video.videoTitle}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl font-bold sm:text-2xl">
+                      {video.title}
+                    </h3>
+                    <p className="text-base text-white/60 sm:text-lg">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -177,7 +204,7 @@ export function Demo() {
                     <DualVideoPlayer
                       originalVideo={feature.originalVideo}
                       dubVideo={feature.dubVidoe}
-                      title={feature.title}
+                      title={feature.videoTitle}
                       originalFlag={feature.originalFlag}
                       dubFlag={feature.dubFlag}
                       thumbnail={feature.thumbnail}
