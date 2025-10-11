@@ -39,7 +39,7 @@ export const BentoGridItem = ({
       className={cn(
         "row-span-1 rounded-xl group/bento",
         "p-4 sm:p-5 lg:p-6",
-        "h-fit sm:h-[210px]",
+        "h-fit sm:h-[250px]",
         "bg-white dark:bg-black",
         "border border-transparent dark:border-white/[0.2]",
         "shadow-input dark:shadow-none hover:shadow-xl",
