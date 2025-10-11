@@ -42,7 +42,7 @@ const features: Array<DubbingFeature> = [
     description:
       "High-quality, scalable dubs for any genre—fast, seamless multilingual content for YouTube producers",
     type: "dubbing",
-    videoTitle: "CNET Humanoid",
+    videoTitle: "CNET",
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/1a3a5929-a622-4f72-a27b-bafd97f5a5d3/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
@@ -59,7 +59,7 @@ const features: Array<DubbingFeature> = [
     description:
       "Designed to adapt across content categories while preserving original accent, spatial effects, non-verbal cues, and emotions.",
     type: "dubbing",
-    videoTitle: "Mady-Morrisson",
+    videoTitle: "MADY MORRISSON",
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/86cba5bd-7875-4883-b358-fa82f68af63c/play_720p.mp4",
     originalFlag: "/assets/img/greman_flag.jpg",
@@ -93,7 +93,7 @@ const features: Array<DubbingFeature> = [
     description:
       "Use AI-driven phoneme mapping and emotional analysis to align lip movements with dubbed audio while preserving original emotions.",
     type: "dubbing",
-    videoTitle: "Logitech Lipsync",
+    videoTitle: "LOGITECH",
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/ceff1ebf-95b9-40a0-99f8-d1cb9eca1cbd/play_720p.mp4",
     originalFlag: "/assets/img/us-flag.png",
