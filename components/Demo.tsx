@@ -110,7 +110,7 @@ const viemoVideo = [
     id: "1123828162",
     videoTitle: "Money Heist by Netflix",
     title: "Entertainment Content",
-    tag: "",
+    tag: "entertainment-content",
     description:
       "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
   },
@@ -118,7 +118,7 @@ const viemoVideo = [
     id: "1125079326",
     videoTitle: "EdTech",
     title: "Online Learining Content",
-    tag: "EdTech",
+    tag: "edTech-content",
     description:
       "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
   },
