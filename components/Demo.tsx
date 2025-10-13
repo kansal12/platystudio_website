@@ -24,18 +24,16 @@ const features: Array<DubbingFeature> = [
     description:
       "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
     type: "dubbing",
-    videoTitle: "PTM - IAS Princeton",
+    videoTitle: "IAS Princeton",
 
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/1295b06c-6cb9-4771-83cf-f49d49a91420/play_480p.mp4",
     originalFlag: "/assets/img/us-flag.png",
-    // originalLabel: "Original",
     dubVidoe:
       "https://vz-c5817d00-065.b-cdn.net/b277d050-f483-4080-bca9-2c74b529d425/play_480p.mp4",
     dubFlag: "/assets/img/span-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/1295b06c-6cb9-4771-83cf-f49d49a91420/thumbnail_8971f0d3.jpg",
-    // dubLable: "Dubbed",
   },
   {
     title: "Technology News",
@@ -112,6 +110,15 @@ const viemoVideo = [
     id: "1123828162",
     videoTitle: "Money Heist by Netflix",
     title: "Entertainment Content",
+    tag: "",
+    description:
+      "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
+  },
+  {
+    id: "1125079326",
+    videoTitle: "EdTech",
+    title: "Online Learining Content",
+    tag: "EdTech",
     description:
       "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
   },
@@ -170,11 +177,12 @@ export function Demo() {
                 while maintaining the authenticity of the original performance.
               </p>
             </div>
-            <div className="my-7">
+            <div className="flex flex-col gap-4 my-7">
               {viemoVideo.map((video) => (
                 <div
+                  id={video.tag}
                   key={video.title}
-                  className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20"
+                  className="flex flex-col gap-4 group bg-black/20 rounded-2xl p-4 hover:bg-black/40 transition-colors duration-300 border border-white/20 scroll-mt-[100px]"
                 >
                   <div className="relative aspect-[16/9]  overflow-hidden rounded-xl border border-white/10 bg-black/50 transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl">
                     <VimeoPlayer

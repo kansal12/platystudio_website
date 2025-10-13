@@ -28,7 +28,7 @@ export default function Home() {
   };
   return (
     <VideoPlayerProvider>
-      <div className="relative min-h-screen w-full overflow-hidden">
+      <div className="relative min-h-screen w-full overflow-hidden ">
         <DemoScheduler
           setShowDialog={setModalOpen}
           showDialog={isModalOpen}

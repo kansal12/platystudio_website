@@ -234,27 +234,27 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
   const { setCurrentPlayingId } = useVideoPlayer();
 
   // Listen for global pause events
-  useEffect(() => {
-    const handlePauseOthers = (
-      e: CustomEvent<{ currentId: string | null }>
-    ) => {
-      if (e.detail.currentId !== playerId && isPlaying) {
-        if (originalVideoRef.current) originalVideoRef.current.pause();
-        setIsPlaying(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handlePauseOthers = (
+  //     e: CustomEvent<{ currentId: string | null }>
+  //   ) => {
+  //     if (e.detail.currentId !== playerId && isPlaying) {
+  //       if (originalVideoRef.current) originalVideoRef.current.pause();
+  //       setIsPlaying(false);
+  //     }
+  //   };
 
-    window.addEventListener(
-      "pauseOtherPlayers",
-      handlePauseOthers as EventListener
-    );
-    return () => {
-      window.removeEventListener(
-        "pauseOtherPlayers",
-        handlePauseOthers as EventListener
-      );
-    };
-  }, [playerId, isPlaying]);
+  //   window.addEventListener(
+  //     "pauseOtherPlayers",
+  //     handlePauseOthers as EventListener
+  //   );
+  //   return () => {
+  //     window.removeEventListener(
+  //       "pauseOtherPlayers",
+  //       handlePauseOthers as EventListener
+  //     );
+  //   };
+  // }, [playerId, isPlaying]);
 
   const handleReplay = () => {
     if (!playerRef.current) return;
