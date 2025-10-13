@@ -112,7 +112,7 @@ const viemoVideo = [
     title: "Entertainment Content",
     tag: "entertainment-content",
     description:
-      "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
+      "Bringing the world’s finest entertainment to every language, powered by Platy Studio’s AI dubbing technology. Credits: Netflix.",
   },
   {
     id: "1125079326",
@@ -120,7 +120,7 @@ const viemoVideo = [
     title: "Online Learining Content",
     tag: "edTech-content",
     description:
-      "Bringing the world’s finest stories to every language, powered by Platy Studio’s AI dubbing technology.",
+      "Reimagining how the world learns — bringing every great lesson and educator’s voice to every language without any compromise. Credits: Cuemath.",
   },
 ];
 
