@@ -41,7 +41,6 @@ export function Header() {
       window.removeEventListener("hashchange", updateHash);
     };
   }, []); // 👈 no dependencies — runs once
-  console.log("Current hash:", hash);
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/50 backdrop-blur-xl">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

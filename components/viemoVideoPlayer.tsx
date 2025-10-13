@@ -311,11 +311,6 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
         />
       </div>
 
-      {title && (
-        <div className="absolute left-3 sm:left-4 top-3 sm:top-4 text-xs sm:text-sm font-medium bg-black/80 text-white rounded-md px-2 py-1 uppercase">
-          {title}
-        </div>
-      )}
       <div
         className={cn(
           "absolute w-full inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
@@ -348,6 +343,14 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
         </div>
 
         <div className="absolute bottom-0 w-full left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
+          {title && (
+            <div className="flex justify-between">
+              <div></div>
+              <div className=" text-xs sm:text-sm font-medium bg-black/80 text-white rounded-md px-2 py-1 uppercase">
+                {title}
+              </div>
+            </div>
+          )}
           <Slider
             value={currentTime}
             max={duration - stopVimeoVideoPlay}

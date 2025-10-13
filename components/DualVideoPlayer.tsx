@@ -252,11 +252,6 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         </video>
       </div>
 
-      {title && (
-        <div className="absolute left-3 sm:left-4 top-3 sm:top-4 text-xs sm:text-sm font-medium bg-black/80 text-white rounded-md px-2 py-1 uppercase">
-          {title}
-        </div>
-      )}
       <div
         className={cn(
           "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-opacity duration-300",
@@ -289,37 +284,46 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1.5 sm:gap-2 md:gap-4 p-2 sm:p-3 md:p-4">
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <Button
-              variant="default"
-              size="sm"
-              className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium py-0  ${
-                activeVideo === "original"
-                  ? "opacity-100 outline outline-2 outline-[#9333ea]"
-                  : "opacity-75 "
-              }`}
-              onClick={() => handlePlay("original")}
-            >
-              <FlagButton
-                key={"original"}
-                flag={originalFlag}
-                label={"original"}
-              />
-              Original
-            </Button>
-            <Button
-              variant="default"
-              size="sm"
-              className={`h-6 sm:h-8 px-2 box-border text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
-                activeVideo === "dub"
-                  ? "opacity-100 outline outline-2 outline-[#9333ea]"
-                  : "opacity-75"
-              }`}
-              onClick={() => handlePlay("dub")}
-            >
-              <FlagButton key={"dub"} flag={dubFlag} label={"dub"} />
-              Dubbed
-            </Button>
+          <div className="flex justify-between">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <Button
+                variant="default"
+                size="sm"
+                className={`h-6 sm:h-8 px-2 text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium py-0  ${
+                  activeVideo === "original"
+                    ? "opacity-100 outline outline-2 outline-[#9333ea]"
+                    : "opacity-75 "
+                }`}
+                onClick={() => handlePlay("original")}
+              >
+                <FlagButton
+                  key={"original"}
+                  flag={originalFlag}
+                  label={"original"}
+                />
+                Original
+              </Button>
+              <Button
+                variant="default"
+                size="sm"
+                className={`h-6 sm:h-8 px-2 box-border text-[10px] sm:text-xs whitespace-nowrap shrink-0 font-medium  py-0 ${
+                  activeVideo === "dub"
+                    ? "opacity-100 outline outline-2 outline-[#9333ea]"
+                    : "opacity-75"
+                }`}
+                onClick={() => handlePlay("dub")}
+              >
+                <FlagButton key={"dub"} flag={dubFlag} label={"dub"} />
+                Dubbed
+              </Button>
+            </div>
+            <div>
+              {title && (
+                <div className="text-xs sm:text-sm font-medium bg-black/80 text-white rounded-md px-2 py-1 uppercase">
+                  {title}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2">

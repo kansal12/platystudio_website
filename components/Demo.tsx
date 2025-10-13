@@ -24,7 +24,7 @@ const features: Array<DubbingFeature> = [
     description:
       "Professional-grade dubbing that works for technical and academic content while preserving speaker's syle, voice and emotions.",
     type: "dubbing",
-    videoTitle: "Path to Maths- IAS Princeton",
+    videoTitle: "PTM - IAS Princeton",
 
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/1295b06c-6cb9-4771-83cf-f49d49a91420/play_480p.mp4",

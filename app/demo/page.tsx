@@ -2,7 +2,8 @@
 
 import DualVideoPlayer from "@/components/DualVideoPlayer";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps";
 // type Tags = "All";
@@ -219,6 +220,11 @@ const features: Array<DubbingFeature> = [
 export default function Demos() {
   const tags: Tags[] = ["All"];
   const [activeTag, setActiveTag] = useState<Tags>("All");
+  const param = useSearchParams().get("tag");
+
+  useEffect(() => {
+    setActiveTag((param as Tags) || "All");
+  }, [param]);
 
   return (
     <section
