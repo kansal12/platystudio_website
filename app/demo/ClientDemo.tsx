@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps";
+type Tags = "All" | "Drama" | "Frontend" | "Backend" | "Design" | "DevOps";
 // type Tags = "All";
 
 interface DubbingFeature {
