@@ -77,7 +77,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/thumbnail_c74b6c36.jpg",
-    tags: ["DevOps"],
+    tags: ["Drama"],
   },
   {
     id: 4,
