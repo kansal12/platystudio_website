@@ -69,7 +69,7 @@ const features: Array<DubbingFeature> = [
     videoTitle: "Multi-spatial Cloning",
 
     originalVideo:
-      "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/play_720p.mp4",
+      "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/play_480p.mp4",
     originalFlag: "/assets/img/turkey_flag.png",
 
     dubVideo:
