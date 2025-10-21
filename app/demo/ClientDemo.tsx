@@ -66,7 +66,7 @@ const features: Array<DubbingFeature> = [
     description:
       "Blending multiple voice and sound layers to create rich, cinematic audio experiences that feel natural and multidimensional.",
     type: "dubbing",
-    videoTitle: "Multi-spatial Cloning",
+    videoTitle: "Turkish Drama",
 
     originalVideo:
       "https://vz-c5817d00-065.b-cdn.net/f87e4665-639c-49a5-a7cf-2346a265bf31/play_480p.mp4",
