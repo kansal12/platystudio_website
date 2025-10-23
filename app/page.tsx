@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { Testimonials } from "@/components/testimonials";
+import { Pricing } from "@/components/pricing";
 
 export default function Home() {
   const router = useRouter();
@@ -41,6 +42,7 @@ export default function Home() {
         <Testimonials />
         <CTASection />
         <FAQ />
+        {/* <Pricing /> */}
       </div>
       <ToastContainer />
     </VideoPlayerProvider>

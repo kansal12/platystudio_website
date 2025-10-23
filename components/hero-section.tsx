@@ -23,7 +23,7 @@ export function HeroSection() {
             className="bg-white px-8 py-6 text-black hover:bg-white/90"
             onClick={() => setShowDemo(true)}
           >
-            Schedule Demo
+            Schedule Call
           </RainbowButton>
         </div>
       </div>

@@ -3,6 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { DemoDialog } from "./demo-dialog";
+import { useState } from "react";
+import { RainbowButton } from "./ui/rainbow-button";
 
 const plans = [
   {
@@ -31,15 +34,19 @@ const plans = [
 ];
 
 export function Pricing() {
+  const [showDemo, setShowDemo] = useState(false);
+  const handleDemoClick = () => setShowDemo(true);
   return (
     <section className="relative py-16 sm:py-24 lg:py-32" id="pricing">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <SectionHeading
+        {/* <SectionHeading
           title="Simple, transparent pricing"
           description="Choose the plan that's right for your production needs"
-        />
+        /> */}
+
+        {/*
         <div className="mt-12 sm:mt-16 lg:mt-20 grid gap-8 md:grid-cols-2 lg:gap-12">
-          {plans.map((plan) => (
+           {plans.map((plan) => (
             <BackgroundGradient
               key={plan.name}
               className="rounded-[22px] p-4 sm:p-8 lg:p-10"
@@ -76,9 +83,27 @@ export function Pricing() {
                 </Button>
               </div>
             </BackgroundGradient>
-          ))}
+          ))} 
+           <div/>
+           */}
+
+        <div className="mt-12 sm:mt-16 lg:mt-20 flex flex-col items-center justify-center gap-4  lg:gap-4">
+          <div className="sm:w-[500px] text-lg text-center">
+            We offer custom pricing based on the complexity and scale of your
+            project, and provide quotes across different quality tiers. You can
+            schedule a call for exact pricing. discuss the exact details.
+          </div>
+          <div>
+            <RainbowButton
+              className="mt-4 w-full"
+              onClick={() => setShowDemo(true)}
+            >
+              Get Price
+            </RainbowButton>
+          </div>
         </div>
       </div>
+      <DemoDialog open={showDemo} onOpenChange={setShowDemo} />
     </section>
   );
 }

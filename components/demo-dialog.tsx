@@ -129,7 +129,7 @@ export function DemoDialog({
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle>Schedule Demo</DialogTitle>
+              <DialogTitle>Schedule Call</DialogTitle>
               <DialogDescription>
                 Let us know your requirements and we wll get back to you
                 shortly.
@@ -200,7 +200,7 @@ export function DemoDialog({
                 />
               </div>
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Schedule Demo"}
+                {isSubmitting ? "Submitting..." : "Schedule Call"}
               </Button>
             </form>
           </>

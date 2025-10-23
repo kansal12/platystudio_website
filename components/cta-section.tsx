@@ -56,7 +56,7 @@ export function CTASection() {
               className="bg-white px-8 py-6 text-black hover:bg-white/90"
               onClick={handleDemoClick}
             >
-              Schedule Demo
+              Schedule Call
             </RainbowButton>
             <p className="text-base text-white/40">
               Join the future of video production today

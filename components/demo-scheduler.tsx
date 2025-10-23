@@ -103,7 +103,7 @@ export function DemoScheduler({
           >
             Minimize
           </Button>
-          <Button type="submit">Schedule Demo</Button>
+          <Button type="submit">Schedule Call</Button>
         </div>
       </DialogContent>
     </Dialog>

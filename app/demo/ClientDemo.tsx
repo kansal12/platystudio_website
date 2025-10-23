@@ -5,7 +5,14 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-type Tags = "All" | "AI" | "Frontend" | "Backend" | "Design" | "DevOps" | "Drama";
+type Tags =
+  | "All"
+  | "AI"
+  | "Frontend"
+  | "Backend"
+  | "Design"
+  | "DevOps"
+  | "Drama";
 // type Tags = "All";
 
 interface DubbingFeature {
@@ -218,7 +225,7 @@ const features: Array<DubbingFeature> = [
 ];
 
 export default function ClientDemo() {
-  const tags: Tags[] = ["All"];
+  const tags: Tags[] = ["All", "Drama"];
   const [activeTag, setActiveTag] = useState<Tags>("All");
   const param = useSearchParams().get("tag");
 

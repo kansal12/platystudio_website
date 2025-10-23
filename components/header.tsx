@@ -76,6 +76,17 @@ export function Header() {
               >
                 Demo
               </Link>
+              <Link
+                href="/price"
+                className={`relative text-sm font-medium text-white/100 transition-all duration-300 hover:text-white/90
+    after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:content-[''] ${
+      pathname === "/price"
+        ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text after:w-full after:bg-gradient-to-r after:from-blue-400 after:via-indigo-500 after:to-purple-600"
+        : ""
+    }`}
+              >
+                Price
+              </Link>
 
               <Link
                 href="https://kansal12.github.io/"
@@ -97,7 +108,7 @@ export function Header() {
               className="hidden md:inline-flex"
               onClick={() => setShowDemo(true)}
             >
-              Schedule Demo
+              Schedule Call
             </RainbowButton>
             <Sheet>
               <SheetTrigger asChild>
@@ -139,7 +150,7 @@ export function Header() {
                       className="mt-4 w-full"
                       onClick={() => setShowDemo(true)}
                     >
-                      Schedule Demo
+                      Schedule Call
                     </RainbowButton>
                   </SheetClose>
                 </nav>
