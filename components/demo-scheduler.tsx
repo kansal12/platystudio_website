@@ -54,7 +54,7 @@ export function DemoScheduler({
     <Dialog open={showDialog} onOpenChange={setShowDialog}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Schedule a Demo</DialogTitle>
+          <DialogTitle>Schedule a Call</DialogTitle>
           <DialogDescription>
             See Platy.Studio in action. Choose your preferred date and time for
             a personalized demo.

@@ -135,7 +135,7 @@ export function DemoDialog({
                 shortly.
               </DialogDescription>
             </DialogHeader>
-            <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+            <form onSubmit={handleSubmit} className="grid gap-4 pb-4 sm:py-4">
               <div className="grid gap-2">
                 <Label htmlFor="name">Name *</Label>
                 <Input
