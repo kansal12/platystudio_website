@@ -43,7 +43,7 @@ export default function DemoScheduler() {
             a personalized demo.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 pb-4">
           <div className="grid gap-2">
             <Label htmlFor="name">Name</Label>
             <Input id="name" />

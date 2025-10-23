@@ -25,9 +25,11 @@ import { toast } from "react-toastify";
 export function DemoDialog({
   open,
   onOpenChange,
+  onClose,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onClose?: () => void;
 }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -113,6 +115,7 @@ export function DemoDialog({
       setIsSubmitting(false);
       setIsSubmitted(false);
       onOpenChange(false);
+      onClose && onClose();
     }
   };
 
@@ -135,7 +138,7 @@ export function DemoDialog({
                 shortly.
               </DialogDescription>
             </DialogHeader>
-            <form onSubmit={handleSubmit} className="grid gap-4 pb-4 sm:py-4">
+            <form onSubmit={handleSubmit} className="grid gap-4 pb-4">
               <div className="grid gap-2">
                 <Label htmlFor="name">Name *</Label>
                 <Input

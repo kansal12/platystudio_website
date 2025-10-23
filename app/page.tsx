@@ -11,28 +11,37 @@ import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { Testimonials } from "@/components/testimonials";
 import { Pricing } from "@/components/pricing";
+import { DemoDialog } from "@/components/demo-dialog";
 
 export default function Home() {
   const router = useRouter();
-  const [isModalOpen, setModalOpen] = useState(false);
+  // const [isModalOpen, setModalOpen] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     if (query.get("popup") === "true") {
-      setModalOpen(true);
+      setShowDemo(true);
+      // setModalOpen(true);
     }
   }, []);
 
   const handleCloseModal = () => {
-    setModalOpen(false);
+    setShowDemo(false);
+    // setModalOpen(false);
     router.push("/"); // Clear the query params
   };
   return (
     <VideoPlayerProvider>
       <div className="relative min-h-screen w-full overflow-hidden ">
-        <DemoScheduler
+        {/* <DemoScheduler
           setShowDialog={setModalOpen}
           showDialog={isModalOpen}
+          onClose={handleCloseModal}
+        /> */}
+        <DemoDialog
+          open={showDemo}
+          onOpenChange={setShowDemo}
           onClose={handleCloseModal}
         />
         <HeroSection />

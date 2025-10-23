@@ -54,13 +54,13 @@ export function DemoScheduler({
     <Dialog open={showDialog} onOpenChange={setShowDialog}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Schedule a Call</DialogTitle>
+          <DialogTitle>Schedule Call</DialogTitle>
           <DialogDescription>
             See Platy.Studio in action. Choose your preferred date and time for
             a personalized demo.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 pb-4">
           <div className="grid gap-2">
             <Label htmlFor="name">Name</Label>
             <Input id="name" />
@@ -93,7 +93,7 @@ export function DemoScheduler({
           </div>
         </div>
         <div className="flex justify-between">
-          <Button
+          {/* <Button
             variant="outline"
             // onClick={() => {
             //   setShowDialog(false);
@@ -102,7 +102,7 @@ export function DemoScheduler({
             onClick={onClose}
           >
             Minimize
-          </Button>
+          </Button> */}
           <Button type="submit">Schedule Call</Button>
         </div>
       </DialogContent>
