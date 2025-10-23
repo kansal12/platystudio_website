@@ -115,7 +115,9 @@ export function DemoDialog({
       setIsSubmitting(false);
       setIsSubmitted(false);
       onOpenChange(false);
-      onClose && onClose();
+      if (onClose) {
+        onClose();
+      }
     }
   };
 
