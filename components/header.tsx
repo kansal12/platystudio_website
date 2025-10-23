@@ -77,15 +77,15 @@ export function Header() {
                 Demo
               </Link>
               <Link
-                href="/price"
+                href="/pricing"
                 className={`relative text-sm font-medium text-white/100 transition-all duration-300 hover:text-white/90
     after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 hover:after:w-full after:bg-white after:transition-all after:duration-300 after:content-[''] ${
-      pathname === "/price"
+      pathname === "/pricing"
         ? "text-transparent bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text after:w-full after:bg-gradient-to-r after:from-blue-400 after:via-indigo-500 after:to-purple-600"
         : ""
     }`}
               >
-                Price
+                Pricing
               </Link>
 
               <Link

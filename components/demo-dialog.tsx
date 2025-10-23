@@ -193,7 +193,7 @@ export function DemoDialog({
                 <Input
                   id="message"
                   className="min-h-[80px]"
-                  placeholder="Tell us about your project requirements..."
+                  placeholder="Tell us about your content."
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
                   required

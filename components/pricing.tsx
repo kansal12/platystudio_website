@@ -88,10 +88,10 @@ export function Pricing() {
            */}
 
         <div className="mt-12 sm:mt-16 lg:mt-20 flex flex-col items-center justify-center gap-4  lg:gap-4">
-          <div className="sm:w-[500px] text-lg text-center">
+          <div className="sm:w-[500px] text-lg  sm:text-xl text-center">
             We offer custom pricing based on the complexity and scale of your
             project, and provide quotes across different quality tiers. You can
-            schedule a call for exact pricing. discuss the exact details.
+            schedule a call for exact pricing.
           </div>
           <div>
             <RainbowButton
