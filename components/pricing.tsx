@@ -92,7 +92,7 @@ export function Pricing() {
             We offer custom pricing tailored to the scale and complexity
              of your project, with options across multiple quality tiers. 
              Just schedule a quick call using the button below, 
-             and we'll give you an exact quote.
+             and we&rsquo;ll give you an exact quote.
           </div>
           <div>
             <RainbowButton
