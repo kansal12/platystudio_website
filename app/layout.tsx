@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     url: "https://platy.studio/",
     siteName: "Platy Studio",
     type: "website",
+    images: [{
+      url: 'https://platy.studio/platy_icon.png',
+      alt: 'Platy Studio Icon',
+    }],
   },
 };
 

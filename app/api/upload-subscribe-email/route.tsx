@@ -7,10 +7,10 @@ import os from "os";
 
 export async function POST(req: Request) {
   const { email } = await req.json();
-
+  // console.log("email", email);
   // Format CSV content
-  const csv = `email${os.EOL}${email}`;
-
+  const csv = `email: ${email}`;
+  // console.log("csv", csv);
   // Save CSV temporarily
   const filePath = path.join(os.tmpdir(), `email_${Date.now()}.csv`);
   await writeFile(filePath, csv, "utf-8");
