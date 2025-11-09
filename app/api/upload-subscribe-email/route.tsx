@@ -6,10 +6,43 @@ import { Client } from "basic-ftp";
 import os from "os";
 
 export async function POST(req: Request) {
-  const { email } = await req.json();
+  let email: string | undefined;
+
+  // 🧩 Safely parse JSON
+  try {
+    const data = await req.json();
+    email = data?.email;
+  } catch (err) {
+    console.error("Invalid JSON body:", err);
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Invalid JSON body. Use application/json format.",
+      },
+      { status: 400 }
+    );
+  }
+
+  // 🛡️ Validate email input
+  if (!email || typeof email !== "string" || !email.trim()) {
+    return NextResponse.json(
+      { success: false, error: "Email is required." },
+      { status: 400 }
+    );
+  }
+
+  const trimmedEmail = email.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(trimmedEmail)) {
+    return NextResponse.json(
+      { success: false, error: "Invalid email format." },
+      { status: 400 }
+    );
+  }
   // console.log("email", email);
   // Format CSV content
-  const csv = `email: ${email}`;
+  const csv = `email: ${trimmedEmail}`;
   // console.log("csv", csv);
   // Save CSV temporarily
   const filePath = path.join(os.tmpdir(), `email_${Date.now()}.csv`);

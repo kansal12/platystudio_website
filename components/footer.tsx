@@ -15,6 +15,21 @@ export function Footer() {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Trim and validate email BEFORE making API calls
+    const emailValue = email.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailValue) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+
+    if (!emailRegex.test(emailValue)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
     setIsSubscribing(true);
 
     const payload = {
@@ -71,8 +86,8 @@ export function Footer() {
           <div className="space-y-4 max-w-[500px]">
             <h3 className="text-lg font-bold">Platy.Studio</h3>
             <p className="text-sm text-white/60">
-              Seattle-based AI video production studio 
-              specializing in high-quality dubbing solutions.
+              Seattle-based AI video production studio specializing in
+              high-quality dubbing solutions.
             </p>
             <div className="flex space-x-4">
               <Link
