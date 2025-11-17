@@ -165,6 +165,7 @@ export function Demo() {
                       Setting New Standards
                     </span>
                     <br />
+                    in AI-Driven Dubbing
                   </>
                 }
                 description=""
