@@ -117,7 +117,7 @@ const viemoVideo = [
   {
     id: "1125079326",
     videoTitle: "EdTech",
-    title: "Online Learining Content",
+    title: "Online Learning Content",
     tag: "edTech-content",
     description:
       "Reimagining how the world learns — bringing every great lesson and educator’s voice to every language without any compromise. Credits: Cuemath.",
@@ -165,7 +165,6 @@ export function Demo() {
                       Setting New Standards
                     </span>
                     <br />
-                    that sets us apart
                   </>
                 }
                 description=""
