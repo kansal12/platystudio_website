@@ -165,7 +165,7 @@ export function Demo() {
                       Setting New Standards
                     </span>
                     <br />
-                    in Dubbing
+                    in quality
                   </>
                 }
                 description=""
