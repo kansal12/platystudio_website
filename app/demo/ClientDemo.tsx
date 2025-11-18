@@ -227,7 +227,7 @@ const features: Array<DubbingFeature> = [
 ];
 
 export default function ClientDemo() {
-  const tags: Tags[] = ["All", "Drama"];
+  const tags: Tags[] = ["All", "Drama", "Wellness", "News"];
   const [activeTag, setActiveTag] = useState<Tags>("All");
   const param = useSearchParams().get("tag");
 
