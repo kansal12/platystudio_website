@@ -12,7 +12,9 @@ type Tags =
   | "Backend"
   | "Design"
   | "DevOps"
-  | "Drama";
+  | "Drama"
+    "Wellness"
+    "News";
 // type Tags = "All";
 
 interface DubbingFeature {
@@ -47,7 +49,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/ae948458-46d0-4de2-9f8c-d3d327dbab2a/thumbnail_e33af038.jpg",
-    tags: ["Backend"],
+    tags: ["News"],
   },
   {
     id: 2,
@@ -121,7 +123,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/greek_flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/72603c44-cbfb-43d8-99d4-ce93e71edfdb/thumbnail_5bfec1b2.jpg",
-    tags: ["AI"],
+    tags: ["Wellness"],
   },
 
   {
@@ -161,7 +163,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/us-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/cce1d0a2-54b5-4fb6-94df-c172f4be9a68/thumbnail.jpg",
-    tags: ["DevOps"],
+    tags: ["Wellness"],
   },
 
   {
@@ -220,7 +222,7 @@ const features: Array<DubbingFeature> = [
     dubFlag: "/assets/img/ind-flag.png",
     thumbnail:
       "https://vz-c5817d00-065.b-cdn.net/7f549a5a-09d3-4df5-b168-29c6eb4d0dc6/thumbnail.jpg",
-    tags: ["Backend"],
+    tags: ["News"],
   },
 ];
 
