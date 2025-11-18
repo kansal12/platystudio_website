@@ -12,9 +12,9 @@ type Tags =
   | "Backend"
   | "Design"
   | "DevOps"
+  | "Wellness"  
   | "Drama"
-    "Wellness"
-    "News";
+  | "News";
 // type Tags = "All";
 
 interface DubbingFeature {
