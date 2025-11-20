@@ -16,6 +16,13 @@ import { SectionHeading } from "@/components/ui/section-heading";
 const testimonials = [
   {
     quote:
+      "Shoutout to Platy Studio — our official dubbing partner! The quality is absolutely stunning, turnarounds are quick, pricing is competitive, and their team is very professional. Highly recommend!",
+    author: "Awadhesh Kumar",
+    position: "Founder, AK Studios LLC",
+    avatar: "/ak_studio.jpeg",
+  },
+  {
+    quote:
       "Platy Studio’s dubbing quality is unreal. They made our product demos feel native in the target non-English language — effortlessly.",
     author: "Rahul Singh",
     position: "COO, Mesh.ai",
