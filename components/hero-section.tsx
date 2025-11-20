@@ -13,7 +13,7 @@ export function HeroSection() {
           Box Office Quality AI Dubbing
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/60 sm:text-xl md:text-xl lg:text-2xl px-10 md:px-0">
-          Redefining video Localization at scale for Movies, OTT, Sports, News
+          Redefining Video Localization at Scale for Movies, OTT, Sports, News
           and Content Creators{" "}
           {/*and
            karaoke tracks. */}
