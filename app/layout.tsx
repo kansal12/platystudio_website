@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     images: [{
       url: 'https://platy.studio/platy_icon.png',
       alt: 'Platy Studio Icon',
+      width: 512,
+      height: 512,
     }],
   },
 };
@@ -50,8 +52,40 @@ export default function RootLayout({
           }}
         /> */}
         {/* Google tag (gtag.js)  */}
-        <Analytics /> {/* 👈 GA & tracking run here */}
+        <Analytics />
         <link rel="icon" href="/platy_icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Platy Studio",
+              applicationCategory: "MultimediaApplication",
+              url: "https://platy.studio",
+              description:
+                "AI-powered video dubbing studio for movies, OTT, and content creators.",
+              offers: {
+                "@type": "Offer",
+                priceCurrency: "USD",
+                price: "0",
+                description: "Custom pricing based on project scope",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Platy Studio LLC",
+                url: "https://platy.studio",
+                logo: "https://platy.studio/platy_icon.png",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Seattle",
+                  addressRegion: "WA",
+                  addressCountry: "US",
+                },
+              },
+            }),
+          }}
+        />
         <PreloadImages />
       </head>
       <body className={`${inter.className} bg-black text-white antialiased`}>

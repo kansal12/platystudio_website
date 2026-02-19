@@ -184,7 +184,7 @@ const DualVideoPlayer: React.FC<DualVideoPlayerProps> = ({
 
   return (
     <div
-      className="relative group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
+      className="relative group/player overflow-hidden rounded-lg bg-black"
       // {...handlers}
       onMouseEnter={() => {
         setShowControls(true);

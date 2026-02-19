@@ -105,7 +105,7 @@ export function Header() {
           </div>
           <div className="flex items-center space-x-4">
             <RainbowButton
-              className="hidden md:inline-flex"
+              className="hidden md:inline-flex font-semibold"
               onClick={() => setShowDemo(true)}
             >
               Schedule Call
@@ -147,7 +147,7 @@ export function Header() {
                   </SheetClose>
                   <SheetClose asChild>
                     <RainbowButton
-                      className="mt-4 w-full"
+                      className="mt-4 w-full font-semibold"
                       onClick={() => setShowDemo(true)}
                     >
                       Schedule Call

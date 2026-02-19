@@ -1,59 +1,31 @@
-"use client";
+import { Suspense } from "react";
 import { HeroSection } from "@/components/hero-section";
 import { Features } from "@/components/features";
 import { Demo } from "@/components/Demo";
 import { FAQ } from "@/components/faq";
 import { CTASection } from "@/components/cta-section";
-import { VideoPlayerProvider } from "@/contexts/video-player-context";
-import { DemoScheduler } from "@/components/demo-scheduler";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
 import { Testimonials } from "@/components/testimonials";
-import { Pricing } from "@/components/pricing";
-import { DemoDialog } from "@/components/demo-dialog";
+import { HomeClientShell } from "@/components/home-client-shell";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Platy Studio - AI Video Dubbing for Movies, OTT & Content Creators",
+  description:
+    "Box-office quality AI dubbing with voice cloning, lip sync, and idiomatic translation. 20+ languages, 10x faster than traditional methods.",
+  alternates: { canonical: "https://platy.studio" },
+};
 
 export default function Home() {
-  const router = useRouter();
-  // const [isModalOpen, setModalOpen] = useState(false);
-  const [showDemo, setShowDemo] = useState(false);
-
-  useEffect(() => {
-    const query = new URLSearchParams(window.location.search);
-    if (query.get("popup") === "true") {
-      setShowDemo(true);
-      // setModalOpen(true);
-    }
-  }, []);
-
-  const handleCloseModal = () => {
-    setShowDemo(false);
-    // setModalOpen(false);
-    router.push("/"); // Clear the query params
-  };
   return (
-    <VideoPlayerProvider>
-      <div className="relative min-h-screen w-full overflow-hidden ">
-        {/* <DemoScheduler
-          setShowDialog={setModalOpen}
-          showDialog={isModalOpen}
-          onClose={handleCloseModal}
-        /> */}
-        <DemoDialog
-          open={showDemo}
-          onOpenChange={setShowDemo}
-          onClose={handleCloseModal}
-        />
+    <Suspense>
+      <HomeClientShell>
         <HeroSection />
-        {/* <BrandLogos /> */}
         <Features />
         <Demo />
         <Testimonials />
         <CTASection />
         <FAQ />
-        {/* <Pricing /> */}
-      </div>
-      <ToastContainer />
-    </VideoPlayerProvider>
+      </HomeClientShell>
+    </Suspense>
   );
 }

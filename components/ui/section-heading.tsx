@@ -10,7 +10,7 @@ export function SectionHeading({ title, description }: SectionHeadingProps) {
         {title}
       </h2>
       {description && (
-        <p className="mt-6 text-xl text-white/60 sm:text-2xl">{description}</p>
+        <p className="mt-6 text-lg text-white/60 sm:text-xl">{description}</p>
       )}
     </div>
   );

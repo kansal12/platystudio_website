@@ -1,15 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   images: {
-    domains: [
-      "platy.studio",
-      "platy-studio.vercel.app",
-      "startup-template-sage.vercel.app",
+    remotePatterns: [
+      { protocol: "https", hostname: "platy.studio" },
+      { protocol: "https", hostname: "platy-studio.vercel.app" },
+      { protocol: "https", hostname: "startup-template-sage.vercel.app" },
+      { protocol: "https", hostname: "vz-c5817d00-065.b-cdn.net" },
     ],
     formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

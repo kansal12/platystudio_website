@@ -276,7 +276,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
   return (
     <div
       // className="relative  mx-auto  group/player  rounded-lg border border-slate-200/20 bg-slate-100/10"
-      className="relative  mx-auto  group/player overflow-hidden rounded-lg border border-slate-200/20 bg-slate-100/10"
+      className="relative mx-auto group/player overflow-hidden rounded-lg bg-black"
       // {...handlers}
       onMouseEnter={() => {
         setShowControls(true);
@@ -302,7 +302,7 @@ const VimeoPlayer: React.FC<VimeoPlayerProps> = ({ videoId, title }) => {
           src={`https://player.vimeo.com/video/${videoId}?controls=0`}
           onEnded={handleEnded}
           // className="w-full h-full"
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute inset-0 w-full h-full border-0 scale-[1.005] origin-center"
           frameBorder="0"
           allow="autoplay; picture-in-picture"
           allowFullScreen

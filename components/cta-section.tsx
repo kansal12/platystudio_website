@@ -53,7 +53,7 @@ export function CTASection() {
             className="mt-12 flex flex-col items-center justify-center gap-4"
           >
             <RainbowButton
-              className="bg-white px-8 py-6 text-black hover:bg-white/90"
+              className="bg-white px-10 py-6 text-lg font-semibold text-black hover:bg-white/90 hover:scale-[1.03] transition-transform"
               onClick={handleDemoClick}
             >
               Schedule Call
@@ -86,7 +86,7 @@ export function CTASection() {
                 className="group relative rounded-2xl border border-white/10 bg-black/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/5"
               >
                 <div className="absolute -inset-px -z-10 rounded-2xl bg-gradient-to-b from-slate-800 via-slate-800/50 to-slate-900 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="text-3xl font-bold text-white">
+                <div className="text-2xl sm:text-3xl font-bold text-white">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-sm font-medium text-white/80">

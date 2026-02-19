@@ -1,7 +1,10 @@
 "use client";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { Button } from "@/components/ui/button";
 import { DemoDialog } from "@/components/demo-dialog";
 import { useState } from "react";
+import Link from "next/link";
+import { Phone, Play } from "lucide-react";
 
 export function HeroSection() {
   const [showDemo, setShowDemo] = useState(false);
@@ -14,17 +17,25 @@ export function HeroSection() {
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/60 sm:text-xl md:text-xl lg:text-2xl px-10 md:px-0">
           Redefining Video Localization at Scale for Movies, OTT, Sports, News
-          and Content Creators{" "}
-          {/*and
-           karaoke tracks. */}
+          and Content Creators
         </p>
-        <div className="mt-10 flex items-center justify-center gap-6">
+        <div className="mt-10 flex items-center justify-center gap-5">
           <RainbowButton
-            className="bg-white px-8 py-6 text-black hover:bg-white/90"
+            className="bg-white px-10 py-6 text-lg font-semibold text-black hover:bg-white/90 hover:scale-[1.03] transition-transform"
             onClick={() => setShowDemo(true)}
           >
+            <Phone className="mr-2 h-5 w-5" />
             Schedule Call
           </RainbowButton>
+          <Link href="#Demo">
+            <Button
+              variant="outline"
+              className="px-10 py-6 text-lg font-semibold text-white border-white/40 hover:bg-white/10 hover:border-white/60 hover:scale-[1.03] transition-all backdrop-blur-sm"
+            >
+              <Play className="mr-2 h-5 w-5 fill-white" />
+              Watch Demo
+            </Button>
+          </Link>
         </div>
       </div>
       <DemoDialog open={showDemo} onOpenChange={setShowDemo} />

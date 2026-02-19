@@ -9,10 +9,10 @@ import { OptimizedImage } from "@/components/ui/optimized-image";
 export function Features() {
   return (
     <section
-      className="container mx-auto relative  flex justify-center scroll-mt-[100px]"
+      className="container mx-auto relative flex justify-center scroll-mt-[100px]"
       id="features"
     >
-      <div className="px-4 sm:px-6 lg:px-8 ">
+      <div className="px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={
             <>
@@ -25,7 +25,7 @@ export function Features() {
           }
           description=""
         />
-        <div className="mt-16 sm:mt-20 lg:mt-24 ">
+        <div className="mt-16 sm:mt-20 lg:mt-24">
           <BentoGrid className="max-w-7xl mx-auto">
             {items.map((item, i) => (
               <BentoGridItem
@@ -52,7 +52,7 @@ const items = [
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/sync.png"
-          alt="Automated Lip Sync"
+          alt="Adaptive Translation"
           fill
           className="object-cover rounded-xl"
         />
@@ -63,12 +63,12 @@ const items = [
   {
     title: "Voice Cloning",
     description:
-      "Captures and replicates the speaker’s voice, volume, texture and style.",
+      "Captures and replicates the speaker's voice, volume, texture and style.",
     header: (
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/manual.png"
-          alt="Manual Supervision"
+          alt="Voice Cloning"
           fill
           className="object-cover rounded-xl"
         />
@@ -84,7 +84,7 @@ const items = [
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/ott.png"
-          alt="Real-time Preview"
+          alt="Emotive Nuance"
           fill
           className="object-cover rounded-xl"
         />
@@ -92,22 +92,6 @@ const items = [
     ),
     icon: <Play className="h-4 w-4 text-neutral-500" />,
   },
-  // {
-  //   title: "Background Sounds",
-  //   description:
-  //     "Preserves noise, ambience, and music for an authentic, theater-like experience.",
-  //   header: (
-  //     <div className="relative w-full h-full min-h-[6rem]">
-  //       <OptimizedImage
-  //         src="/features/ml.png"
-  //         alt="Multi-language Support"
-  //         fill
-  //         className="object-cover rounded-xl"
-  //       />
-  //     </div>
-  //   ),
-  //   icon: <Globe2 className="h-4 w-4 text-neutral-500" />,
-  // },
   {
     title: "Human in the Loop",
     description:
@@ -116,7 +100,7 @@ const items = [
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/ml.png"
-          alt="Multi-language Support"
+          alt="Human in the Loop"
           fill
           className="object-cover rounded-xl"
         />
@@ -132,7 +116,7 @@ const items = [
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/manual.png"
-          alt="Data Security"
+          alt="Idiomatic Translation"
           fill
           className="object-cover rounded-xl"
         />
@@ -148,7 +132,7 @@ const items = [
       <div className="relative w-full h-full min-h-[6rem]">
         <OptimizedImage
           src="/features/manual.png"
-          alt="Long Format Content"
+          alt="Lip Sync"
           fill
           className="object-cover rounded-xl"
         />
