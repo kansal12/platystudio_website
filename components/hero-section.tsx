@@ -15,7 +15,7 @@ export function HeroSection() {
         <h1 className="mx-auto mt-10 max-w-5xl p-2 overflow-visible bg-gradient-to-b from-white to-white/60 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl lg:text-8xl">
           Box Office Quality AI Dubbing
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/60 sm:text-xl md:text-xl lg:text-2xl px-4 sm:px-10 md:px-0">
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-7 text-white/60 sm:text-xl md:text-xl lg:text-2xl px-4 sm:px-10 md:px-0">
           Redefining Video Localization at Scale for Movies, OTT, Sports, News
           and Content Creators
         </p>
