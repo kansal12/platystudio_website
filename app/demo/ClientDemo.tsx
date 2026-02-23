@@ -34,7 +34,7 @@ interface DubbingFeature {
 const features: Array<DubbingFeature> = [
   {
     id: 1,
-    title: "Lip synchronization in 20+ languages",
+    title: "Lip synchronization in 30+ languages",
     description:
       "Our advanced AI seamlessly edits video to perfectly align lip movements with the new language.",
     type: "dubbing",

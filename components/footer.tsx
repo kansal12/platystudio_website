@@ -208,7 +208,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="space-y-4 max-w-[250px]">
+          <div className="space-y-4 max-w-full lg:max-w-[250px]">
             <h3 className="text-lg font-bold">Stay Updated</h3>
             <p className="text-sm text-white/60">
               Subscribe to our newsletter for the latest updates and insights.

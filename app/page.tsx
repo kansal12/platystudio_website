@@ -11,7 +11,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Platy Studio - AI Video Dubbing for Movies, OTT & Content Creators",
   description:
-    "Box-office quality AI dubbing with voice cloning, lip sync, and idiomatic translation. 20+ languages, 10x faster than traditional methods.",
+    "Box-office quality AI dubbing with voice cloning, lip sync, and idiomatic translation. 30+ languages, 10x faster than traditional methods.",
   alternates: { canonical: "https://platy.studio" },
 };
 

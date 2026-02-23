@@ -9,7 +9,7 @@ export function CTASection() {
   const handleDemoClick = () => setShowDemo(true);
 
   return (
-    <section className="relative">
+    <section className="relative py-16 sm:py-24 lg:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800/50 via-black to-black"></div>
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-4xl">
@@ -17,7 +17,7 @@ export function CTASection() {
             <div className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm text-white/80 backdrop-blur-sm">
               Ready to Transform Your Content?
             </div>
-            <h2 className="mt-8 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 sm:mt-8 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Experience the <br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
                 AI-Powered Innovation
@@ -53,7 +53,7 @@ export function CTASection() {
             className="mt-12 flex flex-col items-center justify-center gap-4"
           >
             <RainbowButton
-              className="bg-white px-10 py-6 text-lg font-semibold text-black hover:bg-white/90 hover:scale-[1.03] transition-transform"
+              className="bg-white w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg font-semibold text-black hover:bg-white/90 hover:scale-[1.03] transition-transform"
               onClick={handleDemoClick}
             >
               Schedule Call
@@ -72,7 +72,7 @@ export function CTASection() {
               },
               {
                 label: "Languages Supported",
-                value: "20+",
+                value: "30+",
                 description: "And growing every month",
               },
               {
@@ -83,7 +83,7 @@ export function CTASection() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="group relative rounded-2xl border border-white/10 bg-black/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/5"
+                className="group relative rounded-2xl border border-white/10 bg-black/50 p-5 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/5"
               >
                 <div className="absolute -inset-px -z-10 rounded-2xl bg-gradient-to-b from-slate-800 via-slate-800/50 to-slate-900 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="text-2xl sm:text-3xl font-bold text-white">

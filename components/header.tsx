@@ -137,6 +137,14 @@ export function Header() {
 
                   <SheetClose asChild>
                     <Link
+                      href="/pricing"
+                      className="text-lg px-4 py-2 hover:bg-white/5 rounded-lg"
+                    >
+                      Pricing
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
                       href="https://kansal12.github.io/"
                       target="_blank"
                       rel="noopener noreferrer"
