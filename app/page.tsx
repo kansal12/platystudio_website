@@ -7,6 +7,7 @@ import { CTASection } from "@/components/cta-section";
 import { Testimonials } from "@/components/testimonials";
 import { HomeClientShell } from "@/components/home-client-shell";
 import { Metadata } from "next";
+import { BrandLogos } from "@/components/brand-logos";
 
 export const metadata: Metadata = {
   title: "Platy Studio - AI Video Dubbing for Movies, OTT & Content Creators",
@@ -22,7 +23,8 @@ export default function Home() {
         <HeroSection />
         <Features />
         <Demo />
-        <Testimonials />
+        {/* <Testimonials /> */}
+        <BrandLogos />
         <CTASection />
         <FAQ />
       </HomeClientShell>

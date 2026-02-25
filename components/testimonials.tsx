@@ -19,7 +19,7 @@ const testimonials = [
       "Shoutout to Platy Studio — our official dubbing partner! The quality is absolutely stunning, turnarounds are quick, pricing is competitive, and their team is very professional. Highly recommend!",
     author: "Awadhesh Kumar",
     position: "Founder, AK Studios LLC",
-    avatar: "/ak_studio.jpeg",
+    avatar: "/brand_log/ak_studio.jpeg",
   },
   {
     quote:
