@@ -99,3 +99,13 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

@@ -38,37 +38,34 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 2,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
-        {
-          "flex-row": !vertical,
-          "flex-col": vertical,
-        },
+        "group relative overflow-hidden p-2",
         className
       )}
     >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
-            })}
-          >
-            {children}
-            {children}
-          </div>
-        ))}
+      <div
+        className={cn(
+          "flex w-max shrink-0 items-center gap-[var(--gap)] will-change-transform backface-hidden",
+          !vertical ? "flex-row animate-marquee" : "flex-col animate-marquee-vertical",
+          pauseOnHover && "group-hover:[animation-play-state:paused]",
+          reverse && "[animation-direction:reverse]"
+        )}
+        style={
+          {
+            "--gap": "1rem",
+            "--duration": "40s",
+            WebkitTransform: "translateZ(0)",
+          } as React.CSSProperties
+        }
+      >
+        {children}
+        {children}
+      </div>
     </div>
   );
 }
