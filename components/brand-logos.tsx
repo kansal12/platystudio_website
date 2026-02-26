@@ -103,7 +103,7 @@ export function BrandLogos() {
                   alt={brand.name}
                   width={70}
                   height={60}
-                  className={`h-[60px] w-auto object-contain transition-all duration-300 scal mix-blend-multiply ${brand.scale} ${brand.paddingTop}`}
+                  className={`h-[60px] w-auto object-contain transition-all duration-300 scal  ${brand.scale} ${brand.paddingTop}`}
                 />
               </div>
             ))}
