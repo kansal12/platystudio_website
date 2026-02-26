@@ -66,6 +66,7 @@ export function Marquee({
             })}
           >
             {children}
+            {children}
           </div>
         ))}
     </div>

@@ -74,7 +74,8 @@ export default {
         shine: "shine var(--duration) infinite linear",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        marquee: "marquee var(--duration) linear infinite",
+        // marquee: "marquee var(--duration) linear infinite",
+        marquee: "marquee var(--duration, 40s) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
@@ -121,9 +122,13 @@ export default {
             height: "0",
           },
         },
+        // marquee: {
+        //   from: { transform: "translateX(0)" },
+        //   to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        // },
         marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          "0%": { transform: "translate3d(0,0,0)" },
+          "100%": { transform: "translate3d(-50%,0,0)" },
         },
         "marquee-vertical": {
           from: { transform: "translateY(0)" },
