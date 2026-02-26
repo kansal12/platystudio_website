@@ -75,7 +75,8 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         // marquee: "marquee var(--duration) linear infinite",
-        marquee: "marquee var(--duration, 40s) linear infinite",
+        // "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
@@ -126,13 +127,17 @@ export default {
         //   from: { transform: "translateX(0)" },
         //   to: { transform: "translateX(calc(-100% - var(--gap)))" },
         // },
+        // "marquee-vertical": {
+        //   from: { transform: "translateY(0)" },
+        //   to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        // },
         marquee: {
           "0%": { transform: "translate3d(0,0,0)" },
           "100%": { transform: "translate3d(-50%,0,0)" },
         },
         "marquee-vertical": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+          "0%": { transform: "translate3d(0,0,0)" },
+          "100%": { transform: "translate3d(0,-50%,0)" },
         },
       },
     },
