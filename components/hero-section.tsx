@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { DemoDialog } from "@/components/demo-dialog";
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, Play } from "lucide-react";
 
 export function HeroSection() {
   const [showDemo, setShowDemo] = useState(false);
