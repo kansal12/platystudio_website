@@ -77,7 +77,7 @@ const brands = [
 
 export function BrandLogos() {
   return (
-    <section className="relative w-full pb-24 sm:pb-28 lg:pb-36 ">
+    <section className="relative w-full py-16 sm:py-24 lg:py-32">
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={
