@@ -23,7 +23,7 @@ export default function Home() {
         <HeroSection />
         <Features />
         <Demo />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <BrandLogos />
         <CTASection />
         <FAQ />
