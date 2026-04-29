@@ -73,11 +73,30 @@ const brands = [
     scale: "scale-[80%]",
     paddingTop: "pt-0",
   },
+  {
+    name: "alep_digital",
+    logo: "/brand_logs/alep_digital.png",
+    scale: "scale-[100%]",
+    paddingTop: "pt-0",
+  },
+  {
+    name: "letsai",
+    logo: "/brand_logs/letsai.png",
+    scale: "scale-[100%]",
+    paddingTop: "pt-0",
+  },
+  {
+    name: "xploriz_digital",
+    logo: "/brand_logs/xploriz_digital.jpeg",
+    scale: "scale-[100%]",
+    paddingTop: "pt-0",
+  },
+
 ];
 
 export function BrandLogos() {
   return (
-    <section className="relative w-full py-16 sm:py-24 lg:py-32">
+    <section className="relative w-full my-24 sm:my-28 lg:my-36">
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={

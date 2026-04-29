@@ -9,7 +9,7 @@ export function CTASection() {
   const handleDemoClick = () => setShowDemo(true);
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32">
+    <section className="relative my-24 sm:my-28 lg:my-36">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800/50 via-black to-black"></div>
       <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-4xl">

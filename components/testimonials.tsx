@@ -49,7 +49,7 @@ export function Testimonials() {
     useCarouselIndicator(emblaApi);
 
   return (
-    <section className="relative w-full pb-24 sm:pb-28 lg:pb-36 overflow-hidden">
+    <section className="relative w-full my-24 sm:my-28 lg:my-36 overflow-hidden">
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title={
