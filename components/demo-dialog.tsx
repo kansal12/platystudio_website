@@ -92,21 +92,25 @@ export function DemoDialog({
         }),
       ]);
 
-      // Handle both responses
-      if (csvResponse.ok && emailResponse.ok) {
+      // Email is the primary lead delivery channel — treat its success as
+      // overall success even if the CSV backup upload fails.
+      if (emailResponse.ok) {
+        if (!csvResponse.ok) {
+          console.warn(
+            "CSV upload failed but email was sent successfully:",
+            await csvResponse.text().catch(() => "<no body>")
+          );
+        }
         setIsSubmitted(true);
         toast.success("Your details were submitted successfully!");
       } else {
-        // Check which request failed
-        const csvError = !csvResponse.ok ? await csvResponse.json() : null;
-        const emailError = !emailResponse.ok
-          ? await emailResponse.json()
-          : null;
-
-        toast.error(`Error submitting form:\n
-        CSV Upload: ${csvError ? csvError.message : "Success"}\n
-        Email Sending: ${emailError ? emailError.message : "Success"}
-      `);
+        console.error(
+          "Email send failed:",
+          await emailResponse.text().catch(() => "<no body>")
+        );
+        toast.error(
+          "Sorry, we couldn't submit your details. Please try again."
+        );
       }
     } catch (error) {
       console.error("Submission Error:", error);
