@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/select";
 
 export default function DemoScheduler() {
-  const [isMinimized, setIsMinimized] = React.useState(false);
+  const [isMinimized, _setIsMinimized] = React.useState(false);
   const [showDialog, setShowDialog] = React.useState(true);
 
   React.useEffect(() => {

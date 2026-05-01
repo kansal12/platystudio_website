@@ -39,29 +39,13 @@ export function Footer() {
     };
 
     try {
-      // Concurrently call both APIs
-      const [csvResponse, emailResponse] = await Promise.all([
-        fetch("/api/upload-subscribe-email", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }),
-        fetch("/api/send-email", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }),
-      ]);
+      const emailResponse = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      // Email is the primary lead delivery channel — treat its success as
-      // overall success even if the CSV backup upload fails.
       if (emailResponse.ok) {
-        if (!csvResponse.ok) {
-          console.warn(
-            "CSV upload failed but email was sent successfully:",
-            await csvResponse.text().catch(() => "<no body>")
-          );
-        }
         setIsSubscribed(true);
         toast.success("Your details were submitted successfully!");
       } else {

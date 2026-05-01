@@ -12,7 +12,7 @@ const VimeoPlayer: React.FC = () => {
   const playerRef = useRef<Player | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [duration, setDuration] = useState<number>(0);
-  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [_currentTime, setCurrentTime] = useState<number>(0);
 
   const [showReplayButton, setShowReplayButton] = useState<boolean>(false);
   const [showControls, setShowControls] = useState<boolean>(true);
